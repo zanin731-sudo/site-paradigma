@@ -11,6 +11,20 @@ body {
   color: #141414;
 }
 
+header {
+  position: relative;
+  z-index: 50;
+}
+
+[data-overlay] {
+  pointer-events: none;
+  z-index: 40;
+}
+
+[data-overlay]:not(.hidden) {
+  pointer-events: auto;
+}
+
 .font-display {
   font-family: 'League Gothic', 'Poppins', sans-serif;
   letter-spacing: 0.05em;
@@ -63,7 +77,7 @@ body {
     top: var(--mobile-nav-top, 76px);
     right: 0;
     left: 0;
-    z-index: 40;
+    z-index: 60;
     border-top: 1px solid rgba(255, 255, 255, 0.18);
     background: rgba(0, 0, 0, 0.92);
     backdrop-filter: blur(14px);
