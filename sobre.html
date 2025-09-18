@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>;paradigma | Quem somos</title>
+  <meta name="description" content="Conheça a equipe e a história do ;paradigma, laboratório vivo de futuros regenerativos." />
+  <meta property="og:title" content="Sobre ;paradigma" />
+  <meta property="og:description" content="Equipe multidisciplinar que cruza ciência, ancestralidade e tecnologia." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://site-paradigma.local/sobre.html" />
+  <meta property="og:image" content="https://site-paradigma.local/assets/img/hero-overlay.svg" />
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#000000',
+            foreground: '#ffffff',
+            muted: '#f0f0f0',
+            accent: '#449f60',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'system-ui', 'sans-serif'],
+            display: ['League Gothic', 'Poppins', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body class="bg-muted text-slate-900" data-analytics="site-paradigma">
+  <div class="fixed inset-0 bg-black/60 hidden" data-overlay aria-hidden="true"></div>
+  <header class="bg-background text-foreground">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 lg:px-8">
+      <a href="/" class="font-display text-3xl uppercase tracking-widest focus-visible">;paradigma</a>
+      <button type="button" class="focus-visible inline-flex items-center justify-center rounded-md border border-white/20 p-2 text-white lg:hidden" aria-label="Abrir menu" aria-expanded="false" data-menu-button>
+        <span class="sr-only">Abrir menu</span>
+        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5M3.75 12h16.5M3.75 18.75h16.5" />
+        </svg>
+      </button>
+      <nav class="hidden flex-1 justify-end gap-8 text-sm font-medium lg:flex" data-nav>
+        <a class="focus-visible transition hover:text-accent" href="/">Home</a>
+        <a class="focus-visible transition hover:text-accent" href="/manifesto.html">Manifesto</a>
+        <a class="focus-visible transition hover:text-accent" href="/conteudos.html">Conteúdos</a>
+        <a class="focus-visible text-accent transition hover:text-accent" href="/sobre.html" aria-current="page">Sobre</a>
+        <a class="focus-visible transition hover:text-accent" href="/contato.html">Contato</a>
+      </nav>
+    </div>
+    <nav class="hidden border-t border-white/10 bg-background px-4 pb-6 pt-4 lg:hidden" data-nav>
+      <ul class="space-y-2 text-lg font-medium">
+        <li><a class="focus-visible block rounded-md px-2 py-2 transition hover:bg-white/10" href="/">Home</a></li>
+        <li><a class="focus-visible block rounded-md px-2 py-2 transition hover:bg-white/10" href="/manifesto.html">Manifesto</a></li>
+        <li><a class="focus-visible block rounded-md px-2 py-2 transition hover:bg-white/10" href="/conteudos.html">Conteúdos</a></li>
+        <li><a class="focus-visible block rounded-md px-2 py-2 transition hover:bg-white/10 text-accent" href="/sobre.html" aria-current="page">Sobre</a></li>
+        <li><a class="focus-visible block rounded-md px-2 py-2 transition hover:bg-white/10" href="/contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo-principal">
+    <!-- INÍCIO BLOCO HERO SOBRE -->
+    <section class="relative overflow-hidden bg-background text-foreground">
+      <div class="hero-overlay relative h-[360px] w-full">
+        <img src="/assets/img/hero-overlay.svg" alt="Formas abstratas representando colaboração" class="absolute inset-0 h-full w-full" />
+        <div class="relative mx-auto flex h-full max-w-6xl flex-col justify-center gap-4 px-4 py-12 lg:px-8">
+          <p class="font-semibold uppercase tracking-[0.3em] text-accent">Sobre nós</p>
+          <h1 class="font-display text-5xl uppercase leading-tight">Laboratório de futuros regenerativos</h1>
+          <p class="max-w-3xl text-lg text-foreground/80">Somos estrategistas, cientistas, educadores e artistas experimentando novas maneiras de viver em sintonia com a natureza.</p>
+        </div>
+      </div>
+    </section>
+    <!-- FIM BLOCO HERO SOBRE -->
+
+    <!-- INÍCIO BLOCO HISTÓRIA -->
+    <section class="mx-auto max-w-5xl px-4 py-16 lg:px-8">
+      <div class="section-card section-card--dark space-y-6 p-10">
+        <h2 class="font-display text-3xl uppercase">Nossa jornada</h2>
+        <!-- INÍCIO BLOCO HISTÓRIA -->
+        <p class="text-sm text-foreground/80">Nasceu em 2018 a partir de encontros espontâneos em espaços independentes. A cada roda, percebíamos o desejo coletivo de integrar ciência, arte e espiritualidade de forma prática. Transformamos essas conversas em uma plataforma que acolhe projetos colaborativos e prototipa iniciativas de impacto social.</p>
+        <!-- FIM BLOCO HISTÓRIA -->
+      </div>
+    </section>
+    <!-- FIM BLOCO HISTÓRIA -->
+
+    <!-- INÍCIO BLOCO EQUIPE -->
+    <section class="mx-auto max-w-6xl px-4 pb-16 lg:px-8">
+      <div class="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+        <div>
+          <p class="font-semibold uppercase tracking-[0.3em] text-accent">Equipe</p>
+          <h2 class="font-display text-4xl uppercase">Quem cuida do ;paradigma</h2>
+        </div>
+        <p class="max-w-xl text-lg text-slate-600">Formamos um coletivo multidisciplinar. Cada pessoa carrega repertórios distintos que se somam em experiências imersivas.</p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- INÍCIO BLOCO CARDS EQUIPE -->
+        <article class="section-card p-6">
+          <h3 class="font-display text-2xl uppercase text-background">Lia Monte</h3>
+          <p class="mt-2 text-sm text-slate-600">Bióloga evolutiva e diretora de pesquisa. Conecta descobertas científicas a aplicações cotidianas.</p>
+        </article>
+        <article class="section-card p-6">
+          <h3 class="font-display text-2xl uppercase text-background">Caio Nobre</h3>
+          <p class="mt-2 text-sm text-slate-600">Estratégia e cultura. Conduz narrativas e parcerias com redes comunitárias.</p>
+        </article>
+        <article class="section-card section-card--dark p-6">
+          <h3 class="font-display text-2xl uppercase">Amaranta Reis</h3>
+          <p class="mt-2 text-sm text-foreground/80">Artista e facilitadora de experiências somáticas. Pesquisa interseções entre corpo e tecnologia.</p>
+        </article>
+        <!-- FIM BLOCO CARDS EQUIPE -->
+      </div>
+    </section>
+    <!-- FIM BLOCO EQUIPE -->
+
+    <!-- INÍCIO BLOCO CHAMADA CONTATO -->
+    <section class="mx-auto max-w-4xl px-4 pb-20 lg:px-8">
+      <div class="section-card section-card--dark p-10 text-center">
+        <h2 class="font-display text-3xl uppercase">Quer cocriar com a gente?</h2>
+        <p class="mt-4 text-lg text-foreground/80">Abrimos agendas trimestrais para novos projetos, residências artísticas e programas corporativos.</p>
+        <a href="/contato.html" class="focus-visible mt-8 inline-flex items-center justify-center rounded-full bg-accent px-8 py-3 font-semibold text-background transition hover:bg-foreground hover:text-background">Fale com o coletivo</a>
+      </div>
+    </section>
+    <!-- FIM BLOCO CHAMADA CONTATO -->
+  </main>
+
+  <footer class="bg-background py-10 text-foreground">
+    <div class="mx-auto flex max-w-6xl flex-col gap-6 px-4 text-sm text-foreground/70 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+      <p>&copy; <span id="ano-footer">2024</span> ;paradigma. Todos os direitos reservados.</p>
+      <div class="flex items-center gap-4">
+        <a class="focus-visible transition hover:text-foreground" href="https://instagram.com" aria-label="Instagram">Instagram</a>
+        <a class="focus-visible transition hover:text-foreground" href="https://www.youtube.com" aria-label="YouTube">YouTube</a>
+        <a class="focus-visible transition hover:text-foreground" href="https://www.linkedin.com" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- <script data-analytics-script src="https://analytics.example.com/tracker.js"></script> -->
+  <script src="/assets/js/main.js" defer></script>
+  <script>
+    const anoFooter = document.getElementById('ano-footer');
+    if (anoFooter) {
+      anoFooter.textContent = new Date().getFullYear().toString();
+    }
+  </script>
+</body>
+</html>
