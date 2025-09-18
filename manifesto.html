@@ -46,7 +46,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5M3.75 12h16.5M3.75 18.75h16.5" />
         </svg>
       </button>
-      <nav class="hidden flex-1 justify-end gap-8 text-sm font-medium lg:flex" data-nav>
+      <nav class="hidden flex-1 justify-end gap-8 text-sm font-medium lg:flex" data-nav data-nav-desktop>
         <a class="focus-visible transition hover:text-accent" href="/">Home</a>
         <a class="focus-visible text-accent transition hover:text-accent" href="/manifesto.html" aria-current="page">Manifesto</a>
         <a class="focus-visible transition hover:text-accent" href="/conteudos.html">Conteúdos</a>
@@ -54,13 +54,13 @@
         <a class="focus-visible transition hover:text-accent" href="/contato.html">Contato</a>
       </nav>
     </div>
-    <nav class="hidden border-t border-white/10 bg-background px-4 pb-6 pt-4 lg:hidden" data-nav>
+    <nav class="hidden border-t border-white/10 bg-background px-4 pb-6 pt-4 lg:hidden" data-nav data-nav-mobile>
       <ul class="space-y-2 text-lg font-medium">
-        <li><a class="focus-visible block rounded-md px-2 py-2 transition hover:bg-white/10" href="/">Home</a></li>
-        <li><a class="focus-visible block rounded-md px-2 py-2 transition hover:bg-white/10 text-accent" href="/manifesto.html" aria-current="page">Manifesto</a></li>
-        <li><a class="focus-visible block rounded-md px-2 py-2 transition hover:bg-white/10" href="/conteudos.html">Conteúdos</a></li>
-        <li><a class="focus-visible block rounded-md px-2 py-2 transition hover:bg-white/10" href="/sobre.html">Sobre</a></li>
-        <li><a class="focus-visible block rounded-md px-2 py-2 transition hover:bg-white/10" href="/contato.html">Contato</a></li>
+        <li><a class="focus-visible mobile-nav__link block rounded-md px-2 py-2 transition" href="/">Home</a></li>
+        <li><a class="focus-visible mobile-nav__link block rounded-md px-2 py-2 transition text-accent" href="/manifesto.html" aria-current="page">Manifesto</a></li>
+        <li><a class="focus-visible mobile-nav__link block rounded-md px-2 py-2 transition" href="/conteudos.html">Conteúdos</a></li>
+        <li><a class="focus-visible mobile-nav__link block rounded-md px-2 py-2 transition" href="/sobre.html">Sobre</a></li>
+        <li><a class="focus-visible mobile-nav__link block rounded-md px-2 py-2 transition" href="/contato.html">Contato</a></li>
       </ul>
     </nav>
   </header>
