@@ -1,0 +1,58 @@
+:root {
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  --color-muted: #f0f0f0;
+  --color-accent: #449f60;
+}
+
+body {
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--color-muted);
+  color: #141414;
+}
+
+.font-display {
+  font-family: 'League Gothic', 'Poppins', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.hero-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.72), rgba(68, 159, 96, 0.65));
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.hero-overlay img {
+  object-fit: cover;
+}
+
+.section-card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 25px 40px -25px rgba(20, 20, 20, 0.35);
+}
+
+.section-card--dark {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.section-card--dark a {
+  color: var(--color-accent);
+}
+
+.focus-visible:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+@font-face {
+  font-family: 'League Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/leaguegothic/v9/CSRg4x8UC4p2Ql0Xv6A.woff2') format('woff2');
+}
