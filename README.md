@@ -1,8 +1,8 @@
 # ;paradigma — site estático
 
-Site estático responsivo criado com HTML, Tailwind CSS (via CDN) e JavaScript simples.
+Site responsivo criado com HTML, Tailwind CSS (via CDN) e JavaScript simples.
 
-## Estrutura
+## Estrutura de pastas (resumida)
 
 ```
 /
@@ -17,47 +17,60 @@ Site estático responsivo criado com HTML, Tailwind CSS (via CDN) e JavaScript s
     ├── img/
     │   ├── hero-overlay.svg
     │   └── favicon.svg
-    └── fonts/
+    └── data/
+        └── conteudos.json
 ```
 
-## Edição de textos e imagens
+## Como editar a Home (`index.html`)
 
-Todos os trechos editáveis estão sinalizados com comentários HTML no formato:
+A página inicial foi reorganizada em blocos independentes. Os textos podem ser alterados diretamente no HTML.
 
-```html
-<!-- INÍCIO BLOCO NOME -->
-...
-<!-- FIM BLOCO NOME -->
-```
+### Hero (primeira dobra)
+- Headline e subheadline ficam nos elementos `<h1>` e `<p>` logo após o rótulo “Biologia evolutiva na prática”.
+- Para trocar a imagem de fundo, atualize o `src` do `<img>` dentro da primeira `<section>`.
+- Os botões “Assinar newsletter” e “Explorar conteúdos” utilizam o atributo `data-scroll-target` para rolar até as seções correspondentes. Caso altere os IDs das seções, ajuste também o atributo nos links.
 
-1. Abra o arquivo desejado em um editor de texto.
-2. Localize o bloco que deseja alterar usando o nome no comentário.
-3. Substitua o texto entre os comentários pelo novo conteúdo.
-4. Salve o arquivo — não é necessário alterar nenhuma classe ou estrutura.
+### Manifesto condensado
+- Altere os parágrafos dentro da seção identificada por `aria-labelledby="manifesto-heading"`.
+- O botão “Ler manifesto completo” aponta para `manifesto.html`. Atualize o `href` caso o arquivo mude de local.
 
-### Troca de imagens
+### Conteúdos em destaque
+- Os cards são gerados dinamicamente a partir do arquivo `assets/data/conteudos.json`.
+- Cada item do array deve conter os campos:
+  - `titulo` (string)
+  - `descricao` (string curta)
+  - `imagem` (URL absoluta ou caminho relativo)
+  - `alt` (texto alternativo da imagem)
+  - `link` (URL para “Ler mais”)
+- Basta editar o JSON e recarregar a página. Em caso de erro de carregamento, uma mensagem orienta a verificar o arquivo.
 
-- Substitua os arquivos dentro de `assets/img/` pelos novos visuais mantendo os mesmos nomes (`hero-overlay.svg`, `favicon.svg`) ou atualize o atributo `src` das imagens correspondentes.
-- Utilize imagens em alta resolução e com contraste adequado. As imagens atuais são placeholders e podem ser sobrescritas.
+### Bloco interativo/reflexão
+- Os botões possuem atributos `data-reflexao` (`cacar`, `cooperar`, `fugir`).
+- Para alterar as respostas, edite o objeto `reflexoes` no script inline no final da página, mantendo a correspondência com os valores de `data-reflexao`.
 
-### Fontes
+### Newsletter / Comunidade
+- A seção verde possui o ID `newsletter` e utiliza o mesmo endpoint placeholder do MailerLite (`https://app.mailerlite.com/webforms/submit/placeholder`).
+- Substitua o valor de `action` pelos dados do formulário real e, se necessário, acrescente campos ocultos exigidos pelo MailerLite.
+- O formulário do card “Radar evolutivo” no Hero compartilha a mesma URL de envio.
 
-- A fonte **Poppins** é carregada do Google Fonts no `<head>` de cada página.
-- A fonte **League Gothic** é importada via regra `@font-face` em `assets/css/styles.css`. Para usar um arquivo local, substitua a URL remota pela localização desejada.
+### Materiais / Infoprodutos
+- O título, parágrafo e botão ficam dentro da seção identificada por `infoproduto-heading`.
+- O bloco da direita usa a imagem `hero-overlay.svg` como textura. Troque a classe `bg-[url('...')]` para apontar outra arte ou substitua por um `<img>` convencional.
 
-### Cores e estilos globais
+### Frase de fecho e rodapé
+- Atualize o texto destacado dentro da seção `aria-label="Mensagem final"` conforme necessário.
+- Os links do rodapé e ícones sociais estão agrupados no `<footer>`. Substitua as URLs pelos perfis oficiais da marca.
 
-- Ajuste as cores principais alterando as variáveis CSS em `assets/css/styles.css` (`--color-background`, `--color-foreground`, etc.).
-- Personalizações de sombra, bordas e espaçamentos também podem ser feitas diretamente nesse arquivo.
+## Imagens e fontes
 
-### Menu mobile e interações
+- Substitua arquivos em `assets/img/` mantendo os nomes ou atualize os caminhos diretamente no HTML/JSON.
+- As fontes **Poppins** e **League Gothic** são importadas via Google Fonts no `<head>` do `index.html`. Ajuste o `<link>` caso prefira servir arquivos locais.
 
-- O comportamento do menu hamburguer está em `assets/js/main.js`. Caso deseje personalizar animações ou eventos adicionais, edite esse arquivo.
+## Scripts
 
-## Analytics
-
-Existe um script de analytics comentado no final de cada página HTML. Basta remover os comentários e ajustar a URL para ativá-lo.
+- `assets/js/main.js` controla o menu mobile.
+- O script inline no final de `index.html` é responsável pela rolagem suave, bloco interativo e carregamento dos conteúdos em destaque.
 
 ## Visualizar localmente
 
-Abra qualquer arquivo `.html` diretamente no navegador. Por utilizar apenas HTML/CSS/JS simples, não há necessidade de servidor ou build.
+Abra qualquer arquivo `.html` diretamente no navegador. Não há build ou servidor necessários.
