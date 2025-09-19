@@ -91,25 +91,20 @@
           </p>
           <div class="flex flex-col gap-4 sm:flex-row" role="group" aria-label="Chamadas para ação">
             <a
-              href="#newsletter"
-              data-scroll-target="#newsletter"
-              class="focus-visible inline-flex items-center justify-center rounded-full bg-accent px-8 py-3 font-semibold text-background transition hover:bg-foreground hover:text-background"
-            >Assinar newsletter</a>
-            <a
               href="#conteudos-destaque"
               data-scroll-target="#conteudos-destaque"
               class="focus-visible inline-flex items-center justify-center rounded-full border border-foreground px-8 py-3 font-semibold text-foreground transition hover:bg-foreground hover:text-background"
             >Explorar conteúdos</a>
           </div>
         </div>
-        <div class="max-w-md rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur">
-          <h2 class="font-display text-3xl uppercase text-white">Radar evolutivo</h2>
+        <div id="newsletter" class="max-w-md rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur">
+          <h2 class="font-display text-3xl uppercase text-white">Inscreva-se aqui na nossa newsletter!</h2>
           <p class="mt-2 text-sm text-white/75">
-            Atualizações quinzenais com insights acionáveis, provocações históricas e práticas transdisciplinares para o seu cotidiano.
+            Quinzenalmente na sua caixa de e-mail. Textos e reflexões para quebrar seus paradigmas ;)
           </p>
           <form
             class="mt-4 space-y-3"
-            aria-label="Inscreva-se no radar evolutivo"
+            aria-label="Formulário de inscrição na newsletter"
             action="https://app.mailerlite.com/webforms/submit/placeholder"
             method="post"
             target="_blank"
@@ -200,38 +195,6 @@
           >Fugir</button>
         </div>
         <div class="mt-6 min-h-[4rem] rounded-2xl bg-white/10 p-6 text-sm text-white/90" data-reflexao-output aria-live="polite"></div>
-      </div>
-    </section>
-
-    <section id="newsletter" class="bg-accent py-16" aria-labelledby="newsletter-heading">
-      <div class="mx-auto max-w-4xl px-4 text-white lg:px-8">
-        <h2 id="newsletter-heading" class="font-display text-4xl uppercase">Quer receber provocações e reflexões quinzenais? Assine a newsletter.</h2>
-        <p class="mt-4 text-white/90">
-          Prometemos conversas sinceras, referências instigantes e convites para experimentar novas práticas de cuidado.
-        </p>
-        <form
-          class="mt-8 flex flex-col gap-4 sm:flex-row"
-          action="https://app.mailerlite.com/webforms/submit/placeholder"
-          method="post"
-          target="_blank"
-          aria-label="Assine a newsletter"
-        >
-          <div class="flex-1">
-            <label class="sr-only" for="newsletter-email">Email</label>
-            <input
-              id="newsletter-email"
-              name="fields[email]"
-              type="email"
-              class="h-full w-full rounded-full border border-white/30 bg-white/10 px-6 py-3 text-base text-white placeholder:text-white/70 focus-visible"
-              placeholder="nome@email.com"
-              required
-            />
-          </div>
-          <button
-            type="submit"
-            class="focus-visible inline-flex items-center justify-center rounded-full bg-white px-8 py-3 font-semibold text-background transition hover:bg-foreground hover:text-background"
-          >Quero fazer parte</button>
-        </form>
       </div>
     </section>
 
