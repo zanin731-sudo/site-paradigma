@@ -1,0 +1,23 @@
+[
+  {
+    "titulo": "Rituais circadianos para tempos digitais",
+    "descricao": "Pequenas práticas que reprogramam o corpo para responder melhor a telas, trabalho remoto e noites pouco escuras.",
+    "imagem": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80",
+    "alt": "Pessoa observando o nascer do sol em meio à natureza",
+    "link": "/conteudos.html"
+  },
+  {
+    "titulo": "Tecnologia como extensão do corpo",
+    "descricao": "Podcast sobre como próteses, apps e inteligência artificial recriam ecologias de cooperação ancestrais.",
+    "imagem": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
+    "alt": "Mãos humanas interagindo com uma interface holográfica",
+    "link": "/conteudos.html"
+  },
+  {
+    "titulo": "Mapas afetivos da cidade",
+    "descricao": "Guia em PDF para cartografar laços de cuidado, consumo e mobilidade sob uma lente evolutiva.",
+    "imagem": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
+    "alt": "Vista aérea de uma cidade com ruas iluminadas",
+    "link": "/conteudos.html"
+  }
+]

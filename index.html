@@ -10,10 +10,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://site-paradigma.local/" />
   <meta property="og:image" content="https://site-paradigma.local/assets/img/hero-overlay.svg" />
-  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -33,20 +36,26 @@
       },
     };
   </script>
-  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-<body class="bg-muted text-slate-900" data-analytics="site-paradigma">
+<body class="bg-muted font-sans text-slate-900" data-analytics="site-paradigma">
   <div class="fixed inset-0 bg-black/60 hidden" data-overlay aria-hidden="true"></div>
-  <header class="bg-background text-foreground">
+  <header class="bg-background text-foreground" role="banner">
     <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 lg:px-8">
-      <a href="/" class="font-display text-3xl uppercase tracking-widest focus-visible">;paradigma</a>
-      <button type="button" class="focus-visible inline-flex items-center justify-center rounded-md border border-white/20 p-2 text-white lg:hidden" aria-label="Abrir menu" aria-expanded="false" data-menu-button>
+      <a href="/" class="font-display text-3xl uppercase tracking-[0.35em] focus-visible">;paradigma</a>
+      <button
+        type="button"
+        class="focus-visible inline-flex items-center justify-center rounded-md border border-white/20 p-2 text-white lg:hidden"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        data-menu-button
+      >
         <span class="sr-only">Abrir menu</span>
         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5M3.75 12h16.5M3.75 18.75h16.5" />
         </svg>
       </button>
-      <nav class="hidden flex-1 justify-end gap-8 text-sm font-medium lg:flex" data-nav data-nav-desktop>
+      <nav class="hidden flex-1 justify-end gap-8 text-sm font-medium lg:flex" data-nav data-nav-desktop aria-label="Menu principal">
         <a class="focus-visible transition hover:text-accent" href="/">Home</a>
         <a class="focus-visible transition hover:text-accent" href="/manifesto.html">Manifesto</a>
         <a class="focus-visible transition hover:text-accent" href="/conteudos.html">Conteúdos</a>
@@ -54,7 +63,7 @@
         <a class="focus-visible transition hover:text-accent" href="/contato.html">Contato</a>
       </nav>
     </div>
-    <nav class="hidden border-t border-white/10 bg-background px-4 pb-6 pt-4 lg:hidden" data-nav data-nav-mobile>
+    <nav class="hidden border-t border-white/10 bg-background px-4 pb-6 pt-4 lg:hidden" data-nav data-nav-mobile aria-label="Menu principal móvel">
       <ul class="space-y-2 text-lg font-medium">
         <li><a class="focus-visible mobile-nav__link block rounded-md px-2 py-2 transition" href="/">Home</a></li>
         <li><a class="focus-visible mobile-nav__link block rounded-md px-2 py-2 transition" href="/manifesto.html">Manifesto</a></li>
@@ -66,114 +75,352 @@
   </header>
 
   <main id="conteudo-principal">
-    <!-- INÍCIO BLOCO HERO -->
-    <section class="relative overflow-hidden bg-background text-foreground">
-      <div class="hero-overlay relative w-full">
-        <img src="/assets/img/hero-overlay.svg" alt="Texturas orgânicas e formas abstratas" class="absolute inset-0 h-full w-full" />
-        <div class="relative mx-auto flex max-w-6xl flex-col justify-center gap-6 px-4 py-24 sm:py-28 lg:flex-row lg:items-center lg:gap-10 lg:px-8 lg:py-20">
-          <div class="max-w-2xl space-y-4">
-            <p class="font-semibold uppercase tracking-[0.25em] text-accent">Biologia evolutiva na prática</p>
-            <h1 class="font-display text-5xl uppercase leading-tight md:text-6xl">Reescrevendo narrativas de bem-estar</h1>
-            <p class="max-w-xl text-lg text-foreground/80">Somos um laboratório vivo de ideias. Curamos conteúdos, programas e experiências que unem ciência, ancestralidade e tecnologia para uma vida com propósito.</p>
-            <div class="flex flex-col gap-4 sm:flex-row">
-              <a href="/manifesto.html" class="focus-visible inline-flex items-center justify-center rounded-full bg-accent px-8 py-3 font-semibold text-background transition hover:bg-foreground hover:text-background">Ler manifesto</a>
-              <a href="/conteudos.html" class="focus-visible inline-flex items-center justify-center rounded-full border border-foreground px-8 py-3 font-semibold text-foreground transition hover:bg-foreground hover:text-background">Explorar conteúdos</a>
-            </div>
+    <section class="relative overflow-hidden bg-background text-foreground" aria-labelledby="hero-heading">
+      <div class="absolute inset-0">
+        <img src="assets/img/hero-overlay.svg" alt="Texturas orgânicas e formas abstratas" class="h-full w-full object-cover" />
+        <div class="absolute inset-0 bg-black/75 mix-blend-multiply" aria-hidden="true"></div>
+      </div>
+      <div class="relative mx-auto flex max-w-6xl flex-col gap-10 px-4 py-24 sm:py-32 lg:flex-row lg:items-center lg:px-8">
+        <div class="max-w-2xl space-y-6">
+          <p class="font-semibold uppercase tracking-[0.35em] text-accent">Biologia evolutiva na prática</p>
+          <h1 id="hero-heading" class="font-display text-5xl uppercase leading-tight text-white sm:text-6xl lg:text-7xl">
+            Não somos apenas o agora. Somos herdeiros de milhões de anos de história.
+          </h1>
+          <p class="text-lg text-white/80">
+            Descubra o que a biologia evolutiva tem a dizer sobre o seu presente. Explore provocações, rituais e caminhos para viver com senso crítico e esperança.
+          </p>
+          <div class="flex flex-col gap-4 sm:flex-row" role="group" aria-label="Chamadas para ação">
+            <a
+              href="#newsletter"
+              data-scroll-target="#newsletter"
+              class="focus-visible inline-flex items-center justify-center rounded-full bg-accent px-8 py-3 font-semibold text-background transition hover:bg-foreground hover:text-background"
+            >Assinar newsletter</a>
+            <a
+              href="#conteudos-destaque"
+              data-scroll-target="#conteudos-destaque"
+              class="focus-visible inline-flex items-center justify-center rounded-full border border-foreground px-8 py-3 font-semibold text-foreground transition hover:bg-foreground hover:text-background"
+            >Explorar conteúdos</a>
           </div>
-          <div class="max-w-sm rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur">
-            <h2 class="font-display text-3xl uppercase">Radar evolutivo</h2>
-            <p class="mt-2 text-sm text-foreground/75">Atualizações quinzenais com insights acionáveis e práticas interdisciplinares.</p>
-            <form class="mt-4 space-y-3" aria-label="Inscreva-se no radar evolutivo">
-              <label class="sr-only" for="newsletter-email">Email</label>
-              <input id="newsletter-email" type="email" class="w-full rounded-full border border-white/30 bg-white/10 px-4 py-3 text-sm placeholder:text-white/60 focus-visible" placeholder="nome@email.com" required />
-              <button type="submit" class="focus-visible w-full rounded-full bg-accent px-6 py-3 text-sm font-semibold text-background transition hover:bg-foreground hover:text-background">Quero receber</button>
-            </form>
-          </div>
+        </div>
+        <div class="max-w-md rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur">
+          <h2 class="font-display text-3xl uppercase text-white">Radar evolutivo</h2>
+          <p class="mt-2 text-sm text-white/75">
+            Atualizações quinzenais com insights acionáveis, provocações históricas e práticas transdisciplinares para o seu cotidiano.
+          </p>
+          <form
+            class="mt-4 space-y-3"
+            aria-label="Inscreva-se no radar evolutivo"
+            action="https://app.mailerlite.com/webforms/submit/placeholder"
+            method="post"
+            target="_blank"
+          >
+            <label class="sr-only" for="hero-newsletter-email">Email</label>
+            <input
+              id="hero-newsletter-email"
+              name="fields[email]"
+              type="email"
+              class="w-full rounded-full border border-white/30 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/60 focus-visible"
+              placeholder="nome@email.com"
+              required
+            />
+            <button
+              type="submit"
+              class="focus-visible w-full rounded-full bg-accent px-6 py-3 text-sm font-semibold text-background transition hover:bg-foreground hover:text-background"
+            >Quero receber</button>
+          </form>
         </div>
       </div>
     </section>
-    <!-- FIM BLOCO HERO -->
 
-    <!-- INÍCIO BLOCO PILARES -->
-    <section class="mx-auto max-w-6xl px-4 py-16 lg:px-8">
-      <div class="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+    <section class="mx-auto max-w-5xl px-4 py-16 lg:px-8" aria-labelledby="manifesto-heading">
+      <div class="space-y-6 rounded-3xl bg-white p-8 shadow-lg">
+        <div class="space-y-2">
+          <p class="font-semibold uppercase tracking-[0.3em] text-accent">Manifesto</p>
+          <h2 id="manifesto-heading" class="font-display text-4xl uppercase text-background">Respirar história para mover futuros</h2>
+        </div>
+        <div class="space-y-4 text-slate-700">
+          <p>
+            Somos uma comunidade que lê a biologia evolutiva como mapa para o agora. Investigamos como heranças ancestrais moldam comportamentos, emoções e escolhas, sem romantizar o passado nem idealizar o futuro.
+          </p>
+          <p>
+            Cultivamos reflexão crítica, mas também rituais de cuidado e alegria. Entendemos que a transformação acontece quando teoria e prática se encontram, e quando a ciência dialoga com corpo, cultura e território.
+          </p>
+          <p class="mb-2">
+            Convidamos você a experimentar novos arranjos de convivência, consumo e imaginação, honrando as histórias que nos precedem e abrindo espaço para futuros possíveis.
+          </p>
+        </div>
         <div>
-          <p class="font-semibold uppercase tracking-[0.3em] text-accent">Pilares</p>
-          <h2 class="font-display text-4xl uppercase">O que move a comunidade</h2>
+          <a
+            href="/manifesto.html"
+            class="focus-visible inline-flex items-center justify-center rounded-full bg-background px-8 py-3 font-semibold text-foreground transition hover:bg-accent hover:text-background"
+          >Ler manifesto completo</a>
         </div>
-        <p class="max-w-xl text-lg text-slate-600">Conectamos evolução biológica, saúde integral e cultura para provocar diálogos transformadores. Cada pilar é um convite a experimentar novos paradigmas.</p>
-      </div>
-      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <article class="section-card p-6">
-          <h3 class="font-display text-2xl uppercase text-background">Ciência com alma</h3>
-          <p class="mt-3 text-sm text-slate-600">Pesquisas de ponta traduzidas em linguagem acessível, com curadoria de especialistas multidisciplinares.</p>
-        </article>
-        <article class="section-card p-6">
-          <h3 class="font-display text-2xl uppercase text-background">Corpo em movimento</h3>
-          <p class="mt-3 text-sm text-slate-600">Experiências sensoriais, práticas somáticas e tecnologias para uma rotina conectada ao corpo.</p>
-        </article>
-        <article class="section-card section-card--dark p-6">
-          <h3 class="font-display text-2xl uppercase">Ecologia emocional</h3>
-          <p class="mt-3 text-sm text-foreground/80">Comunidades de apoio, rodas de conversa e espaços seguros para explorar afetos e vulnerabilidades.</p>
-        </article>
       </div>
     </section>
-    <!-- FIM BLOCO PILARES -->
 
-    <!-- INÍCIO BLOCO CHAMADA CONTEÚDOS -->
-    <section class="bg-foreground">
-      <div class="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-16 lg:flex-row lg:items-center lg:px-8">
-        <div class="w-full space-y-6 lg:w-1/2">
-          <p class="font-semibold uppercase tracking-[0.3em] text-accent">Conteúdos</p>
-          <h2 class="font-display text-4xl uppercase text-background">Aprenda, questione, transforme</h2>
-          <p class="text-lg text-slate-600">Lives, newsletters, playlists e dossiês temáticos. Atualizamos constantemente com provocações que misturam arte, biologia, filosofia e tecnologia.</p>
-          <a href="/conteudos.html" class="focus-visible inline-flex items-center justify-center rounded-full bg-background px-8 py-3 font-semibold text-foreground transition hover:bg-accent hover:text-background">Ver agenda completa</a>
-        </div>
-        <div class="grid w-full gap-6 lg:w-1/2">
-          <div class="section-card p-6">
-            <p class="text-xs uppercase tracking-[0.4em] text-accent">Newsletter</p>
-            <h3 class="font-display text-2xl uppercase text-background">Sintropia semanal</h3>
-            <p class="mt-2 text-sm text-slate-600">Resumo com pesquisas emergentes, biohacks e rituais regenerativos.</p>
+    <section id="conteudos-destaque" class="bg-white py-16" aria-labelledby="conteudos-heading">
+      <div class="mx-auto max-w-6xl px-4 lg:px-8">
+        <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <p class="font-semibold uppercase tracking-[0.3em] text-accent">Conteúdos em destaque</p>
+            <h2 id="conteudos-heading" class="font-display text-4xl uppercase text-background">Provocações recentes</h2>
           </div>
-          <div class="section-card section-card--dark p-6">
-            <p class="text-xs uppercase tracking-[0.4em] text-accent">Experiência</p>
-            <h3 class="font-display text-2xl uppercase">Imersão bio-urbana</h3>
-            <p class="mt-2 text-sm text-foreground/80">Circuitos sensoriais pela cidade para reconectar com ritmos naturais.</p>
-          </div>
+          <p class="max-w-xl text-lg text-slate-600">
+            Um recorte vivo do nosso acervo. Atualize o arquivo <code>assets/data/conteudos.json</code> e veja os cards ganharem vida automaticamente.
+          </p>
         </div>
+        <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3" data-conteudos-grid aria-live="polite"></div>
+        <p class="mt-6 text-sm text-slate-500" data-conteudos-feedback></p>
       </div>
     </section>
-    <!-- FIM BLOCO CHAMADA CONTEÚDOS -->
 
-    <!-- INÍCIO BLOCO CTA MANIFESTO -->
-    <section class="mx-auto max-w-5xl px-4 py-16 text-center lg:px-8">
-      <div class="section-card section-card--dark p-12">
-        <h2 class="font-display text-4xl uppercase">Manifesto vivo</h2>
-        <p class="mt-4 text-lg text-foreground/80">Assumimos a responsabilidade de co-criar futuros regenerativos, sustentados pelo cuidado radical e pela curiosidade científica.</p>
-        <a href="/manifesto.html" class="focus-visible mt-8 inline-flex items-center justify-center rounded-full bg-accent px-8 py-3 font-semibold text-background transition hover:bg-foreground hover:text-background">Mergulhar no manifesto</a>
+    <section class="mx-auto max-w-5xl px-4 py-16 lg:px-8" aria-labelledby="reflexao-heading">
+      <div class="rounded-3xl bg-background px-8 py-12 text-white shadow-lg">
+        <p class="font-semibold uppercase tracking-[0.3em] text-accent">Experimentar</p>
+        <h2 id="reflexao-heading" class="mt-2 font-display text-4xl uppercase">O que seu corpo ancestral faria diante do mundo moderno?</h2>
+        <p class="mt-4 text-white/80">Escolha uma resposta para desbloquear uma reflexão instantânea.</p>
+        <div class="mt-8 flex flex-col gap-4 sm:flex-row" role="group" aria-label="Opções de reflexão">
+          <button
+            type="button"
+            class="focus-visible w-full rounded-full border border-white/40 px-6 py-3 font-semibold uppercase tracking-[0.2em] transition hover:bg-white/10"
+            data-reflexao="cacar"
+            aria-pressed="false"
+          >Caçar</button>
+          <button
+            type="button"
+            class="focus-visible w-full rounded-full border border-white/40 px-6 py-3 font-semibold uppercase tracking-[0.2em] transition hover:bg-white/10"
+            data-reflexao="cooperar"
+            aria-pressed="false"
+          >Cooperar</button>
+          <button
+            type="button"
+            class="focus-visible w-full rounded-full border border-white/40 px-6 py-3 font-semibold uppercase tracking-[0.2em] transition hover:bg-white/10"
+            data-reflexao="fugir"
+            aria-pressed="false"
+          >Fugir</button>
+        </div>
+        <div class="mt-6 min-h-[4rem] rounded-2xl bg-white/10 p-6 text-sm text-white/90" data-reflexao-output aria-live="polite"></div>
       </div>
     </section>
-    <!-- FIM BLOCO CTA MANIFESTO -->
+
+    <section id="newsletter" class="bg-accent py-16" aria-labelledby="newsletter-heading">
+      <div class="mx-auto max-w-4xl px-4 text-white lg:px-8">
+        <h2 id="newsletter-heading" class="font-display text-4xl uppercase">Quer receber provocações e reflexões quinzenais? Assine a newsletter.</h2>
+        <p class="mt-4 text-white/90">
+          Prometemos conversas sinceras, referências instigantes e convites para experimentar novas práticas de cuidado.
+        </p>
+        <form
+          class="mt-8 flex flex-col gap-4 sm:flex-row"
+          action="https://app.mailerlite.com/webforms/submit/placeholder"
+          method="post"
+          target="_blank"
+          aria-label="Assine a newsletter"
+        >
+          <div class="flex-1">
+            <label class="sr-only" for="newsletter-email">Email</label>
+            <input
+              id="newsletter-email"
+              name="fields[email]"
+              type="email"
+              class="h-full w-full rounded-full border border-white/30 bg-white/10 px-6 py-3 text-base text-white placeholder:text-white/70 focus-visible"
+              placeholder="nome@email.com"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            class="focus-visible inline-flex items-center justify-center rounded-full bg-white px-8 py-3 font-semibold text-background transition hover:bg-foreground hover:text-background"
+          >Quero fazer parte</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-4 py-16 lg:px-8" aria-labelledby="infoproduto-heading">
+      <div class="grid gap-6 rounded-3xl bg-white p-8 shadow-lg lg:grid-cols-[1.2fr,1fr]">
+        <div class="space-y-4">
+          <p class="font-semibold uppercase tracking-[0.3em] text-accent">Materiais</p>
+          <h2 id="infoproduto-heading" class="font-display text-4xl uppercase text-background">Iniciação à biologia evolutiva</h2>
+          <p class="text-slate-600">
+            Um curso-ensaio em vídeo e texto para compreender os princípios que regem a evolução e aplicá-los em decisões cotidianas. Ideal para quem deseja construir repertório crítico e sensível.
+          </p>
+          <button
+            type="button"
+            class="focus-visible inline-flex items-center justify-center rounded-full bg-background px-8 py-3 font-semibold text-foreground transition hover:bg-accent hover:text-background"
+          >Saiba mais</button>
+        </div>
+        <div class="flex items-center justify-center">
+          <div class="h-48 w-full max-w-xs rounded-3xl bg-muted/80 bg-[url('assets/img/hero-overlay.svg')] bg-cover bg-center p-4 text-center text-sm text-slate-600 shadow-inner">
+            <span class="sr-only">Imagem ilustrativa do material Iniciação à biologia evolutiva</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-background py-16 text-center text-white" aria-label="Mensagem final">
+      <p class="mx-auto max-w-3xl px-4 font-display text-4xl uppercase">A ;paradigma existe para unir a crítica à esperança.</p>
+    </section>
   </main>
 
-  <footer class="bg-background py-10 text-foreground">
-    <div class="mx-auto flex max-w-6xl flex-col gap-6 px-4 text-sm text-foreground/70 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-      <p>&copy; <span id="ano-footer">2024</span> ;paradigma. Todos os direitos reservados.</p>
-      <div class="flex items-center gap-4">
-        <a class="focus-visible transition hover:text-foreground" href="https://instagram.com" aria-label="Instagram">Instagram</a>
-        <a class="focus-visible transition hover:text-foreground" href="https://www.youtube.com" aria-label="YouTube">YouTube</a>
-        <a class="focus-visible transition hover:text-foreground" href="https://www.linkedin.com" aria-label="LinkedIn">LinkedIn</a>
+  <footer class="bg-background py-12 text-white" role="contentinfo">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 lg:grid-cols-[1fr_auto] lg:items-center lg:px-8">
+      <div class="space-y-6">
+        <a href="/" class="font-display text-3xl uppercase tracking-[0.35em] text-white focus-visible">;paradigma</a>
+        <p class="text-sm text-white/70">;paradigma — ciência, natureza, humanidade.</p>
+      </div>
+      <div class="grid gap-6 text-sm lg:text-right">
+        <nav aria-label="Links institucionais" class="flex flex-wrap justify-start gap-x-6 gap-y-2 lg:justify-end">
+          <a class="focus-visible transition hover:text-accent" href="/manifesto.html">Manifesto</a>
+          <a class="focus-visible transition hover:text-accent" href="/conteudos.html">Conteúdos</a>
+          <a class="focus-visible transition hover:text-accent" href="/sobre.html">Sobre</a>
+          <a class="focus-visible transition hover:text-accent" href="/contato.html">Contato</a>
+        </nav>
+        <div class="flex items-center justify-start gap-4 lg:justify-end" aria-label="Redes sociais">
+          <a class="focus-visible text-white transition hover:text-accent" href="https://instagram.com" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true">
+              <path
+                d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.75a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5Zm0 2a3.25 3.25 0 1 0 0 6.5 3.25 3.25 0 0 0 0-6.5Zm6.5-.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z"
+              />
+            </svg>
+          </a>
+          <a class="focus-visible text-white transition hover:text-accent" href="https://www.tiktok.com" aria-label="TikTok">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true">
+              <path
+                d="M15.5 2a5.5 5.5 0 0 0 3.5 5.1V11a6.5 6.5 0 1 1-7.7-6.4V7a3.5 3.5 0 1 0 2.2 3.2V2h2Z"
+              />
+            </svg>
+          </a>
+          <a class="focus-visible text-white transition hover:text-accent" href="#newsletter" data-scroll-target="#newsletter" aria-label="Newsletter">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true">
+              <path d="M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14l-5.5-4h-8A2.5 2.5 0 0 1 5 12.5v-1l7 4 7-4V5H5v7.5a.5.5 0 0 0 .5.5h8l4.5 3V14l-5.5-3.142L3 8V5Z" />
+            </svg>
+          </a>
+        </div>
+        <p class="text-xs text-white/60">&copy; <span id="ano-footer">2024</span> ;paradigma. Todos os direitos reservados.</p>
       </div>
     </div>
   </footer>
 
-  <!-- <script data-analytics-script src="https://analytics.example.com/tracker.js"></script> -->
-  <script src="/assets/js/main.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
   <script>
-    const anoFooter = document.getElementById('ano-footer');
-    if (anoFooter) {
-      anoFooter.textContent = new Date().getFullYear().toString();
-    }
+    window.addEventListener('DOMContentLoaded', () => {
+      const scrollLinks = document.querySelectorAll('[data-scroll-target]');
+      scrollLinks.forEach((link) => {
+        link.addEventListener('click', (event) => {
+          const targetSelector = link.getAttribute('data-scroll-target');
+          const target = targetSelector ? document.querySelector(targetSelector) : null;
+          if (target) {
+            event.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            target.setAttribute('tabindex', '-1');
+            try {
+              target.focus({ preventScroll: true });
+            } catch (error) {
+              target.focus();
+            }
+            target.removeAttribute('tabindex');
+          }
+        });
+      });
+
+      const reflexaoButtons = document.querySelectorAll('[data-reflexao]');
+      const reflexaoOutput = document.querySelector('[data-reflexao-output]');
+      const reflexoes = {
+        cacar: 'Seu impulso de caça poderia virar foco em metas claras: mire no que importa, conserve energia e celebre cada avanço incremental.',
+        cooperar: 'Corpos ancestrais sabiam que sobreviver é um ato coletivo. Procure alianças, divida saberes e crie redes de apoio para atravessar turbulências.',
+        fugir: 'Fugir também é estratégia inteligente. Recolha-se, observe à distância e desenhe caminhos alternativos antes de retornar com novas respostas.',
+      };
+      reflexaoButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          reflexaoButtons.forEach((btn) => btn.setAttribute('aria-pressed', 'false'));
+          button.setAttribute('aria-pressed', 'true');
+          const chave = button.getAttribute('data-reflexao');
+          if (reflexaoOutput) {
+            reflexaoOutput.textContent = chave && reflexoes[chave] ? reflexoes[chave] : '';
+          }
+        });
+      });
+
+      const conteudosGrid = document.querySelector('[data-conteudos-grid]');
+      const conteudosFeedback = document.querySelector('[data-conteudos-feedback]');
+      const conteudosEndpoint = 'assets/data/conteudos.json';
+      if (conteudosGrid) {
+        fetch(conteudosEndpoint)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error('Não foi possível carregar os conteúdos.');
+            }
+            return response.json();
+          })
+          .then((data) => {
+            if (!Array.isArray(data) || data.length === 0) {
+              if (conteudosFeedback) {
+                conteudosFeedback.textContent = 'Adicione conteúdos no arquivo assets/data/conteudos.json para preencher esta seção.';
+              }
+              return;
+            }
+            const fragment = document.createDocumentFragment();
+            data.forEach((item) => {
+              const card = document.createElement('article');
+              card.className = 'flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg';
+
+              const figure = document.createElement('div');
+              figure.className = 'relative h-48 w-full bg-slate-200';
+              if (item.imagem) {
+                const img = document.createElement('img');
+                img.src = item.imagem;
+                img.alt = item.alt || item.titulo || 'Conteúdo em destaque';
+                img.loading = 'lazy';
+                img.className = 'h-full w-full object-cover';
+                figure.appendChild(img);
+              } else {
+                figure.innerHTML = '<span class="sr-only">Imagem ilustrativa do conteúdo</span>';
+              }
+              card.appendChild(figure);
+
+              const body = document.createElement('div');
+              body.className = 'flex flex-1 flex-col gap-4 p-6';
+
+              if (item.titulo) {
+                const title = document.createElement('h3');
+                title.className = 'font-display text-2xl uppercase text-background';
+                title.textContent = item.titulo;
+                body.appendChild(title);
+              }
+
+              if (item.descricao) {
+                const description = document.createElement('p');
+                description.className = 'text-sm text-slate-600';
+                description.textContent = item.descricao;
+                body.appendChild(description);
+              }
+
+              const linkWrapper = document.createElement('div');
+              linkWrapper.className = 'mt-auto';
+              const link = document.createElement('a');
+              link.className = 'focus-visible inline-flex items-center justify-center rounded-full bg-background px-6 py-2 text-sm font-semibold text-foreground transition hover:bg-accent hover:text-background';
+              link.textContent = 'Ler mais';
+              link.href = item.link || '#';
+              link.setAttribute('aria-label', item.titulo ? `Ler mais sobre ${item.titulo}` : 'Ler conteúdo');
+              linkWrapper.appendChild(link);
+              body.appendChild(linkWrapper);
+
+              card.appendChild(body);
+              fragment.appendChild(card);
+            });
+            conteudosGrid.appendChild(fragment);
+          })
+          .catch(() => {
+            if (conteudosFeedback) {
+              conteudosFeedback.textContent = 'Não foi possível carregar os conteúdos. Verifique se o arquivo assets/data/conteudos.json está acessível.';
+            }
+          });
+      }
+
+      const anoFooter = document.getElementById('ano-footer');
+      if (anoFooter) {
+        anoFooter.textContent = new Date().getFullYear().toString();
+      }
+    });
   </script>
 </body>
 </html>
