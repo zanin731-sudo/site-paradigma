@@ -36,13 +36,17 @@ A página inicial foi reorganizada em blocos independentes. Os textos podem ser 
 
 ### Conteúdos em destaque
 - Os cards são gerados dinamicamente a partir do arquivo `assets/data/conteudos.json`.
-- Cada item do array deve conter os campos:
-  - `titulo` (string)
-  - `descricao` (string curta)
-  - `imagem` (URL absoluta ou caminho relativo)
-  - `alt` (texto alternativo da imagem)
-  - `link` (URL para “Ler mais”)
-- Basta editar o JSON e recarregar a página. Em caso de erro de carregamento, uma mensagem orienta a verificar o arquivo.
+- Cada item do array deve conter os campos obrigatórios:
+  - `titulo` — texto curto em formato de string.
+  - `descricao` — resumo provocativo com até 1 ou 2 frases.
+  - `imagem` — URL completa (ex.: `https://placehold.co/600x400`) ou caminho relativo dentro de `assets/img/`.
+  - `link` — destino do botão “Ler mais” (página interna ou externa).
+- Opcionalmente, inclua `alt` para personalizar o texto alternativo da imagem.
+- Para adicionar ou editar conteúdos:
+  1. Abra `assets/data/conteudos.json` em um editor de texto.
+  2. Duplique um dos objetos existentes (cada objeto é separado por vírgulas) e ajuste os campos.
+  3. Salve o arquivo e recarregue o `index.html` no navegador para visualizar as mudanças.
+- Se o JSON estiver vazio, malformatado ou indisponível, a Home usa automaticamente três cards padrão definidos no script inline do `index.html`. Uma mensagem informativa aparece abaixo dos cards indicando se os dados vieram do arquivo ou do fallback.
 
 ### Bloco interativo/reflexão
 - Os botões possuem atributos `data-reflexao` (`cacar`, `cooperar`, `fugir`).

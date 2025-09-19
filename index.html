@@ -343,78 +343,116 @@
       const conteudosGrid = document.querySelector('[data-conteudos-grid]');
       const conteudosFeedback = document.querySelector('[data-conteudos-feedback]');
       const conteudosEndpoint = '/assets/data/conteudos.json';
-      if (conteudosGrid) {
-        fetch(conteudosEndpoint)
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error('Não foi possível carregar os conteúdos.');
-            }
-            return response.json();
-          })
-          .then((data) => {
-            if (!Array.isArray(data) || data.length === 0) {
-              if (conteudosFeedback) {
-                conteudosFeedback.textContent = 'Adicione conteúdos no arquivo assets/data/conteudos.json para preencher esta seção.';
-              }
-              return;
-            }
-            const fragment = document.createDocumentFragment();
-            data.forEach((item) => {
-              const card = document.createElement('article');
-              card.className = 'flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg';
+      const conteudosFallback = [
+        {
+          titulo: 'Ecossistemas de cuidado urbano',
+          descricao: 'Práticas micro que reencantam a vida nas cidades e criam laços de regeneração coletiva.',
+          imagem: 'https://placehold.co/600x400/0f172a/ffffff?text=%3Bparadigma',
+          link: '/manifesto.html',
+        },
+        {
+          titulo: 'Fisiologia da esperança',
+          descricao: 'Como o corpo responde a pequenas vitórias e por que celebrar importa para a evolução cultural.',
+          imagem: 'https://placehold.co/600x400/14532d/ffffff?text=%3Bparadigma',
+          link: '/conteudos.html',
+        },
+        {
+          titulo: 'Rituais circadianos em 15 minutos',
+          descricao: 'Um roteiro rápido para resetar o relógio biológico em meio ao caos digital.',
+          imagem: 'https://placehold.co/600x400/334155/ffffff?text=%3Bparadigma',
+          link: '/conteudos.html',
+        },
+      ];
 
-              const figure = document.createElement('div');
-              figure.className = 'relative h-48 w-full bg-slate-200';
-              if (item.imagem) {
-                const img = document.createElement('img');
-                img.src = item.imagem;
-                img.alt = item.alt || item.titulo || 'Conteúdo em destaque';
-                img.loading = 'lazy';
-                img.className = 'h-full w-full object-cover';
-                figure.appendChild(img);
-              } else {
-                figure.innerHTML = '<span class="sr-only">Imagem ilustrativa do conteúdo</span>';
-              }
-              card.appendChild(figure);
+      const renderConteudos = (items) => {
+        const fragment = document.createDocumentFragment();
+        items.forEach((item) => {
+          const card = document.createElement('article');
+          card.className = 'flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg';
 
-              const body = document.createElement('div');
-              body.className = 'flex flex-1 flex-col gap-4 p-6';
+          const figure = document.createElement('div');
+          figure.className = 'relative h-48 w-full bg-slate-200';
+          if (item.imagem) {
+            const img = document.createElement('img');
+            img.src = item.imagem;
+            img.alt = item.alt || item.titulo || 'Conteúdo em destaque';
+            img.loading = 'lazy';
+            img.decoding = 'async';
+            img.className = 'h-full w-full object-cover';
+            figure.appendChild(img);
+          } else {
+            figure.innerHTML = '<span class="sr-only">Imagem ilustrativa do conteúdo</span>';
+          }
+          card.appendChild(figure);
 
-              if (item.titulo) {
-                const title = document.createElement('h3');
-                title.className = 'font-display text-2xl uppercase text-background';
-                title.textContent = item.titulo;
-                body.appendChild(title);
-              }
+          const body = document.createElement('div');
+          body.className = 'flex flex-1 flex-col gap-4 p-6';
 
-              if (item.descricao) {
-                const description = document.createElement('p');
-                description.className = 'text-sm text-slate-600';
-                description.textContent = item.descricao;
-                body.appendChild(description);
-              }
+          if (item.titulo) {
+            const title = document.createElement('h3');
+            title.className = 'font-display text-2xl uppercase text-background';
+            title.textContent = item.titulo;
+            body.appendChild(title);
+          }
 
-              const linkWrapper = document.createElement('div');
-              linkWrapper.className = 'mt-auto';
-              const link = document.createElement('a');
-              link.className = 'focus-visible inline-flex items-center justify-center rounded-full bg-background px-6 py-2 text-sm font-semibold text-foreground transition hover:bg-accent hover:text-background';
-              link.textContent = 'Ler mais';
-              link.href = item.link || '#';
-              link.setAttribute('aria-label', item.titulo ? `Ler mais sobre ${item.titulo}` : 'Ler conteúdo');
-              linkWrapper.appendChild(link);
-              body.appendChild(linkWrapper);
+          if (item.descricao) {
+            const description = document.createElement('p');
+            description.className = 'text-sm text-slate-600';
+            description.textContent = item.descricao;
+            body.appendChild(description);
+          }
 
-              card.appendChild(body);
-              fragment.appendChild(card);
-            });
-            conteudosGrid.appendChild(fragment);
-          })
-          .catch(() => {
-            if (conteudosFeedback) {
-              conteudosFeedback.textContent = 'Não foi possível carregar os conteúdos. Verifique se o arquivo assets/data/conteudos.json está acessível.';
-            }
-          });
-      }
+          const linkWrapper = document.createElement('div');
+          linkWrapper.className = 'mt-auto';
+          const link = document.createElement('a');
+          link.className = 'focus-visible inline-flex items-center justify-center rounded-full bg-background px-6 py-2 text-sm font-semibold text-foreground transition hover:bg-accent hover:text-background';
+          link.textContent = 'Ler mais';
+          link.href = item.link || '#';
+          link.setAttribute('aria-label', item.titulo ? `Ler mais sobre ${item.titulo}` : 'Ler conteúdo');
+          linkWrapper.appendChild(link);
+          body.appendChild(linkWrapper);
+
+          card.appendChild(body);
+          fragment.appendChild(card);
+        });
+        conteudosGrid.appendChild(fragment);
+      };
+
+      const carregarConteudos = async () => {
+        if (!conteudosGrid) {
+          return;
+        }
+
+        let dados = null;
+        let utilizouFallback = false;
+
+        try {
+          const response = await fetch(conteudosEndpoint, { cache: 'no-store' });
+          if (!response.ok) {
+            throw new Error('Não foi possível carregar os conteúdos.');
+          }
+          dados = await response.json();
+        } catch (error) {
+          dados = conteudosFallback;
+          utilizouFallback = true;
+        }
+
+        if (!Array.isArray(dados) || dados.length === 0) {
+          dados = conteudosFallback;
+          utilizouFallback = true;
+        }
+
+        conteudosGrid.innerHTML = '';
+        renderConteudos(dados);
+
+        if (conteudosFeedback) {
+          conteudosFeedback.textContent = utilizouFallback
+            ? 'Conteúdos carregados automaticamente. Atualize assets/data/conteudos.json para personalizar esta seção.'
+            : 'Conteúdos carregados do arquivo assets/data/conteudos.json.';
+        }
+      };
+
+      carregarConteudos();
 
       const anoFooter = document.getElementById('ano-footer');
       if (anoFooter) {
