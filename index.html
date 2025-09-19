@@ -371,7 +371,7 @@
           card.className = 'flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg';
 
           const figure = document.createElement('div');
-          figure.className = 'relative h-48 w-full bg-slate-200';
+          figure.className = 'relative h-40 w-full bg-slate-200 md:h-48';
           if (item.imagem) {
             const img = document.createElement('img');
             img.src = item.imagem;
@@ -386,18 +386,18 @@
           card.appendChild(figure);
 
           const body = document.createElement('div');
-          body.className = 'flex flex-1 flex-col gap-4 p-6';
+          body.className = 'flex flex-1 flex-col gap-3 p-5 md:gap-4 md:p-6';
 
           if (item.titulo) {
             const title = document.createElement('h3');
-            title.className = 'font-display text-2xl uppercase text-background';
+            title.className = 'font-display text-xl uppercase text-background md:text-2xl';
             title.textContent = item.titulo;
             body.appendChild(title);
           }
 
           if (item.descricao) {
             const description = document.createElement('p');
-            description.className = 'text-sm text-slate-600';
+            description.className = 'text-xs text-slate-600 md:text-sm';
             description.textContent = item.descricao;
             body.appendChild(description);
           }
@@ -405,7 +405,7 @@
           const linkWrapper = document.createElement('div');
           linkWrapper.className = 'mt-auto';
           const link = document.createElement('a');
-          link.className = 'focus-visible inline-flex items-center justify-center rounded-full bg-background px-6 py-2 text-sm font-semibold text-foreground transition hover:bg-accent hover:text-background';
+          link.className = 'focus-visible inline-flex items-center justify-center rounded-full bg-background px-4 py-2 text-xs font-semibold text-foreground transition hover:bg-accent hover:text-background md:px-6 md:text-sm';
           link.textContent = 'Ler mais';
           link.href = item.link || '#';
           link.setAttribute('aria-label', item.titulo ? `Ler mais sobre ${item.titulo}` : 'Ler conteúdo');
