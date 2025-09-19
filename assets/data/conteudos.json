@@ -1,23 +1,20 @@
 [
   {
-    "titulo": "Rituais circadianos para tempos digitais",
-    "descricao": "Pequenas práticas que reprogramam o corpo para responder melhor a telas, trabalho remoto e noites pouco escuras.",
-    "imagem": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80",
-    "alt": "Pessoa observando o nascer do sol em meio à natureza",
+    "titulo": "Ecossistemas de cuidado urbano",
+    "descricao": "Práticas micro que reencantam a vida nas cidades e criam laços de regeneração coletiva.",
+    "imagem": "https://placehold.co/600x400/0f172a/ffffff?text=%3Bparadigma",
+    "link": "/manifesto.html"
+  },
+  {
+    "titulo": "Fisiologia da esperança",
+    "descricao": "Como o corpo responde a pequenas vitórias e por que celebrar importa para a evolução cultural.",
+    "imagem": "https://placehold.co/600x400/14532d/ffffff?text=%3Bparadigma",
     "link": "/conteudos.html"
   },
   {
-    "titulo": "Tecnologia como extensão do corpo",
-    "descricao": "Podcast sobre como próteses, apps e inteligência artificial recriam ecologias de cooperação ancestrais.",
-    "imagem": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
-    "alt": "Mãos humanas interagindo com uma interface holográfica",
-    "link": "/conteudos.html"
-  },
-  {
-    "titulo": "Mapas afetivos da cidade",
-    "descricao": "Guia em PDF para cartografar laços de cuidado, consumo e mobilidade sob uma lente evolutiva.",
-    "imagem": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
-    "alt": "Vista aérea de uma cidade com ruas iluminadas",
+    "titulo": "Rituais circadianos em 15 minutos",
+    "descricao": "Um roteiro rápido para resetar o relógio biológico em meio ao caos digital.",
+    "imagem": "https://placehold.co/600x400/334155/ffffff?text=%3Bparadigma",
     "link": "/conteudos.html"
   }
 ]
