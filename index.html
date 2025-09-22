@@ -128,8 +128,9 @@
     </section>
 
     <section
-      class="relative overflow-hidden px-4 py-16 lg:px-8"
+      class="relative overflow-hidden px-4 py-16 opacity-0 translate-y-8 transition-all duration-700 ease-out lg:px-8"
       aria-labelledby="manifesto-heading"
+      data-animate-on-scroll
       style="
         background-image: linear-gradient(rgba(9, 9, 11, 0.55), rgba(9, 9, 11, 0.55)), url('/assets/img/bg-manifesto.jpg');
         background-size: cover;
@@ -138,29 +139,32 @@
       "
     >
       <div class="mx-auto max-w-5xl">
-        <div class="space-y-6 rounded-3xl bg-white p-8 shadow-lg">
+        <div
+          class="space-y-6 rounded-3xl bg-white/80 p-8 shadow-lg backdrop-blur-sm opacity-0 translate-y-6 scale-95 transition-all duration-700 ease-out"
+          data-animate-child
+        >
           <div class="space-y-2">
             <p class="font-semibold uppercase tracking-[0.3em] text-accent">Manifesto</p>
             <h2 id="manifesto-heading" class="font-display text-4xl uppercase text-background">Respirar história para mover futuros</h2>
           </div>
           <div class="space-y-4 text-slate-700">
-          <p>
-            Somos uma comunidade que lê a biologia evolutiva como mapa para o agora. Investigamos como heranças ancestrais moldam comportamentos, emoções e escolhas, sem romantizar o passado nem idealizar o futuro.
-          </p>
-          <p>
-            Cultivamos reflexão crítica, mas também rituais de cuidado e alegria. Entendemos que a transformação acontece quando teoria e prática se encontram, e quando a ciência dialoga com corpo, cultura e território.
-          </p>
-          <p class="mb-2">
-            Convidamos você a experimentar novos arranjos de convivência, consumo e imaginação, honrando as histórias que nos precedem e abrindo espaço para futuros possíveis.
-          </p>
+            <p>
+              Somos uma comunidade que lê a biologia evolutiva como mapa para o agora. Investigamos como heranças ancestrais moldam comportamentos, emoções e escolhas, sem romantizar o passado nem idealizar o futuro.
+            </p>
+            <p>
+              Cultivamos reflexão crítica, mas também rituais de cuidado e alegria. Entendemos que a transformação acontece quando teoria e prática se encontram, e quando a ciência dialoga com corpo, cultura e território.
+            </p>
+            <p class="mb-2">
+              Convidamos você a experimentar novos arranjos de convivência, consumo e imaginação, honrando as histórias que nos precedem e abrindo espaço para futuros possíveis.
+            </p>
+          </div>
+          <div>
+            <a
+              href="/manifesto.html"
+              class="focus-visible inline-flex items-center justify-center rounded-full bg-background px-8 py-3 font-semibold text-foreground transition hover:bg-accent hover:text-background"
+            >Ler manifesto completo</a>
+          </div>
         </div>
-        <div>
-          <a
-            href="/manifesto.html"
-            class="focus-visible inline-flex items-center justify-center rounded-full bg-background px-8 py-3 font-semibold text-foreground transition hover:bg-accent hover:text-background"
-          >Ler manifesto completo</a>
-        </div>
-      </div>
       </div>
     </section>
 
@@ -295,6 +299,38 @@
           }
         });
       });
+
+      const animateSections = document.querySelectorAll('[data-animate-on-scroll]');
+      if (animateSections.length > 0) {
+        const revealElements = (element) => {
+          element.classList.add('opacity-100', 'translate-y-0');
+          element.classList.remove('opacity-0', 'translate-y-8');
+          const children = element.querySelectorAll('[data-animate-child]');
+          children.forEach((child, index) => {
+            child.style.transitionDelay = `${(index + 1) * 120}ms`;
+            child.classList.add('opacity-100', 'translate-y-0', 'scale-100');
+            child.classList.remove('opacity-0', 'translate-y-6', 'scale-95');
+          });
+        };
+
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver(
+            (entries, obs) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  revealElements(entry.target);
+                  obs.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.2 }
+          );
+
+          animateSections.forEach((section) => observer.observe(section));
+        } else {
+          animateSections.forEach((section) => revealElements(section));
+        }
+      }
 
       const reflexaoButtons = document.querySelectorAll('[data-reflexao]');
       const reflexaoOutput = document.querySelector('[data-reflexao-output]');
