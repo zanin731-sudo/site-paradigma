@@ -174,9 +174,6 @@
             <p class="font-semibold uppercase tracking-[0.3em] text-accent">Conteúdos em destaque</p>
             <h2 id="conteudos-heading" class="font-display text-4xl uppercase text-background">Provocações recentes</h2>
           </div>
-          <p class="max-w-xl text-lg text-slate-600">
-            Um recorte vivo do nosso acervo. Atualize o arquivo <code>assets/data/conteudos.json</code> e veja os cards ganharem vida automaticamente.
-          </p>
         </div>
         <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3" data-conteudos-grid aria-live="polite"></div>
         <p class="mt-6 text-sm text-slate-500" data-conteudos-feedback></p>
@@ -400,7 +397,7 @@
             img.alt = item.alt || item.titulo || 'Conteúdo em destaque';
             img.loading = 'lazy';
             img.decoding = 'async';
-            img.className = 'h-full w-full object-cover';
+            img.className = 'h-full w-full object-cover object-center';
             figure.appendChild(img);
           } else {
             figure.innerHTML = '<span class="sr-only">Imagem ilustrativa do conteúdo</span>';
@@ -472,7 +469,7 @@
         if (conteudosFeedback) {
           conteudosFeedback.textContent = utilizouFallback
             ? 'Conteúdos carregados automaticamente. Atualize assets/data/conteudos.json para personalizar esta seção.'
-            : 'Conteúdos carregados do arquivo assets/data/conteudos.json.';
+            : '';
         }
       };
 
