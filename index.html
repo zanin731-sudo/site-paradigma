@@ -128,20 +128,19 @@
     </section>
 
     <section
-      class="relative overflow-hidden px-4 py-16 opacity-0 translate-y-8 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] lg:px-8"
+      class="relative overflow-hidden px-4 py-16 lg:px-8"
       aria-labelledby="manifesto-heading"
-      data-animate-on-scroll
       style="
         background-image: linear-gradient(rgba(9, 9, 11, 0.55), rgba(9, 9, 11, 0.55)), url('/assets/img/bg-manifesto.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+        background-size: cover, cover;
+        background-position: center, center;
+        background-repeat: no-repeat, no-repeat;
+        background-attachment: scroll, fixed;
       "
     >
       <div class="mx-auto max-w-5xl">
         <div
-          class="space-y-6 rounded-3xl bg-white/60 p-8 shadow-lg backdrop-blur-sm opacity-0 translate-y-6 scale-95 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]"
-          data-animate-child
+          class="space-y-6 rounded-3xl bg-white/60 p-8 shadow-lg backdrop-blur-sm transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]"
         >
           <div class="space-y-2">
             <p class="font-semibold uppercase tracking-[0.3em] text-accent">Manifesto</p>
