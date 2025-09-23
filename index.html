@@ -178,7 +178,31 @@
             </p>
           </div>
         </div>
-        <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3" data-conteudos-grid aria-live="polite"></div>
+        <div class="mt-10" data-conteudos-wrapper>
+          <div class="relative">
+            <button
+              type="button"
+              class="focus-visible absolute left-2 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-background shadow transition hover:bg-accent hover:text-background disabled:cursor-not-allowed disabled:opacity-50 md:hidden"
+              aria-label="Ver conteúdo anterior"
+              data-conteudos-prev
+            >
+              <span aria-hidden="true">&#8592;</span>
+            </button>
+            <div
+              class="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] md:grid md:gap-6 md:overflow-visible md:pb-0 md:[&::-webkit-scrollbar]:auto md:[-ms-overflow-style:auto] md:[scrollbar-width:auto] md:grid-cols-2 xl:grid-cols-3"
+              data-conteudos-grid
+              aria-live="polite"
+            ></div>
+            <button
+              type="button"
+              class="focus-visible absolute right-2 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-background shadow transition hover:bg-accent hover:text-background disabled:cursor-not-allowed disabled:opacity-50 md:hidden"
+              aria-label="Ver próximo conteúdo"
+              data-conteudos-next
+            >
+              <span aria-hidden="true">&#8594;</span>
+            </button>
+          </div>
+        </div>
         <p class="mt-6 text-sm text-slate-500" data-conteudos-feedback></p>
       </div>
     </section>
@@ -363,6 +387,8 @@
       });
 
       const conteudosGrid = document.querySelector('[data-conteudos-grid]');
+      const conteudosPrev = document.querySelector('[data-conteudos-prev]');
+      const conteudosNext = document.querySelector('[data-conteudos-next]');
       const conteudosFeedback = document.querySelector('[data-conteudos-feedback]');
       const conteudosEndpoint = '/assets/data/conteudos.json';
       const conteudosFallback = [
@@ -386,14 +412,39 @@
         },
       ];
 
+      const updateCarouselButtons = () => {
+        if (!conteudosGrid) {
+          return;
+        }
+        const isMobile = window.matchMedia('(max-width: 767px)').matches;
+        if (!isMobile) {
+          if (conteudosPrev) {
+            conteudosPrev.disabled = false;
+          }
+          if (conteudosNext) {
+            conteudosNext.disabled = false;
+          }
+          return;
+        }
+
+        const maxScrollLeft = conteudosGrid.scrollWidth - conteudosGrid.clientWidth;
+        if (conteudosPrev) {
+          conteudosPrev.disabled = conteudosGrid.scrollLeft <= 0;
+        }
+        if (conteudosNext) {
+          conteudosNext.disabled = conteudosGrid.scrollLeft >= maxScrollLeft - 1;
+        }
+      };
+
       const renderConteudos = (items) => {
         const fragment = document.createDocumentFragment();
         items.forEach((item) => {
           const card = document.createElement('article');
-          card.className = 'flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg';
+          card.className =
+            'group flex h-[420px] min-w-[85%] flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg snap-center md:min-w-0 md:h-[480px]';
 
           const figure = document.createElement('div');
-          figure.className = 'relative h-40 w-full bg-slate-200 md:h-48';
+          figure.className = 'relative flex-[0.7] overflow-hidden bg-slate-200 md:flex-[0.65]';
           if (item.imagem) {
             const img = document.createElement('img');
             img.src = item.imagem;
@@ -408,7 +459,7 @@
           card.appendChild(figure);
 
           const body = document.createElement('div');
-          body.className = 'flex flex-1 flex-col gap-3 p-5 md:gap-4 md:p-6';
+          body.className = 'flex flex-[0.3] flex-col gap-3 p-5 md:flex-[0.35] md:gap-4 md:p-6';
 
           if (item.titulo) {
             const title = document.createElement('h3');
@@ -440,7 +491,24 @@
           fragment.appendChild(card);
         });
         conteudosGrid.appendChild(fragment);
+        updateCarouselButtons();
       };
+
+      const scrollCarousel = (direction) => {
+        if (!conteudosGrid) {
+          return;
+        }
+        const amount = Math.max(conteudosGrid.clientWidth * 0.8, 240);
+        conteudosGrid.scrollBy({ left: direction * amount, behavior: 'smooth' });
+      };
+
+      if (conteudosPrev) {
+        conteudosPrev.addEventListener('click', () => scrollCarousel(-1));
+      }
+
+      if (conteudosNext) {
+        conteudosNext.addEventListener('click', () => scrollCarousel(1));
+      }
 
       const carregarConteudos = async () => {
         if (!conteudosGrid) {
@@ -474,9 +542,20 @@
             ? 'Conteúdos carregados automaticamente. Atualize assets/data/conteudos.json para personalizar esta seção.'
             : '';
         }
+        updateCarouselButtons();
       };
 
       carregarConteudos();
+
+      if (conteudosGrid) {
+        conteudosGrid.addEventListener('scroll', () => {
+          window.requestAnimationFrame(updateCarouselButtons);
+        });
+      }
+
+      window.addEventListener('resize', () => {
+        window.requestAnimationFrame(updateCarouselButtons);
+      });
 
       const anoFooter = document.getElementById('ano-footer');
       if (anoFooter) {
