@@ -102,28 +102,30 @@
           <p class="mt-2 text-sm text-white/75">
             Quinzenalmente na sua caixa de e-mail. Textos e reflexões para quebrar seus paradigmas ;)
           </p>
-          <!-- TODO: substituir SEU_FORM_ID pelo ID real do formulário da MailerLite -->
-          <form
-            class="mt-4 space-y-3"
-            aria-label="Formulário de inscrição na newsletter"
-            action="https://assets.mailerlite.com/webforms/submit/SEU_FORM_ID"
-            method="post"
-            target="_blank"
-          >
-            <label class="sr-only" for="hero-newsletter-email">Email</label>
-            <input
-              id="hero-newsletter-email"
-              name="email"
-              type="email"
-              class="w-full rounded-full border border-white/30 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/60 focus-visible"
-              placeholder="nome@email.com"
-              required
-            />
-            <button
-              type="submit"
-              class="focus-visible w-full rounded-full bg-accent px-6 py-3 text-sm font-semibold text-background transition hover:bg-foreground hover:text-background"
-            >Quero receber</button>
-          </form>
+          <div class="mt-4">
+            <form
+              action="https://assets.mailerlite.com/jsonp/1027447/forms/166648592790979821/subscribe"
+              method="post"
+              target="_blank"
+              class="w-full"
+            >
+              <input
+                type="email"
+                name="fields[email]"
+                placeholder="nome@email.com"
+                required
+                class="w-full rounded-md border border-gray-300 p-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-500 mb-4"
+              />
+              <input type="hidden" name="ml-submit" value="1" />
+              <input type="hidden" name="anticsrf" value="true" />
+              <button
+                type="submit"
+                class="w-full rounded-md bg-green-500 px-4 py-3 font-bold text-white transition hover:bg-green-600"
+              >
+                Quero receber
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
