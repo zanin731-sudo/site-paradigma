@@ -102,12 +102,12 @@
           <p class="mt-2 text-sm text-white/75">
             Quinzenalmente na sua caixa de e-mail. Textos e reflexões para quebrar seus paradigmas ;)
           </p>
-          <div class="mt-4">
+          <div class="mt-4" data-newsletter-wrapper>
             <form
               action="https://assets.mailerlite.com/jsonp/1027447/forms/166648592790979821/subscribe"
               method="post"
-              target="_blank"
               class="w-full"
+              data-newsletter-form
             >
               <input
                 type="email"
@@ -125,6 +125,15 @@
                 Quero receber
               </button>
             </form>
+            <div
+              class="mt-6 hidden rounded-xl border border-white/20 bg-black/60 p-6 text-center text-white"
+              data-newsletter-success
+              role="status"
+              aria-live="polite"
+              tabindex="-1"
+            >
+              <p class="text-lg font-semibold">Confirme seu e-mail/ou caixa de spam :)</p>
+            </div>
           </div>
         </div>
       </div>
@@ -564,6 +573,56 @@
       window.addEventListener('resize', () => {
         window.requestAnimationFrame(updateCarouselButtons);
       });
+
+      const newsletterForm = document.querySelector('[data-newsletter-form]');
+      const newsletterWrapper = document.querySelector('[data-newsletter-wrapper]');
+      const newsletterSuccess = newsletterWrapper
+        ? newsletterWrapper.querySelector('[data-newsletter-success]')
+        : null;
+
+      if (newsletterForm && newsletterWrapper && newsletterSuccess) {
+        const controls = Array.from(newsletterForm.querySelectorAll('input, button'));
+        newsletterWrapper.setAttribute('aria-busy', 'false');
+        const toggleControlsState = (disabled) => {
+          newsletterWrapper.setAttribute('aria-busy', disabled ? 'true' : 'false');
+          controls.forEach((control) => {
+            control.disabled = disabled;
+            if (control.tagName === 'BUTTON') {
+              if (disabled) {
+                control.classList.add('opacity-80', 'cursor-not-allowed');
+              } else {
+                control.classList.remove('opacity-80', 'cursor-not-allowed');
+              }
+            }
+          });
+        };
+
+        newsletterForm.addEventListener('submit', async (event) => {
+          event.preventDefault();
+          toggleControlsState(true);
+
+          const formData = new FormData(newsletterForm);
+
+          try {
+            await fetch(newsletterForm.action, {
+              method: (newsletterForm.method || 'post').toUpperCase(),
+              body: formData,
+              mode: 'no-cors',
+            });
+
+            newsletterForm.reset();
+            newsletterForm.classList.add('hidden');
+            newsletterSuccess.classList.remove('hidden');
+            newsletterWrapper.setAttribute('aria-busy', 'false');
+            window.requestAnimationFrame(() => {
+              newsletterSuccess.focus();
+            });
+          } catch (error) {
+            toggleControlsState(false);
+            console.error('Não foi possível enviar sua inscrição agora.', error);
+          }
+        });
+      }
 
       const anoFooter = document.getElementById('ano-footer');
       if (anoFooter) {
