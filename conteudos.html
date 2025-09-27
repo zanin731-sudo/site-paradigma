@@ -34,6 +34,22 @@
     };
   </script>
   <link rel="stylesheet" href="/assets/css/styles.css" />
+  <style>
+    .content-card {
+      transition: all 0.3s ease-in-out;
+    }
+
+    .content-card:hover {
+      background-color: #f7f7f7;
+    }
+
+    @media (max-width: 767px) {
+      .content-card.mobile-elevated {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 30px 44px -32px rgba(20, 20, 20, 0.45);
+      }
+    }
+  </style>
 </head>
 <body class="bg-muted text-slate-900" data-analytics="site-paradigma">
   <div class="fixed inset-0 bg-black/60 hidden" data-overlay aria-hidden="true"></div>
@@ -84,31 +100,31 @@
       <div class="grid gap-10 lg:grid-cols-[1fr_380px]">
         <div class="space-y-8">
           <!-- INÍCIO BLOCO CARDS PRINCIPAIS -->
-          <article class="section-card p-8">
+          <article class="section-card p-8 content-card" data-content-card>
             <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <h2 class="font-display text-3xl uppercase text-background">Série Pulsar</h2>
               <span class="rounded-full bg-accent/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-accent">Vídeo</span>
             </div>
             <p class="mt-4 text-sm text-slate-600">Documentários curtos que conectam ciência, arte e comunidades periféricas. Novos episódios a cada mês.</p>
           </article>
-          <article class="section-card p-8">
+          <article class="section-card p-8 content-card" data-content-card>
             <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <h2 class="font-display text-3xl uppercase text-background">Laboratório Aberto</h2>
               <span class="rounded-full bg-accent/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-accent">Workshop</span>
             </div>
             <p class="mt-4 text-sm text-slate-600">Encontros práticos com especialistas para prototipar hábitos e tecnologias de cuidado coletivo.</p>
           </article>
-          <article class="section-card section-card--dark p-8">
+          <article class="section-card p-8 content-card" data-content-card>
             <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <h2 class="font-display text-3xl uppercase">Trilha Resonância</h2>
-              <span class="rounded-full bg-foreground/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-foreground">Podcast</span>
+              <h2 class="font-display text-3xl uppercase text-background">Trilha Resonância</h2>
+              <span class="rounded-full bg-accent/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-accent">Podcast</span>
             </div>
-            <p class="mt-4 text-sm text-foreground/80">Conversas profundas com cientistas, artistas e líderes comunitários sobre regeneração urbana.</p>
+            <p class="mt-4 text-sm text-slate-600">Conversas profundas com cientistas, artistas e líderes comunitários sobre regeneração urbana.</p>
           </article>
           <!-- FIM BLOCO CARDS PRINCIPAIS -->
         </div>
         <aside class="space-y-8">
-          <div class="section-card p-6">
+          <div class="section-card p-6 content-card" data-content-card>
             <h3 class="font-display text-2xl uppercase text-background">Agenda ao vivo</h3>
             <!-- INÍCIO BLOCO AGENDA -->
             <ul class="mt-4 space-y-3 text-sm text-slate-600">
@@ -118,13 +134,13 @@
             </ul>
             <!-- FIM BLOCO AGENDA -->
           </div>
-          <div class="section-card section-card--dark p-6">
-            <h3 class="font-display text-2xl uppercase">Downloads</h3>
+          <div class="section-card p-6 content-card" data-content-card>
+            <h3 class="font-display text-2xl uppercase text-background">Downloads</h3>
             <!-- INÍCIO BLOCO DOWNLOADS -->
-            <ul class="mt-4 space-y-3 text-sm text-foreground/80">
-              <li><a class="focus-visible transition hover:text-foreground" href="#">Guia de autocuidado sistêmico</a></li>
-              <li><a class="focus-visible transition hover:text-foreground" href="#">Mapa sonoro das cidades regenerativas</a></li>
-              <li><a class="focus-visible transition hover:text-foreground" href="#">Checklist de rituais diários</a></li>
+            <ul class="mt-4 space-y-3 text-sm text-slate-600">
+              <li><a class="focus-visible transition hover:text-accent" href="#">Guia de autocuidado sistêmico</a></li>
+              <li><a class="focus-visible transition hover:text-accent" href="#">Mapa sonoro das cidades regenerativas</a></li>
+              <li><a class="focus-visible transition hover:text-accent" href="#">Checklist de rituais diários</a></li>
             </ul>
             <!-- FIM BLOCO DOWNLOADS -->
           </div>
@@ -151,6 +167,62 @@
     const anoFooter = document.getElementById('ano-footer');
     if (anoFooter) {
       anoFooter.textContent = new Date().getFullYear().toString();
+    }
+
+    const contentCards = document.querySelectorAll('[data-content-card]');
+    const mobileQuery = window.matchMedia('(max-width: 767px)');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let observer;
+
+    const cleanupObserver = () => {
+      if (observer) {
+        observer.disconnect();
+        observer = undefined;
+      }
+      contentCards.forEach((card) => card.classList.remove('mobile-elevated'));
+    };
+
+    const setupObserver = () => {
+      cleanupObserver();
+
+      if (!mobileQuery.matches || prefersReducedMotion.matches || typeof IntersectionObserver === 'undefined') {
+        return;
+      }
+
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('mobile-elevated');
+            } else {
+              entry.target.classList.remove('mobile-elevated');
+            }
+          });
+        },
+        {
+          threshold: 0.3,
+        }
+      );
+
+      contentCards.forEach((card) => observer.observe(card));
+    };
+
+    if (contentCards.length) {
+      setupObserver();
+
+      const mqHandler = () => setupObserver();
+      if (typeof mobileQuery.addEventListener === 'function') {
+        mobileQuery.addEventListener('change', mqHandler);
+      } else if (typeof mobileQuery.addListener === 'function') {
+        mobileQuery.addListener(mqHandler);
+      }
+
+      const motionHandler = () => setupObserver();
+      if (typeof prefersReducedMotion.addEventListener === 'function') {
+        prefersReducedMotion.addEventListener('change', motionHandler);
+      } else if (typeof prefersReducedMotion.addListener === 'function') {
+        prefersReducedMotion.addListener(motionHandler);
+      }
     }
   </script>
 </body>
