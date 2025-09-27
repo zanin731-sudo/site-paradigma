@@ -37,6 +37,54 @@
     };
   </script>
   <link rel="stylesheet" href="/assets/css/styles.css" />
+  <style>
+    @keyframes newsletter-pop {
+      0% {
+        transform: translateY(12px) scale(0.94);
+        opacity: 0;
+      }
+      60% {
+        transform: translateY(-6px) scale(1.04);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes newsletter-confetti {
+      0% {
+        transform: translateY(0) rotate(0deg) scale(0.8);
+        opacity: 0;
+      }
+      15% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(140%) rotate(45deg) scale(1);
+        opacity: 0;
+      }
+    }
+
+    .newsletter-success-visible {
+      animation: newsletter-pop 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .newsletter-confetti-piece {
+      position: absolute;
+      top: 0;
+      left: var(--confetti-x, 50%);
+      width: 0.5rem;
+      height: 1.5rem;
+      border-radius: 9999px;
+      background: var(--confetti-color, #facc15);
+      opacity: 0;
+      transform-origin: center;
+      animation: newsletter-confetti 1.4s ease-out forwards;
+      animation-delay: var(--confetti-delay, 0s);
+    }
+  </style>
 </head>
 <body class="bg-muted font-sans text-slate-900" data-analytics="site-paradigma">
   <div class="fixed inset-0 bg-black/60 hidden" data-overlay aria-hidden="true"></div>
@@ -103,6 +151,14 @@
             Quinzenalmente na sua caixa de e-mail. Textos e reflexões para quebrar seus paradigmas ;)
           </p>
           <div class="mt-4" data-newsletter-wrapper>
+            <iframe
+              name="newsletter-target"
+              title="Envio da newsletter"
+              class="sr-only"
+              data-newsletter-target
+              aria-hidden="true"
+              tabindex="-1"
+            ></iframe>
             <form
               action="https://assets.mailerlite.com/jsonp/1027447/forms/166648592790979821/subscribe"
               method="post"
@@ -132,7 +188,14 @@
               aria-live="polite"
               tabindex="-1"
             >
-              <p class="text-lg font-semibold">Confirme seu e-mail/ou caixa de spam :)</p>
+              <div class="relative flex flex-col items-center gap-3">
+                <span class="text-5xl animate-bounce" aria-hidden="true">🎉</span>
+                <p class="text-lg font-semibold">Cadastro com sucesso!</p>
+                <p class="text-sm text-white/80">
+                  Verifique sua caixa de e-mail e o spam para confirmar sua inscrição.
+                </p>
+                <div class="pointer-events-none absolute inset-0" data-confetti></div>
+              </div>
             </div>
           </div>
         </div>
@@ -574,53 +637,97 @@
         window.requestAnimationFrame(updateCarouselButtons);
       });
 
-      const newsletterForm = document.querySelector('[data-newsletter-form]');
       const newsletterWrapper = document.querySelector('[data-newsletter-wrapper]');
+      const newsletterForm = newsletterWrapper
+        ? newsletterWrapper.querySelector('[data-newsletter-form]')
+        : null;
       const newsletterSuccess = newsletterWrapper
         ? newsletterWrapper.querySelector('[data-newsletter-success]')
         : null;
+      const newsletterTarget = newsletterWrapper
+        ? newsletterWrapper.querySelector('[data-newsletter-target]')
+        : null;
 
-      if (newsletterForm && newsletterWrapper && newsletterSuccess) {
+      if (newsletterForm && newsletterWrapper && newsletterSuccess && newsletterTarget) {
         const controls = Array.from(newsletterForm.querySelectorAll('input, button'));
+        const confettiContainer = newsletterSuccess.querySelector('[data-confetti]');
+        const targetName = newsletterTarget.getAttribute('name') || 'newsletter-target';
+        newsletterTarget.setAttribute('name', targetName);
+        newsletterForm.setAttribute('target', targetName);
         newsletterWrapper.setAttribute('aria-busy', 'false');
+
+        let ignoreNextFrameLoad = true;
+
         const toggleControlsState = (disabled) => {
           newsletterWrapper.setAttribute('aria-busy', disabled ? 'true' : 'false');
           controls.forEach((control) => {
-            control.disabled = disabled;
             if (control.tagName === 'BUTTON') {
-              if (disabled) {
-                control.classList.add('opacity-80', 'cursor-not-allowed');
-              } else {
-                control.classList.remove('opacity-80', 'cursor-not-allowed');
+              control.disabled = disabled;
+              control.classList.toggle('cursor-not-allowed', disabled);
+              control.classList.toggle('opacity-70', disabled);
+            } else if (control.tagName === 'INPUT') {
+              const input = control;
+              if (input.type !== 'hidden') {
+                input.readOnly = disabled;
+                input.classList.toggle('opacity-80', disabled);
               }
             }
           });
         };
 
-        newsletterForm.addEventListener('submit', async (event) => {
-          event.preventDefault();
-          toggleControlsState(true);
-
-          const formData = new FormData(newsletterForm);
-
-          try {
-            await fetch(newsletterForm.action, {
-              method: (newsletterForm.method || 'post').toUpperCase(),
-              body: formData,
-              mode: 'no-cors',
-            });
-
-            newsletterForm.reset();
-            newsletterForm.classList.add('hidden');
-            newsletterSuccess.classList.remove('hidden');
-            newsletterWrapper.setAttribute('aria-busy', 'false');
-            window.requestAnimationFrame(() => {
-              newsletterSuccess.focus();
-            });
-          } catch (error) {
-            toggleControlsState(false);
-            console.error('Não foi possível enviar sua inscrição agora.', error);
+        const spawnConfetti = () => {
+          if (!confettiContainer) {
+            return;
           }
+          confettiContainer.innerHTML = '';
+          const colors = ['#bef264', '#f472b6', '#60a5fa', '#facc15', '#f87171', '#a855f7'];
+          const pieces = 14;
+          for (let index = 0; index < pieces; index += 1) {
+            const piece = document.createElement('span');
+            piece.className = 'newsletter-confetti-piece';
+            piece.style.setProperty('--confetti-color', colors[index % colors.length]);
+            piece.style.setProperty('--confetti-x', `${Math.random() * 100}%`);
+            piece.style.setProperty('--confetti-delay', `${Math.random() * 0.4}s`);
+            confettiContainer.appendChild(piece);
+          }
+          window.setTimeout(() => {
+            confettiContainer.innerHTML = '';
+          }, 1600);
+        };
+
+        const showSuccessMessage = () => {
+          newsletterSuccess.classList.remove('hidden');
+          newsletterSuccess.classList.add('newsletter-success-visible');
+          spawnConfetti();
+          window.requestAnimationFrame(() => {
+            try {
+              newsletterSuccess.focus({ preventScroll: true });
+            } catch (error) {
+              newsletterSuccess.focus();
+            }
+          });
+          setTimeout(() => {
+            newsletterSuccess.classList.remove('newsletter-success-visible');
+          }, 1200);
+        };
+
+        newsletterTarget.addEventListener('load', () => {
+          if (ignoreNextFrameLoad) {
+            ignoreNextFrameLoad = false;
+            return;
+          }
+
+          toggleControlsState(false);
+          if (newsletterForm) {
+            newsletterForm.reset();
+          }
+          showSuccessMessage();
+        });
+
+        newsletterForm.addEventListener('submit', () => {
+          newsletterSuccess.classList.add('hidden');
+          toggleControlsState(true);
+          ignoreNextFrameLoad = false;
         });
       }
 
