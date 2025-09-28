@@ -60,11 +60,30 @@ $bodyText .= "Mensagem:\n" . $mensagem . "\n";
 /** @var PHPMailer|null $mail */
 $mail = null;
 
-$smtpUser = getenv('HOSTINGER_SMTP_USER') ?: 'newsletter@siteparadigma.com.br';
-$smtpPassword = getenv('HOSTINGER_SMTP_PASSWORD');
+$configPath = __DIR__ . '/config/mail.php';
+$mailConfig = [];
 
+if (is_readable($configPath)) {
+    $loadedConfig = include $configPath;
+    if (is_array($loadedConfig)) {
+        $mailConfig = $loadedConfig;
+    }
+}
+
+$smtpUser = getenv('HOSTINGER_SMTP_USER');
+if ($smtpUser === false || trim((string) $smtpUser) === '') {
+    $smtpUser = $mailConfig['username'] ?? 'newsletter@siteparadigma.com.br';
+}
+$smtpUser = trim((string) $smtpUser);
+
+$smtpPassword = getenv('HOSTINGER_SMTP_PASSWORD');
 if ($smtpPassword === false || trim((string) $smtpPassword) === '') {
-    redirect_with_status('error', 'Configuração de email ausente.');
+    $smtpPassword = $mailConfig['password'] ?? '';
+}
+$smtpPassword = trim((string) $smtpPassword);
+
+if ($smtpPassword === '') {
+    redirect_with_status('error', 'Configuração de email ausente. Defina as variáveis de ambiente ou o arquivo config/mail.php.');
 }
 
 try {
