@@ -57,23 +57,37 @@ $bodyText .= 'Email: ' . $email . "\n";
 $bodyText .= 'Assunto: ' . $assuntoEmail . "\n\n";
 $bodyText .= "Mensagem:\n" . $mensagem . "\n";
 
+/** @var PHPMailer|null $mail */
+$mail = null;
+
 try {
     $mail = new PHPMailer(true);
     $mail->CharSet = 'UTF-8';
-    $mail->isMail();
-    $mail->setFrom($email, $nome);
+    $mail->isSMTP();
+    $mail->Host = 'smtp.hostinger.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'newsletter@siteparadigma.com.br';
+    $mail->Password = 'SUA_SENHA_DO_EMAIL';
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port = 465;
+
+    $mail->setFrom('newsletter@siteparadigma.com.br', ';paradigma');
     $mail->addAddress('newsletter@siteparadigma.com.br', 'Contato ;paradigma');
     $mail->addReplyTo($email, $nome);
+
     $mail->Subject = $assuntoEmail;
     $mail->isHTML(true);
     $mail->Body = $bodyHtml;
     $mail->AltBody = $bodyText;
 
     $mail->send();
+    redirect_with_status('success', 'Mensagem enviada com sucesso! Em breve entraremos em contato.');
 } catch (Exception $exception) {
-    redirect_with_status('error', 'Não foi possível enviar sua mensagem. Tente novamente em instantes.');
-} catch (\Throwable $throwable) {
-    redirect_with_status('error', 'Ocorreu um erro inesperado ao enviar a mensagem.');
-}
+    $message = $mail instanceof PHPMailer && $mail->ErrorInfo !== ''
+        ? $mail->ErrorInfo
+        : $exception->getMessage();
 
-redirect_with_status('success', 'Mensagem enviada com sucesso! Em breve entraremos em contato.');
+    redirect_with_status('error', 'Erro ao enviar: ' . $message);
+} catch (\Throwable $throwable) {
+    redirect_with_status('error', 'Erro ao enviar: ' . $throwable->getMessage());
+}
