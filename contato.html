@@ -64,6 +64,30 @@
         animation-iteration-count: 1 !important;
       }
     }
+
+    .email-address {
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    @keyframes copiedPulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(68, 159, 96, 0.55);
+      }
+      50% {
+        transform: scale(1.03);
+        box-shadow: 0 0 0 6px rgba(68, 159, 96, 0.2);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(68, 159, 96, 0);
+      }
+    }
+
+    [data-copy-email].copied {
+      animation: copiedPulse 0.7s ease;
+    }
   </style>
   <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
@@ -133,15 +157,15 @@
               <span data-reveal-label>Mostrar e-mail</span>
             </button>
           </p>
-          <div id="contato-email" class="relative max-w-xl overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5 px-5 py-5 opacity-0 transition-all duration-500 ease-out -translate-y-3 sm:px-6 sm:py-6 lg:px-8" data-email-panel hidden>
+          <div id="contato-email" class="relative w-full max-w-full overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5 px-6 py-5 opacity-0 transition-all duration-500 ease-out -translate-y-3 sm:max-w-xl sm:px-6 sm:py-6 lg:px-8" data-email-panel hidden>
             <div class="absolute inset-0 bg-gradient-to-r from-accent/20 via-transparent to-foreground/10 opacity-0 transition-opacity duration-700" data-email-glow></div>
             <p class="text-sm uppercase tracking-[0.4em] text-foreground/50">Endereço</p>
             <div class="mt-3">
-              <div class="relative flex min-h-[3.5rem] w-full items-center">
-                <span class="font-display text-xl uppercase text-foreground whitespace-nowrap transition duration-500 sm:text-2xl" data-email-text>newsletter@siteparadigma.com.br</span>
+              <div class="relative flex min-h-[3.5rem] w-full items-center justify-center px-2 text-center sm:px-0">
+                <span class="email-address font-display text-[0.9rem] uppercase text-foreground transition duration-500 sm:text-2xl" data-email-text>newsletter@siteparadigma.com.br</span>
               </div>
             </div>
-            <button type="button" class="focus-visible mt-5 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-background transition hover:bg-foreground sm:mt-6 sm:px-6 sm:text-sm" data-copy-email data-default-label="Copiar endereço">
+            <button type="button" class="focus-visible mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-background transition hover:bg-foreground sm:mt-6 sm:w-auto sm:px-6 sm:text-sm" data-copy-email data-default-label="Copiar endereço">
               <span data-copy-label>Copiar endereço</span>
             </button>
           </div>
@@ -222,6 +246,7 @@
           emailGlow.classList.remove('opacity-60');
           if (copyButton) {
             copyButton.classList.remove('bg-foreground', 'text-background');
+            copyButton.classList.remove('copied');
             setCopyButtonText(copyButtonDefaultText);
             copyButton.disabled = false;
           }
@@ -237,11 +262,11 @@
         try {
           await navigator.clipboard.writeText(emailText.textContent.trim());
           setCopyButtonText('Copiado!');
-          copyButton.classList.add('bg-foreground', 'text-background');
+          copyButton.classList.add('bg-foreground', 'text-background', 'copied');
           copyButton.disabled = true;
           setTimeout(() => {
             setCopyButtonText(copyButtonDefaultText);
-            copyButton.classList.remove('bg-foreground', 'text-background');
+            copyButton.classList.remove('bg-foreground', 'text-background', 'copied');
             copyButton.disabled = false;
           }, 2000);
         } catch (error) {
