@@ -133,17 +133,16 @@
               <span data-reveal-label>Mostrar e-mail</span>
             </button>
           </p>
-          <div id="contato-email" class="relative max-w-md overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5 p-6 opacity-0 transition-all duration-500 ease-out -translate-y-3" data-email-panel hidden>
+          <div id="contato-email" class="relative max-w-xl overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5 px-8 py-6 opacity-0 transition-all duration-500 ease-out -translate-y-3" data-email-panel hidden>
             <div class="absolute inset-0 bg-gradient-to-r from-accent/20 via-transparent to-foreground/10 opacity-0 transition-opacity duration-700" data-email-glow></div>
             <p class="text-sm uppercase tracking-[0.4em] text-foreground/50">Endereço</p>
-            <p class="mt-2 font-display text-2xl uppercase text-foreground">
-              <span class="relative inline-flex items-center gap-2">
-                <span class="transition duration-500" data-email-text>newsletter@siteparadigma.com.br</span>
-                <span class="text-sm font-normal uppercase tracking-[0.3em] text-foreground/40" data-email-copied role="status" aria-live="polite"></span>
-              </span>
-            </p>
-            <button type="button" class="focus-visible mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-2 text-sm font-semibold uppercase tracking-[0.3em] text-background transition hover:bg-foreground" data-copy-email>
-              Copiar endereço
+            <div class="mt-3">
+              <div class="relative flex min-h-[3.5rem] w-full items-center">
+                <span class="font-display text-2xl uppercase text-foreground whitespace-nowrap transition duration-500" data-email-text>newsletter@siteparadigma.com.br</span>
+              </div>
+            </div>
+            <button type="button" class="focus-visible mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-2 text-sm font-semibold uppercase tracking-[0.3em] text-background transition hover:bg-foreground" data-copy-email data-default-label="Copiar endereço">
+              <span data-copy-label>Copiar endereço</span>
             </button>
           </div>
           <noscript>
@@ -184,9 +183,21 @@
     const emailGlow = document.querySelector('[data-email-glow]');
     const emailIcon = document.querySelector('[data-reveal-icon]');
     const copyButton = document.querySelector('[data-copy-email]');
-    const copiedLabel = document.querySelector('[data-email-copied]');
     const emailText = document.querySelector('[data-email-text]');
     const revealLabel = document.querySelector('[data-reveal-label]');
+    const copyButtonLabel = copyButton ? copyButton.querySelector('[data-copy-label]') : null;
+    const copyButtonDefaultText = copyButton ? copyButton.dataset.defaultLabel || (copyButtonLabel ? copyButtonLabel.textContent.trim() : copyButton.textContent.trim()) : '';
+
+    const setCopyButtonText = (text) => {
+      if (!copyButton) {
+        return;
+      }
+      if (copyButtonLabel) {
+        copyButtonLabel.textContent = text;
+      } else {
+        copyButton.textContent = text;
+      }
+    };
 
     if (revealButton && emailPanel && emailGlow && emailIcon && revealLabel) {
       revealButton.addEventListener('click', () => {
@@ -209,11 +220,10 @@
           emailPanel.classList.remove('opacity-100', 'translate-y-0');
           emailPanel.classList.add('opacity-0', '-translate-y-3');
           emailGlow.classList.remove('opacity-60');
-          if (copiedLabel) {
-            copiedLabel.textContent = '';
-          }
           if (copyButton) {
             copyButton.classList.remove('bg-foreground', 'text-background');
+            setCopyButtonText(copyButtonDefaultText);
+            copyButton.disabled = false;
           }
           setTimeout(() => {
             emailPanel.hidden = true;
@@ -222,18 +232,23 @@
       });
     }
 
-    if (copyButton && emailText && copiedLabel) {
+    if (copyButton && emailText) {
       copyButton.addEventListener('click', async () => {
         try {
           await navigator.clipboard.writeText(emailText.textContent.trim());
-          copiedLabel.textContent = 'copiado';
+          setCopyButtonText('Copiado!');
           copyButton.classList.add('bg-foreground', 'text-background');
+          copyButton.disabled = true;
           setTimeout(() => {
-            copiedLabel.textContent = '';
+            setCopyButtonText(copyButtonDefaultText);
             copyButton.classList.remove('bg-foreground', 'text-background');
+            copyButton.disabled = false;
           }, 2000);
         } catch (error) {
-          copiedLabel.textContent = 'não foi possível copiar';
+          setCopyButtonText('Erro ao copiar');
+          setTimeout(() => {
+            setCopyButtonText(copyButtonDefaultText);
+          }, 2000);
         }
       });
     }
