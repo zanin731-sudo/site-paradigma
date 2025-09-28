@@ -79,12 +79,6 @@ A página inicial foi reorganizada em blocos independentes. Os textos podem ser 
 
 Abra qualquer arquivo `.html` diretamente no navegador. Não há build ou servidor necessários.
 
-## Configurar o envio do formulário de contato
+## Contato
 
-O formulário em `contato.html` usa `send_mail.php`, que depende das credenciais SMTP da Hostinger para disparar as mensagens a partir do endereço `newsletter@siteparadigma.com.br`.
-
-1. No painel da Hostinger, copie o usuário (email completo) e a senha da caixa postal ou gere uma senha de aplicativo.
-2. Em produção, defina as variáveis de ambiente `HOSTINGER_SMTP_USER` e `HOSTINGER_SMTP_PASSWORD` com esses valores.
-3. Caso não seja possível trabalhar com variáveis de ambiente, crie um arquivo `config/mail.php` (o repositório já contém `config/mail.example.php` como referência) retornando um array com as chaves `username` e `password`.
-
-Sem uma dessas configurações o script exibe o aviso “Configuração de email ausente” e o envio não é realizado.
+A página `contato.html` oferece uma experiência interativa que revela o endereço `newsletter@siteparadigma.com.br` e inclui um botão para copiar o e-mail. Não há mais formulário ou envio automático de mensagens.

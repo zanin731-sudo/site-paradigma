@@ -33,6 +33,38 @@
       },
     };
   </script>
+  <style>
+    @keyframes float-sway {
+      0%,
+      100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.9;
+      }
+      50% {
+        transform: translateY(-18px) scale(1.05);
+        opacity: 1;
+      }
+    }
+
+    .floating-orb {
+      animation: float-sway 7s ease-in-out infinite;
+    }
+
+    .floating-delay-1 {
+      animation-delay: -2s;
+    }
+
+    .floating-delay-2 {
+      animation-delay: -4s;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .floating-orb {
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
   <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 <body class="bg-muted text-slate-900" data-analytics="site-paradigma">
@@ -79,48 +111,53 @@
     </section>
     <!-- FIM BLOCO HERO CONTATO -->
 
-    <!-- INÍCIO BLOCO FORMULÁRIO -->
-    <section class="mx-auto max-w-4xl px-4 py-16 lg:px-8">
-      <div class="section-card p-10">
-        <h2 class="font-display text-3xl uppercase text-background">Envie uma mensagem</h2>
-        <form class="mt-8 space-y-6" aria-label="Formulário de contato" action="send_mail.php" method="post">
-          <div id="form-status-message" class="hidden rounded-lg border px-4 py-3 text-sm font-medium" role="alert"></div>
-          <div>
-            <label class="block text-sm font-semibold text-slate-600" for="nome">Nome</label>
-            <input id="nome" name="nome" type="text" required class="focus-visible mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm" placeholder="Seu nome" />
-          </div>
-          <div>
-            <label class="block text-sm font-semibold text-slate-600" for="email">Email</label>
-            <input id="email" name="email" type="email" required class="focus-visible mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm" placeholder="nome@email.com" />
-          </div>
-          <div>
-            <label class="block text-sm font-semibold text-slate-600" for="assunto">Assunto</label>
-            <input id="assunto" name="assunto" type="text" class="focus-visible mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm" placeholder="Tema da mensagem" />
-          </div>
-          <div>
-            <label class="block text-sm font-semibold text-slate-600" for="mensagem">Mensagem</label>
-            <textarea id="mensagem" name="mensagem" rows="5" required class="focus-visible mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm" placeholder="Compartilhe sua ideia"></textarea>
-          </div>
-          <button type="submit" class="focus-visible inline-flex items-center justify-center rounded-full bg-accent px-8 py-3 font-semibold text-background transition hover:bg-background hover:text-foreground">Enviar</button>
-        </form>
-      </div>
-    </section>
-    <!-- FIM BLOCO FORMULÁRIO -->
+    <!-- INÍCIO BLOCO MENSAGEM -->
+    <section class="relative mx-auto max-w-4xl px-4 py-16 lg:px-8">
+      <div class="relative overflow-hidden rounded-3xl bg-background p-10 text-foreground shadow-lg">
+        <span class="floating-orb floating-delay-1 pointer-events-none absolute -left-12 top-4 h-36 w-36 rounded-full bg-accent/20 blur-2xl"></span>
+        <span class="floating-orb floating-delay-2 pointer-events-none absolute -right-10 bottom-0 h-32 w-32 rounded-full bg-foreground/10 blur-2xl"></span>
+        <div class="floating-orb pointer-events-none absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/10 blur-3xl"></div>
 
-    <!-- INÍCIO BLOCO INFO -->
-    <section class="mx-auto max-w-4xl px-4 pb-20 lg:px-8">
-      <div class="section-card section-card--dark p-10">
-        <h2 class="font-display text-3xl uppercase">Outros canais</h2>
-        <!-- INÍCIO BLOCO INFO CONTATO -->
-        <ul class="mt-6 space-y-3 text-sm text-foreground/80">
-          <li><strong>Email:</strong> contato@siteparadigma.com</li>
-          <li><strong>Comunidade:</strong> Espaço digital no Circle – convites trimestrais.</li>
-          <li><strong>Residência:</strong> Estúdio experimental em São Paulo, visitas agendadas.</li>
-        </ul>
-        <!-- FIM BLOCO INFO CONTATO -->
+        <div class="relative z-10 flex flex-col gap-6">
+          <div class="inline-flex items-center gap-3 self-start rounded-full border border-foreground/20 bg-foreground/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-foreground/70">
+            <span aria-hidden="true">✶</span>
+            <span>Canal direto</span>
+          </div>
+          <h2 class="font-display text-3xl uppercase">Vamos conversar por e-mail</h2>
+          <p class="max-w-2xl text-base text-foreground/80">
+            Para entrar em contato com a gente baste enviar um e-mail para:
+            <button type="button" class="focus-visible ml-2 inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-4 py-2 text-sm font-semibold text-accent transition hover:bg-accent/20" data-reveal-button aria-expanded="false" aria-controls="contato-email">
+              <svg class="h-4 w-4 transition-transform" data-reveal-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+              <span data-reveal-label>Mostrar e-mail</span>
+            </button>
+          </p>
+          <div id="contato-email" class="relative max-w-md overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5 p-6 opacity-0 transition-all duration-500 ease-out -translate-y-3" data-email-panel hidden>
+            <div class="absolute inset-0 bg-gradient-to-r from-accent/20 via-transparent to-foreground/10 opacity-0 transition-opacity duration-700" data-email-glow></div>
+            <p class="text-sm uppercase tracking-[0.4em] text-foreground/50">Endereço</p>
+            <p class="mt-2 font-display text-2xl uppercase text-foreground">
+              <span class="relative inline-flex items-center gap-2">
+                <span class="transition duration-500" data-email-text>newsletter@siteparadigma.com.br</span>
+                <span class="text-sm font-normal uppercase tracking-[0.3em] text-foreground/40" data-email-copied role="status" aria-live="polite"></span>
+              </span>
+            </p>
+            <button type="button" class="focus-visible mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-2 text-sm font-semibold uppercase tracking-[0.3em] text-background transition hover:bg-foreground" data-copy-email>
+              Copiar endereço
+            </button>
+          </div>
+          <noscript>
+            <p class="mt-6 text-sm text-foreground/70">
+              Se preferir, copie e cole manualmente: <strong>newsletter@siteparadigma.com.br</strong>.
+            </p>
+          </noscript>
+          <p class="text-sm text-foreground/60">
+            Preferimos uma caixa de entrada enxuta: escreva quando sentir que podemos criar algo transformador juntes.
+          </p>
+        </div>
       </div>
     </section>
-    <!-- FIM BLOCO INFO -->
+    <!-- FIM BLOCO MENSAGEM -->
   </main>
 
   <footer class="bg-background py-10 text-foreground">
@@ -142,32 +179,63 @@
       anoFooter.textContent = new Date().getFullYear().toString();
     }
 
-    const formStatusMessage = document.getElementById('form-status-message');
-    if (formStatusMessage) {
-      const params = new URLSearchParams(window.location.search);
-      const status = params.get('status');
-      const message = params.get('message');
+    const revealButton = document.querySelector('[data-reveal-button]');
+    const emailPanel = document.querySelector('[data-email-panel]');
+    const emailGlow = document.querySelector('[data-email-glow]');
+    const emailIcon = document.querySelector('[data-reveal-icon]');
+    const copyButton = document.querySelector('[data-copy-email]');
+    const copiedLabel = document.querySelector('[data-email-copied]');
+    const emailText = document.querySelector('[data-email-text]');
+    const revealLabel = document.querySelector('[data-reveal-label]');
 
-      if (status && message) {
-        const successClasses = ['border-emerald-300', 'bg-emerald-50', 'text-emerald-700'];
-        const errorClasses = ['border-red-300', 'bg-red-50', 'text-red-700'];
+    if (revealButton && emailPanel && emailGlow && emailIcon && revealLabel) {
+      revealButton.addEventListener('click', () => {
+        const isHidden = emailPanel.hasAttribute('hidden');
 
-        formStatusMessage.textContent = message;
-        formStatusMessage.classList.remove('hidden');
-        formStatusMessage.classList.remove(...successClasses, ...errorClasses);
-
-        if (status === 'success') {
-          formStatusMessage.classList.add(...successClasses);
+        if (isHidden) {
+          emailPanel.hidden = false;
+          revealButton.setAttribute('aria-expanded', 'true');
+          revealLabel.textContent = 'Esconder e-mail';
+          emailIcon.classList.add('rotate-45');
+          requestAnimationFrame(() => {
+            emailPanel.classList.remove('opacity-0', '-translate-y-3');
+            emailGlow.classList.add('opacity-60');
+            emailPanel.classList.add('opacity-100', 'translate-y-0');
+          });
         } else {
-          formStatusMessage.classList.add(...errorClasses);
+          revealLabel.textContent = 'Mostrar e-mail';
+          revealButton.setAttribute('aria-expanded', 'false');
+          emailIcon.classList.remove('rotate-45');
+          emailPanel.classList.remove('opacity-100', 'translate-y-0');
+          emailPanel.classList.add('opacity-0', '-translate-y-3');
+          emailGlow.classList.remove('opacity-60');
+          if (copiedLabel) {
+            copiedLabel.textContent = '';
+          }
+          if (copyButton) {
+            copyButton.classList.remove('bg-foreground', 'text-background');
+          }
+          setTimeout(() => {
+            emailPanel.hidden = true;
+          }, 500);
         }
+      });
+    }
 
-        params.delete('status');
-        params.delete('message');
-        const remaining = params.toString();
-        const newUrl = remaining ? `${window.location.pathname}?${remaining}` : window.location.pathname;
-        window.history.replaceState({}, '', newUrl);
-      }
+    if (copyButton && emailText && copiedLabel) {
+      copyButton.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(emailText.textContent.trim());
+          copiedLabel.textContent = 'copiado';
+          copyButton.classList.add('bg-foreground', 'text-background');
+          setTimeout(() => {
+            copiedLabel.textContent = '';
+            copyButton.classList.remove('bg-foreground', 'text-background');
+          }, 2000);
+        } catch (error) {
+          copiedLabel.textContent = 'não foi possível copiar';
+        }
+      });
     }
   </script>
 </body>
