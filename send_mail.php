@@ -60,18 +60,25 @@ $bodyText .= "Mensagem:\n" . $mensagem . "\n";
 /** @var PHPMailer|null $mail */
 $mail = null;
 
+$smtpUser = getenv('HOSTINGER_SMTP_USER') ?: 'newsletter@siteparadigma.com.br';
+$smtpPassword = getenv('HOSTINGER_SMTP_PASSWORD');
+
+if ($smtpPassword === false || trim((string) $smtpPassword) === '') {
+    redirect_with_status('error', 'Configuração de email ausente.');
+}
+
 try {
     $mail = new PHPMailer(true);
     $mail->CharSet = 'UTF-8';
     $mail->isSMTP();
     $mail->Host = 'smtp.hostinger.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'newsletter@siteparadigma.com.br';
-    $mail->Password = 'SUA_SENHA_DO_EMAIL';
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    $mail->Port = 465;
+    $mail->Username = $smtpUser;
+    $mail->Password = $smtpPassword;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
 
-    $mail->setFrom('newsletter@siteparadigma.com.br', ';paradigma');
+    $mail->setFrom($smtpUser, ';paradigma');
     $mail->addAddress('newsletter@siteparadigma.com.br', 'Contato ;paradigma');
     $mail->addReplyTo($email, $nome);
 
