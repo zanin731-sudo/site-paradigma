@@ -34,6 +34,22 @@
     };
   </script>
   <link rel="stylesheet" href="/assets/css/styles.css" />
+  <style>
+    .team-card {
+      transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .team-card:hover {
+      background-color: #f7f7f7;
+    }
+
+    @media (max-width: 767px) {
+      .team-card.mobile-elevated {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 30px 44px -32px rgba(20, 20, 20, 0.45);
+      }
+    }
+  </style>
 </head>
 <body class="bg-muted text-slate-900" data-analytics="site-paradigma">
   <div class="fixed inset-0 bg-black/60 hidden" data-overlay aria-hidden="true"></div>
@@ -80,20 +96,16 @@
     <!-- FIM BLOCO EQUIPE (HEADING PRINCIPAL) -->
 
     <!-- INÍCIO BLOCO CARDS EQUIPE -->
-    <section class="mx-auto max-w-6xl px-4 pb-16 lg:px-8">
+    <section class="mx-auto max-w-6xl px-4 pb-16 pt-16 lg:px-8">
       <h2 class="sr-only">Integrantes do ;paradigma</h2>
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <article class="section-card p-6">
-          <h3 class="font-display text-2xl uppercase text-background">Lia Monte</h3>
-          <p class="mt-2 text-sm text-slate-600">Bióloga evolutiva e diretora de pesquisa. Conecta descobertas científicas a aplicações cotidianas.</p>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+        <article class="section-card team-card p-6" data-team-card>
+          <h3 class="font-display text-2xl uppercase text-background">Rafaela</h3>
+          <p class="mt-2 text-sm text-slate-600">Pesquisa ecossistemas regenerativos e traduz conceitos complexos em experiências acessíveis para comunidades diversas.</p>
         </article>
-        <article class="section-card p-6">
-          <h3 class="font-display text-2xl uppercase text-background">Caio Nobre</h3>
-          <p class="mt-2 text-sm text-slate-600">Estratégia e cultura. Conduz narrativas e parcerias com redes comunitárias.</p>
-        </article>
-        <article class="section-card section-card--dark p-6">
-          <h3 class="font-display text-2xl uppercase">Amaranta Reis</h3>
-          <p class="mt-2 text-sm text-foreground/80">Artista e facilitadora de experiências somáticas. Pesquisa interseções entre corpo e tecnologia.</p>
+        <article class="section-card team-card p-6" data-team-card>
+          <h3 class="font-display text-2xl uppercase text-background">Wagner</h3>
+          <p class="mt-2 text-sm text-slate-600">Orquestra tecnologias colaborativas, cuida da infraestrutura digital e aproxima parceiros estratégicos do laboratório vivo.</p>
         </article>
       </div>
     </section>
@@ -128,6 +140,62 @@
     const anoFooter = document.getElementById('ano-footer');
     if (anoFooter) {
       anoFooter.textContent = new Date().getFullYear().toString();
+    }
+
+    const teamCards = document.querySelectorAll('[data-team-card]');
+    const mobileQuery = window.matchMedia('(max-width: 767px)');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let teamObserver;
+
+    const cleanupTeamObserver = () => {
+      if (teamObserver) {
+        teamObserver.disconnect();
+        teamObserver = undefined;
+      }
+      teamCards.forEach((card) => card.classList.remove('mobile-elevated'));
+    };
+
+    const setupTeamObserver = () => {
+      cleanupTeamObserver();
+
+      if (!mobileQuery.matches || prefersReducedMotion.matches || typeof IntersectionObserver === 'undefined') {
+        return;
+      }
+
+      teamObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('mobile-elevated');
+            } else {
+              entry.target.classList.remove('mobile-elevated');
+            }
+          });
+        },
+        {
+          threshold: 0.3,
+        }
+      );
+
+      teamCards.forEach((card) => teamObserver.observe(card));
+    };
+
+    if (teamCards.length) {
+      setupTeamObserver();
+
+      const handleMobileChange = () => setupTeamObserver();
+      if (typeof mobileQuery.addEventListener === 'function') {
+        mobileQuery.addEventListener('change', handleMobileChange);
+      } else if (typeof mobileQuery.addListener === 'function') {
+        mobileQuery.addListener(handleMobileChange);
+      }
+
+      const handleMotionChange = () => setupTeamObserver();
+      if (typeof prefersReducedMotion.addEventListener === 'function') {
+        prefersReducedMotion.addEventListener('change', handleMotionChange);
+      } else if (typeof prefersReducedMotion.addListener === 'function') {
+        prefersReducedMotion.addListener(handleMotionChange);
+      }
     }
   </script>
 </body>
