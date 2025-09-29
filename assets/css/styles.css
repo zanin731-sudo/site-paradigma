@@ -70,6 +70,12 @@ header {
   }
 }
 
+@media (max-width: 768px) {
+  section[aria-labelledby="reflexao-heading"] {
+    padding-top: 1.5rem;
+  }
+}
+
 .section-card {
   background-color: #ffffff;
   border-radius: 1rem;
