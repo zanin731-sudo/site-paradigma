@@ -97,55 +97,220 @@
 
     <!-- INÍCIO BLOCO LISTA -->
     <section class="mx-auto max-w-6xl px-4 py-16 lg:px-8">
-      <div class="grid gap-10 lg:grid-cols-[1fr_380px]">
-        <div class="space-y-8">
-          <!-- INÍCIO BLOCO CARDS PRINCIPAIS -->
-          <article class="section-card p-8 content-card" data-content-card>
-            <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <h2 class="font-display text-3xl uppercase text-background">Série Pulsar</h2>
-              <span class="rounded-full bg-accent/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-accent">Vídeo</span>
+      <!-- INÍCIO BLOCO ACORDEON CONTEÚDOS -->
+      <div class="space-y-6" data-accordion-root>
+        <div class="accordion-item section-card overflow-hidden" data-accordion-item>
+          <button
+            class="accordion-header flex w-full items-center justify-between gap-4 border-b border-slate-200/70 px-6 py-5 text-left text-background transition-colors duration-300 ease-in-out"
+            type="button"
+            data-accordion-header
+            aria-expanded="false"
+            aria-controls="accordion-content-pulsar"
+            id="accordion-header-pulsar"
+          >
+            <h2 class="accordion-title font-display text-3xl uppercase">Série Pulsar</h2>
+            <svg
+              class="accordion-icon h-5 w-5 flex-shrink-0 text-background transition-transform duration-300 ease-in-out"
+              data-accordion-icon
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div
+            id="accordion-content-pulsar"
+            class="accordion-content max-h-0 overflow-hidden transition-[max-height] duration-500 ease-in-out"
+            data-accordion-content
+            aria-labelledby="accordion-header-pulsar"
+          >
+            <div
+              class="accordion-panel px-6 pb-6 pt-0 text-sm text-slate-600 opacity-0 transition-[opacity,padding] duration-300 ease-in-out"
+              data-accordion-panel
+            >
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="rounded-full bg-accent/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-accent">Vídeo</span>
+              </div>
+              <p class="mt-4">Documentários curtos que conectam ciência, arte e comunidades periféricas. Novos episódios a cada mês.</p>
             </div>
-            <p class="mt-4 text-sm text-slate-600">Documentários curtos que conectam ciência, arte e comunidades periféricas. Novos episódios a cada mês.</p>
-          </article>
-          <article class="section-card p-8 content-card" data-content-card>
-            <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <h2 class="font-display text-3xl uppercase text-background">Laboratório Aberto</h2>
-              <span class="rounded-full bg-accent/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-accent">Workshop</span>
-            </div>
-            <p class="mt-4 text-sm text-slate-600">Encontros práticos com especialistas para prototipar hábitos e tecnologias de cuidado coletivo.</p>
-          </article>
-          <article class="section-card p-8 content-card" data-content-card>
-            <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <h2 class="font-display text-3xl uppercase text-background">Trilha Resonância</h2>
-              <span class="rounded-full bg-accent/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-accent">Podcast</span>
-            </div>
-            <p class="mt-4 text-sm text-slate-600">Conversas profundas com cientistas, artistas e líderes comunitários sobre regeneração urbana.</p>
-          </article>
-          <!-- FIM BLOCO CARDS PRINCIPAIS -->
+          </div>
         </div>
-        <aside class="space-y-8">
-          <div class="section-card p-6 content-card" data-content-card>
-            <h3 class="font-display text-2xl uppercase text-background">Agenda ao vivo</h3>
-            <!-- INÍCIO BLOCO AGENDA -->
-            <ul class="mt-4 space-y-3 text-sm text-slate-600">
-              <li><strong>18/04</strong> – Aula experimental: Ritmos circadianos na prática.</li>
-              <li><strong>27/04</strong> – Estúdio aberto com artistas bio-hackers.</li>
-              <li><strong>09/05</strong> – Oficina de respiração: reset autonômico.</li>
-            </ul>
-            <!-- FIM BLOCO AGENDA -->
+
+        <div class="accordion-item section-card overflow-hidden" data-accordion-item>
+          <button
+            class="accordion-header flex w-full items-center justify-between gap-4 border-b border-slate-200/70 px-6 py-5 text-left text-background transition-colors duration-300 ease-in-out"
+            type="button"
+            data-accordion-header
+            aria-expanded="false"
+            aria-controls="accordion-content-lab"
+            id="accordion-header-lab"
+          >
+            <h2 class="accordion-title font-display text-3xl uppercase">Laboratório Aberto</h2>
+            <svg
+              class="accordion-icon h-5 w-5 flex-shrink-0 text-background transition-transform duration-300 ease-in-out"
+              data-accordion-icon
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div
+            id="accordion-content-lab"
+            class="accordion-content max-h-0 overflow-hidden transition-[max-height] duration-500 ease-in-out"
+            data-accordion-content
+            aria-labelledby="accordion-header-lab"
+          >
+            <div
+              class="accordion-panel px-6 pb-6 pt-0 text-sm text-slate-600 opacity-0 transition-[opacity,padding] duration-300 ease-in-out"
+              data-accordion-panel
+            >
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="rounded-full bg-accent/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-accent">Workshop</span>
+              </div>
+              <p class="mt-4">Encontros práticos com especialistas para prototipar hábitos e tecnologias de cuidado coletivo.</p>
+            </div>
           </div>
-          <div class="section-card p-6 content-card" data-content-card>
-            <h3 class="font-display text-2xl uppercase text-background">Downloads</h3>
-            <!-- INÍCIO BLOCO DOWNLOADS -->
-            <ul class="mt-4 space-y-3 text-sm text-slate-600">
-              <li><a class="focus-visible transition hover:text-accent" href="#">Guia de autocuidado sistêmico</a></li>
-              <li><a class="focus-visible transition hover:text-accent" href="#">Mapa sonoro das cidades regenerativas</a></li>
-              <li><a class="focus-visible transition hover:text-accent" href="#">Checklist de rituais diários</a></li>
-            </ul>
-            <!-- FIM BLOCO DOWNLOADS -->
+        </div>
+
+        <div class="accordion-item section-card overflow-hidden" data-accordion-item>
+          <button
+            class="accordion-header flex w-full items-center justify-between gap-4 border-b border-slate-200/70 px-6 py-5 text-left text-background transition-colors duration-300 ease-in-out"
+            type="button"
+            data-accordion-header
+            aria-expanded="false"
+            aria-controls="accordion-content-trilha"
+            id="accordion-header-trilha"
+          >
+            <h2 class="accordion-title font-display text-3xl uppercase">Trilha Resonância</h2>
+            <svg
+              class="accordion-icon h-5 w-5 flex-shrink-0 text-background transition-transform duration-300 ease-in-out"
+              data-accordion-icon
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div
+            id="accordion-content-trilha"
+            class="accordion-content max-h-0 overflow-hidden transition-[max-height] duration-500 ease-in-out"
+            data-accordion-content
+            aria-labelledby="accordion-header-trilha"
+          >
+            <div
+              class="accordion-panel px-6 pb-6 pt-0 text-sm text-slate-600 opacity-0 transition-[opacity,padding] duration-300 ease-in-out"
+              data-accordion-panel
+            >
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="rounded-full bg-accent/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-accent">Podcast</span>
+              </div>
+              <p class="mt-4">Conversas profundas com cientistas, artistas e líderes comunitários sobre regeneração urbana.</p>
+            </div>
           </div>
-        </aside>
+        </div>
+
+        <div class="accordion-item section-card overflow-hidden" data-accordion-item>
+          <button
+            class="accordion-header flex w-full items-center justify-between gap-4 border-b border-slate-200/70 px-6 py-5 text-left text-background transition-colors duration-300 ease-in-out"
+            type="button"
+            data-accordion-header
+            aria-expanded="false"
+            aria-controls="accordion-content-agenda"
+            id="accordion-header-agenda"
+          >
+            <h2 class="accordion-title font-display text-3xl uppercase">Agenda ao vivo</h2>
+            <svg
+              class="accordion-icon h-5 w-5 flex-shrink-0 text-background transition-transform duration-300 ease-in-out"
+              data-accordion-icon
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div
+            id="accordion-content-agenda"
+            class="accordion-content max-h-0 overflow-hidden transition-[max-height] duration-500 ease-in-out"
+            data-accordion-content
+            aria-labelledby="accordion-header-agenda"
+          >
+            <div
+              class="accordion-panel px-6 pb-6 pt-0 text-sm text-slate-600 opacity-0 transition-[opacity,padding] duration-300 ease-in-out"
+              data-accordion-panel
+            >
+              <!-- INÍCIO BLOCO AGENDA -->
+              <ul class="space-y-3">
+                <li><strong>18/04</strong> – Aula experimental: Ritmos circadianos na prática.</li>
+                <li><strong>27/04</strong> – Estúdio aberto com artistas bio-hackers.</li>
+                <li><strong>09/05</strong> – Oficina de respiração: reset autonômico.</li>
+              </ul>
+              <!-- FIM BLOCO AGENDA -->
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item section-card overflow-hidden" data-accordion-item>
+          <button
+            class="accordion-header flex w-full items-center justify-between gap-4 border-b border-slate-200/70 px-6 py-5 text-left text-background transition-colors duration-300 ease-in-out"
+            type="button"
+            data-accordion-header
+            aria-expanded="false"
+            aria-controls="accordion-content-downloads"
+            id="accordion-header-downloads"
+          >
+            <h2 class="accordion-title font-display text-3xl uppercase">Downloads</h2>
+            <svg
+              class="accordion-icon h-5 w-5 flex-shrink-0 text-background transition-transform duration-300 ease-in-out"
+              data-accordion-icon
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div
+            id="accordion-content-downloads"
+            class="accordion-content max-h-0 overflow-hidden transition-[max-height] duration-500 ease-in-out"
+            data-accordion-content
+            aria-labelledby="accordion-header-downloads"
+          >
+            <div
+              class="accordion-panel px-6 pb-6 pt-0 text-sm text-slate-600 opacity-0 transition-[opacity,padding] duration-300 ease-in-out"
+              data-accordion-panel
+            >
+              <!-- INÍCIO BLOCO DOWNLOADS -->
+              <ul class="space-y-3">
+                <li><a class="focus-visible transition hover:text-accent" href="#">Guia de autocuidado sistêmico</a></li>
+                <li><a class="focus-visible transition hover:text-accent" href="#">Mapa sonoro das cidades regenerativas</a></li>
+                <li><a class="focus-visible transition hover:text-accent" href="#">Checklist de rituais diários</a></li>
+              </ul>
+              <!-- FIM BLOCO DOWNLOADS -->
+            </div>
+          </div>
+        </div>
       </div>
+      <!-- FIM BLOCO ACORDEON CONTEÚDOS -->
     </section>
     <!-- FIM BLOCO LISTA -->
   </main>
@@ -169,61 +334,94 @@
       anoFooter.textContent = new Date().getFullYear().toString();
     }
 
-    const contentCards = document.querySelectorAll('[data-content-card]');
-    const mobileQuery = window.matchMedia('(max-width: 767px)');
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    let observer;
+    // INÍCIO BLOCO SCRIPT ACORDEON CONTEÚDOS
+    const accordionItems = document.querySelectorAll('[data-accordion-item]');
 
-    const cleanupObserver = () => {
-      if (observer) {
-        observer.disconnect();
-        observer = undefined;
-      }
-      contentCards.forEach((card) => card.classList.remove('mobile-elevated'));
-    };
+    const closeItem = (item) => {
+      const header = item.querySelector('[data-accordion-header]');
+      const content = item.querySelector('[data-accordion-content]');
+      const panel = item.querySelector('[data-accordion-panel]');
+      const icon = item.querySelector('[data-accordion-icon]');
 
-    const setupObserver = () => {
-      cleanupObserver();
-
-      if (!mobileQuery.matches || prefersReducedMotion.matches || typeof IntersectionObserver === 'undefined') {
+      if (!header || !content || !panel) {
         return;
       }
 
-      observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('mobile-elevated');
-            } else {
-              entry.target.classList.remove('mobile-elevated');
-            }
-          });
-        },
-        {
-          threshold: 0.3,
-        }
-      );
+      item.classList.remove('is-active');
+      content.style.maxHeight = '0px';
+      panel.classList.add('opacity-0', 'pt-0');
+      panel.classList.remove('opacity-100', 'pt-4');
 
-      contentCards.forEach((card) => observer.observe(card));
+      if (icon) {
+        icon.classList.remove('rotate-180');
+      }
+
+      header.setAttribute('aria-expanded', 'false');
     };
 
-    if (contentCards.length) {
-      setupObserver();
+    const openItem = (item) => {
+      const header = item.querySelector('[data-accordion-header]');
+      const content = item.querySelector('[data-accordion-content]');
+      const panel = item.querySelector('[data-accordion-panel]');
+      const icon = item.querySelector('[data-accordion-icon]');
 
-      const mqHandler = () => setupObserver();
-      if (typeof mobileQuery.addEventListener === 'function') {
-        mobileQuery.addEventListener('change', mqHandler);
-      } else if (typeof mobileQuery.addListener === 'function') {
-        mobileQuery.addListener(mqHandler);
+      if (!header || !content || !panel) {
+        return;
       }
 
-      const motionHandler = () => setupObserver();
-      if (typeof prefersReducedMotion.addEventListener === 'function') {
-        prefersReducedMotion.addEventListener('change', motionHandler);
-      } else if (typeof prefersReducedMotion.addListener === 'function') {
-        prefersReducedMotion.addListener(motionHandler);
+      item.classList.add('is-active');
+      content.style.maxHeight = `${panel.scrollHeight}px`;
+      panel.classList.add('opacity-100', 'pt-4');
+      panel.classList.remove('opacity-0', 'pt-0');
+
+      if (icon) {
+        icon.classList.add('rotate-180');
       }
+
+      header.setAttribute('aria-expanded', 'true');
+    };
+
+    if (accordionItems.length) {
+      accordionItems.forEach((item) => {
+        const header = item.querySelector('[data-accordion-header]');
+
+        if (!header) {
+          return;
+        }
+
+        header.addEventListener('click', () => {
+          const isActive = item.classList.contains('is-active');
+
+          accordionItems.forEach((otherItem) => {
+            if (otherItem !== item) {
+              closeItem(otherItem);
+            }
+          });
+
+          if (isActive) {
+            closeItem(item);
+          } else {
+            openItem(item);
+          }
+        });
+      });
+
+      window.addEventListener('resize', () => {
+        accordionItems.forEach((item) => {
+          if (!item.classList.contains('is-active')) {
+            return;
+          }
+
+          const content = item.querySelector('[data-accordion-content]');
+          const panel = item.querySelector('[data-accordion-panel]');
+
+          if (content && panel) {
+            content.style.maxHeight = `${panel.scrollHeight}px`;
+          }
+        });
+      });
     }
+    // FIM BLOCO SCRIPT ACORDEON CONTEÚDOS
   </script>
 </body>
 </html>
