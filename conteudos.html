@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>;paradigma | Conteúdos e experiências</title>
+  <meta name="description" content="Explore os conteúdos, experiências e trilhas de aprendizagem do ;paradigma." />
+  <meta property="og:title" content="Conteúdos ;paradigma" />
+  <meta property="og:description" content="Agenda viva com lives, newsletters, playlists e imersões." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://site-paradigma.local/conteudos.html" />
+  <meta property="og:image" content="https://site-paradigma.local/assets/img/hero-overlay.svg" />
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#000000',
+            foreground: '#ffffff',
+            muted: '#f0f0f0',
+            accent: '#449f60',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'system-ui', 'sans-serif'],
+            display: ['League Gothic', 'Poppins', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <style>
+    .content-card {
+      transition: all 0.3s ease-in-out;
+    }
+
+    .content-card:hover {
+      background-color: #f7f7f7;
+    }
+
+    @media (max-width: 767px) {
+      .content-card.mobile-elevated {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 30px 44px -32px rgba(20, 20, 20, 0.45);
+      }
+    }
+  </style>
+</head>
+<body class="bg-muted text-slate-900" data-analytics="site-paradigma">
+  <div class="fixed inset-0 bg-black/60 hidden" data-overlay aria-hidden="true"></div>
+  <header class="bg-background text-foreground">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 lg:px-8">
+      <a href="/" class="font-display text-3xl uppercase tracking-widest focus-visible">;paradigma</a>
+      <button type="button" class="focus-visible inline-flex items-center justify-center rounded-md border border-white/20 p-2 text-white lg:hidden" aria-label="Abrir menu" aria-expanded="false" data-menu-button>
+        <span class="sr-only">Abrir menu</span>
+        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5M3.75 12h16.5M3.75 18.75h16.5" />
+        </svg>
+      </button>
+      <nav class="hidden flex-1 justify-end gap-8 text-sm font-medium lg:flex" data-nav data-nav-desktop>
+        <a class="focus-visible transition hover:text-accent" href="/">Home</a>
+        <a class="focus-visible transition hover:text-accent" href="/manifesto.html">Manifesto</a>
+        <a class="focus-visible text-accent transition hover:text-accent" href="/conteudos.html" aria-current="page">Conteúdos</a>
+        <a class="focus-visible transition hover:text-accent" href="/sobre.html">Sobre</a>
+        <a class="focus-visible transition hover:text-accent" href="/produtos.html">Produções</a>
+      </nav>
+    </div>
+    <nav class="hidden border-t border-white/10 bg-background px-4 pb-6 pt-4 lg:hidden" data-nav data-nav-mobile>
+      <ul class="space-y-2 text-lg font-medium">
+        <li><a class="focus-visible mobile-nav__link block rounded-md px-2 py-2 transition" href="/">Home</a></li>
+        <li><a class="focus-visible mobile-nav__link block rounded-md px-2 py-2 transition" href="/manifesto.html">Manifesto</a></li>
+        <li><a class="focus-visible mobile-nav__link block rounded-md px-2 py-2 transition text-accent" href="/conteudos.html" aria-current="page">Conteúdos</a></li>
+        <li><a class="focus-visible mobile-nav__link block rounded-md px-2 py-2 transition" href="/sobre.html">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo-principal">
+    <!-- INÍCIO BLOCO HERO CONTEÚDOS -->
+    <section class="relative overflow-hidden bg-background text-foreground">
+      <div class="hero-overlay relative w-full">
+        <img src="/assets/img/hero-overlay.svg" alt="Texturas urbanas abstratas" class="absolute inset-0 h-full w-full" />
+        <div class="relative mx-auto flex max-w-6xl flex-col justify-center gap-4 px-4 py-20 sm:py-24 lg:px-8 lg:py-20">
+          <p class="font-semibold uppercase tracking-[0.3em] text-accent">Conteúdos</p>
+          <h1 class="font-display text-5xl uppercase leading-tight">Programas e narrativas em evolução</h1>
+          <p class="max-w-3xl text-lg text-foreground/80">Uma curadoria contínua de experiências para nutrir corpo, mente e espírito. Escolha a trilha que conversa com o seu momento.</p>
+        </div>
+      </div>
+    </section>
+    <!-- FIM BLOCO HERO CONTEÚDOS -->
+
+    <!-- INÍCIO BLOCO LISTA -->
+    <section class="mx-auto max-w-6xl px-4 py-16 lg:px-8">
+      <!-- INÍCIO BLOCO ACORDEON CONTEÚDOS -->
+      <div class="space-y-6" data-accordion-root>
+        <div class="accordion-item section-card overflow-hidden" data-accordion-item>
+          <button
+            class="accordion-header flex w-full items-center justify-between gap-4 border-b border-slate-200/70 px-6 py-5 text-left text-background transition-colors duration-300 ease-in-out"
+            type="button"
+            data-accordion-header
+            aria-expanded="false"
+            aria-controls="accordion-content-pulsar"
+            id="accordion-header-pulsar"
+          >
+            <h2 class="accordion-title font-display text-3xl uppercase">Instagram</h2>
+            <svg
+              class="accordion-icon h-5 w-5 flex-shrink-0 text-background transition-transform duration-300 ease-in-out"
+              data-accordion-icon
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div
+            id="accordion-content-pulsar"
+            class="accordion-content max-h-0 overflow-hidden transition-[max-height] duration-500 ease-in-out"
+            data-accordion-content
+            aria-labelledby="accordion-header-pulsar"
+          >
+            <div
+              class="accordion-panel px-6 pb-6 pt-0 text-sm text-slate-600 opacity-0 transition-[opacity,padding] duration-300 ease-in-out"
+              data-accordion-panel
+            >
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="rounded-full bg-accent/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-accent">Conteúdos</span>
+              </div>
+              <p class="mt-4">No instagram você vai encontrar a maior parte das nossas atividades da ;PARADIGMA. Estamos bem ativos por lá, com assuntos dos mais variados!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item section-card overflow-hidden" data-accordion-item>
+          <button
+            class="accordion-header flex w-full items-center justify-between gap-4 border-b border-slate-200/70 px-6 py-5 text-left text-background transition-colors duration-300 ease-in-out"
+            type="button"
+            data-accordion-header
+            aria-expanded="false"
+            aria-controls="accordion-content-lab"
+            id="accordion-header-lab"
+          >
+            <h2 class="accordion-title font-display text-3xl uppercase">News Paradigma</h2>
+            <svg
+              class="accordion-icon h-5 w-5 flex-shrink-0 text-background transition-transform duration-300 ease-in-out"
+              data-accordion-icon
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div
+            id="accordion-content-lab"
+            class="accordion-content max-h-0 overflow-hidden transition-[max-height] duration-500 ease-in-out"
+            data-accordion-content
+            aria-labelledby="accordion-header-lab"
+          >
+            <div
+              class="accordion-panel px-6 pb-6 pt-0 text-sm text-slate-600 opacity-0 transition-[opacity,padding] duration-300 ease-in-out"
+              data-accordion-panel
+            >
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="rounded-full bg-accent/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-accent">e-mail</span>
+              </div>
+              <p class="mt-4">É a nossa newsletter, enviada quinzenalmente com um tópico escolhido onde nos aprofundamos um pouco mais nos assuntos e discussões. Com visões para questionar o obvio e uma pitada de opinião própria! Inscreva-se na página "home"</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item section-card overflow-hidden" data-accordion-item>
+          <button
+            class="accordion-header flex w-full items-center justify-between gap-4 border-b border-slate-200/70 px-6 py-5 text-left text-background transition-colors duration-300 ease-in-out"
+            type="button"
+            data-accordion-header
+            aria-expanded="false"
+            aria-controls="accordion-content-trilha"
+            id="accordion-header-trilha"
+          >
+            <h2 class="accordion-title font-display text-3xl uppercase">Produções ;pdg</h2>
+            <svg
+              class="accordion-icon h-5 w-5 flex-shrink-0 text-background transition-transform duration-300 ease-in-out"
+              data-accordion-icon
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div
+            id="accordion-content-trilha"
+            class="accordion-content max-h-0 overflow-hidden transition-[max-height] duration-500 ease-in-out"
+            data-accordion-content
+            aria-labelledby="accordion-header-trilha"
+          >
+            <div
+              class="accordion-panel px-6 pb-6 pt-0 text-sm text-slate-600 opacity-0 transition-[opacity,padding] duration-300 ease-in-out"
+              data-accordion-panel
+            >
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="rounded-full bg-accent/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-accent">online</span>
+              </div>
+              <p class="mt-4">As produções ;pdg se referem aos produtos digitais da paradigma, e-books, cursos, protocolos, e loja de camisetas!</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- FIM BLOCO ACORDEON CONTEÚDOS -->
+    </section>
+    <!-- FIM BLOCO LISTA -->
+  </main>
+
+  <footer class="bg-background py-10 text-foreground">
+    <div class="mx-auto flex max-w-6xl flex-col gap-6 px-4 text-sm text-foreground/70 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+      <p>&copy; <span id="ano-footer">2024</span> ;paradigma. Todos os direitos reservados.</p>
+      <div class="flex items-center gap-4">
+        <a class="focus-visible transition hover:text-foreground" href="https://instagram.com" aria-label="Instagram">Instagram</a>
+        <a class="focus-visible transition hover:text-foreground" href="https://www.youtube.com" aria-label="YouTube">YouTube</a>
+        <a class="focus-visible transition hover:text-foreground" href="https://www.linkedin.com" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- <script data-analytics-script src="https://analytics.example.com/tracker.js"></script> -->
+  <script src="/assets/js/main.js" defer></script>
+  <script>
+    const anoFooter = document.getElementById('ano-footer');
+    if (anoFooter) {
+      anoFooter.textContent = new Date().getFullYear().toString();
+    }
+
+    // INÍCIO BLOCO SCRIPT ACORDEON CONTEÚDOS
+    const accordionItems = document.querySelectorAll('[data-accordion-item]');
+
+    const closeItem = (item) => {
+      const header = item.querySelector('[data-accordion-header]');
+      const content = item.querySelector('[data-accordion-content]');
+      const panel = item.querySelector('[data-accordion-panel]');
+      const icon = item.querySelector('[data-accordion-icon]');
+
+      if (!header || !content || !panel) {
+        return;
+      }
+
+      item.classList.remove('is-active');
+      content.style.maxHeight = '0px';
+      panel.classList.add('opacity-0', 'pt-0');
+      panel.classList.remove('opacity-100', 'pt-4');
+
+      if (icon) {
+        icon.classList.remove('rotate-180');
+      }
+
+      header.setAttribute('aria-expanded', 'false');
+    };
+
+    const openItem = (item) => {
+      const header = item.querySelector('[data-accordion-header]');
+      const content = item.querySelector('[data-accordion-content]');
+      const panel = item.querySelector('[data-accordion-panel]');
+      const icon = item.querySelector('[data-accordion-icon]');
+
+      if (!header || !content || !panel) {
+        return;
+      }
+
+      item.classList.add('is-active');
+      content.style.maxHeight = `${panel.scrollHeight}px`;
+      panel.classList.add('opacity-100', 'pt-4');
+      panel.classList.remove('opacity-0', 'pt-0');
+
+      if (icon) {
+        icon.classList.add('rotate-180');
+      }
+
+      header.setAttribute('aria-expanded', 'true');
+    };
+
+    if (accordionItems.length) {
+      accordionItems.forEach((item) => {
+        const header = item.querySelector('[data-accordion-header]');
+
+        if (!header) {
+          return;
+        }
+
+        header.addEventListener('click', () => {
+          const isActive = item.classList.contains('is-active');
+
+          accordionItems.forEach((otherItem) => {
+            if (otherItem !== item) {
+              closeItem(otherItem);
+            }
+          });
+
+          if (isActive) {
+            closeItem(item);
+          } else {
+            openItem(item);
+          }
+        });
+      });
+
+      window.addEventListener('resize', () => {
+        accordionItems.forEach((item) => {
+          if (!item.classList.contains('is-active')) {
+            return;
+          }
+
+          const content = item.querySelector('[data-accordion-content]');
+          const panel = item.querySelector('[data-accordion-panel]');
+
+          if (content && panel) {
+            content.style.maxHeight = `${panel.scrollHeight}px`;
+          }
+        });
+      });
+    }
+    // FIM BLOCO SCRIPT ACORDEON CONTEÚDOS
+  </script>
+</body>
+</html>

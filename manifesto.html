@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>;paradigma | Manifesto vivo</title>
+  <meta name="description" content="Manifesto do ;paradigma: ciência, ancestralidade e tecnologia para futuros regenerativos." />
+  <meta property="og:title" content="Manifesto ;paradigma" />
+  <meta property="og:description" content="Conheça as crenças e compromissos que guiam a comunidade ;paradigma." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://site-paradigma.local/manifesto.html" />
+  <meta property="og:image" content="https://site-paradigma.local/assets/img/hero-overlay.svg" />
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#000000',
+            foreground: '#ffffff',
+            muted: '#f0f0f0',
+            accent: '#449f60',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'system-ui', 'sans-serif'],
+            display: ['League Gothic', 'Poppins', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  
+  <!-- 🔰 META PIXEL BASE CODE -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0';
+      n.queue=[]; t=b.createElement(e); t.async=!0;
+      t.src=v; s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}
+      (window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1462444431685846');  // ✅ seu ID real aqui
+      fbq('track', 'PageView');      // registra visualização de página
+    </script>
+
+    <noscript>
+      <img height="1" width="1" style="display:none"
+           src="https://www.facebook.com/tr?id=1462444431685846&ev=PageView&noscript=1"/>
+    </noscript>
+  
+</head>
+<body class="bg-muted text-slate-900" data-analytics="site-paradigma">
+  <div class="fixed inset-0 bg-black/60 hidden" data-overlay aria-hidden="true"></div>
+  <header class="bg-background text-foreground">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 lg:px-8">
+      <a href="/" class="font-display text-3xl uppercase tracking-widest focus-visible">;paradigma</a>
+      <button type="button" class="focus-visible inline-flex items-center justify-center rounded-md border border-white/20 p-2 text-white lg:hidden" aria-label="Abrir menu" aria-expanded="false" data-menu-button>
+        <span class="sr-only">Abrir menu</span>
+        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5M3.75 12h16.5M3.75 18.75h16.5" />
+        </svg>
+      </button>
+      <nav class="hidden flex-1 justify-end gap-8 text-sm font-medium lg:flex" data-nav data-nav-desktop>
+        <a class="focus-visible transition hover:text-accent" href="/">Home</a>
+        <a class="focus-visible text-accent transition hover:text-accent" href="/manifesto.html" aria-current="page">Manifesto</a>
+        <a class="focus-visible transition hover:text-accent" href="/conteudos.html">Conteúdos</a>
+        <a class="focus-visible transition hover:text-accent" href="/sobre.html">Sobre</a>
+        <a class="focus-visible transition hover:text-accent" href="/produtos.html">Produções</a>
+      </nav>
+    </div>
+    <nav class="hidden border-t border-white/10 bg-background px-4 pb-6 pt-4 lg:hidden" data-nav data-nav-mobile>
+      <ul class="space-y-2 text-lg font-medium">
+        <li><a class="focus-visible mobile-nav__link block rounded-md px-2 py-2 transition" href="/">Home</a></li>
+        <li><a class="focus-visible mobile-nav__link block rounded-md px-2 py-2 transition text-accent" href="/manifesto.html" aria-current="page">Manifesto</a></li>
+        <li><a class="focus-visible mobile-nav__link block rounded-md px-2 py-2 transition" href="/conteudos.html">Conteúdos</a></li>
+        <li><a class="focus-visible mobile-nav__link block rounded-md px-2 py-2 transition" href="/sobre.html">Sobre</a></li>
+        <li><a class="focus-visible mobile-nav__link block rounded-md px-2 py-2 transition" href="/contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo-principal">
+    <!-- INÍCIO BLOCO MANIFESTO HERO -->
+    <section class="relative overflow-hidden bg-background text-foreground">
+      <div class="hero-overlay relative w-full">
+        <img src="/assets/img/hero-overlay.svg" alt="Formas abstratas em verde e preto" class="absolute inset-0 h-full w-full" />
+        <div class="relative mx-auto flex max-w-5xl flex-col justify-center gap-4 px-4 py-20 sm:py-24 lg:px-8 lg:py-20">
+          <p class="font-semibold uppercase tracking-[0.3em] text-accent">Manifesto</p>
+          <h1 class="font-display text-5xl uppercase leading-tight">No que acreditamos...</h1>
+          <p class="max-w-2xl text-lg text-foreground/80">Uma declaração viva que orienta nossas decisões coletivas, respeitando a complexidade da vida e celebrando o potencial humano.</p>
+        </div>
+      </div>
+    </section>
+    <!-- FIM BLOCO MANIFESTO HERO -->
+
+    <!-- INÍCIO BLOCO MANIFESTO TEXTO -->
+    <section class="mx-auto max-w-4xl px-4 py-16 lg:px-8">
+      <article class="space-y-10">
+        <div class="section-card section-card--dark space-y-8 p-12">
+          <h2 class="font-display text-3xl uppercase font-semibold tracking-wide">Essência</h2>
+          <!-- INÍCIO BLOCO TEXTO ESSÊNCIA -->
+          <p class="text-base font-light leading-relaxed text-foreground/80">Nós vivemos em um mundo moderno que insiste em explicar o humano apenas pelo agora. Mas somos muito mais do que o presente. Somos herdeiros de milhões de anos de história — do esqueleto que nos sustenta à mente que nos move.</p>
+          <p class="text-base font-light leading-relaxed text-foreground/80">Acreditar que a experiência humana pode ser entendida só pelo hoje é como ler o último capítulo de um livro e achar que conheceu toda a história. O corpo que hoje dirige um carro já caminhou por florestas e savanas. A mente que hoje se perde em notificações foi moldada para caçar, cooperar, amar, competir e sobreviver. O coração que hoje sofre em silêncio ainda guarda medos e sonhos ancestrais.</p>
+          <p class="text-base font-light leading-relaxed text-foreground/80">A ;paradigma nasce da indignação de ver o humano reduzido ao raso - e da esperança de lembrá-lo da profundidade. De mostrar que cada parte boa e cada parte ruim em nós é a tentativa de uma biologia ancestral sobreviver em um mundo novo. E quando entendemos isso, tudo muda.</p>
+          <p class="text-base font-light leading-relaxed text-foreground/80">Percebemos a nossa pequenez diante da história, mas também o poder imenso de continuar escrevendo a sua continuação. Descobrimos que não estamos sozinhos: fazemos parte de uma cadeia viva que nos antecede e nos atravessa. E isso nos faz reconectar com a natureza. Porque não somos espectadores - somos fruto do mesmo processo que moldou rios, montanhas, florestas e animais. A nossa sobrevivência sempre foi, e sempre será, inseparável da sobrevivência do planeta.</p>
+          <p class="text-base font-light leading-relaxed text-foreground/80">Esse conhecimento não é teoria. Ele nos torna amigos mais presentes, pais e filhos mais conscientes, cidadãos mais humanos. Não estamos aqui para oferecer respostas. Estamos aqui para questionar, provocar, e lembrar que o humano não cabe em respostas rasas.</p>
+          <p class="text-base font-light leading-relaxed text-foreground/80">A ;paradigma existe para unir a crítica à esperança. Porque compreender a nossa natureza, e a natureza que nos cerca, é o primeiro passo para transformá-la. No fim sempre há espaço para mais leveza, mais consciência e mais vida.</p>
+          <!-- FIM BLOCO TEXTO ESSÊNCIA -->
+        </div>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="section-card p-8 font-semibold">
+            <h3 class="font-display text-2xl uppercase text-background">Cuidar da complexidade</h3>
+            <!-- INÍCIO BLOCO TEXTO COMPLEXIDADE -->
+            <p class="mt-3 text-sm text-slate-600">Incorporamos olhares plurais, cultivamos escuta ativa e desenhamos experiências que respeitam ritmos diversos.</p>
+            <!-- FIM BLOCO TEXTO COMPLEXIDADE -->
+          </div>
+          <div class="section-card p-8 font-semibold">
+            <h3 class="font-display text-2xl uppercase text-background">Regenerar relações</h3>
+            <!-- INÍCIO BLOCO TEXTO RELAÇÕES -->
+            <p class="mt-3 text-sm text-slate-600">Reaprendemos a cooperar com a natureza, com as comunidades e com nós mesmos para que todos possam prosperar.</p>
+            <!-- FIM BLOCO TEXTO RELAÇÕES -->
+          </div>
+        </div>
+        
+      </article>
+    </section>
+    <!-- FIM BLOCO MANIFESTO TEXTO -->
+  </main>
+
+  <footer class="bg-background py-10 text-foreground">
+    <div class="mx-auto flex max-w-6xl flex-col gap-6 px-4 text-sm text-foreground/70 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+      <p>&copy; <span id="ano-footer">2024</span> ;paradigma. Todos os direitos reservados.</p>
+      <div class="flex items-center gap-4">
+        <a class="focus-visible transition hover:text-foreground" href="https://instagram.com" aria-label="Instagram">Instagram</a>
+        <a class="focus-visible transition hover:text-foreground" href="https://www.youtube.com" aria-label="YouTube">YouTube</a>
+        <a class="focus-visible transition hover:text-foreground" href="https://www.linkedin.com" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- <script data-analytics-script src="https://analytics.example.com/tracker.js"></script> -->
+  <script src="/assets/js/main.js" defer></script>
+  <script>
+    const anoFooter = document.getElementById('ano-footer');
+    if (anoFooter) {
+      anoFooter.textContent = new Date().getFullYear().toString();
+    }
+  </script>
+</body>
+</html>
