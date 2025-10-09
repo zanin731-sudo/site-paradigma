@@ -16,6 +16,18 @@ header {
   z-index: 50;
 }
 
+[data-menu-button] {
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+
+[data-menu-button]:hover,
+[data-menu-button]:focus-visible,
+[data-menu-button][aria-expanded="true"] {
+  background-color: rgba(68, 159, 96, 0.18);
+  border-color: rgba(68, 159, 96, 0.5);
+  color: var(--color-accent);
+}
+
 [data-overlay] {
   pointer-events: none;
   z-index: 40;
