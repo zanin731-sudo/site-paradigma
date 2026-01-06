@@ -23,6 +23,40 @@ html.js-enabled [data-price][data-price-active="true"] {
   color: var(--color-background);
 }
 
+.price-stack {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.price-box {
+  border-radius: 1.25rem;
+  border: 1px solid rgba(46, 91, 68, 0.2);
+  background: rgba(46, 91, 68, 0.08);
+  padding: 1rem 1.25rem;
+}
+
+.price-box__label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: #2e5b44;
+}
+
+.price-box__value {
+  margin-top: 0.4rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #000000;
+}
+
+.price-box__value span {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-left: 0.25rem;
+  color: #2e5b44;
+}
+
 .soma-details summary {
   list-style: none;
   cursor: pointer;
