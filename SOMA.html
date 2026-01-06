@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>;paradigma | SOMA — método de acompanhamento em saúde e movimento</title>
+  <meta name="description" content="SOMA é o método ;pdg para acompanhamento em saúde, movimento e autonomia com camadas claras, objetivos reais e ajustes contínuos." />
+  <meta property="og:title" content="SOMA — acompanhamento em saúde e movimento" />
+  <meta property="og:description" content="Menos promessa, mais mapa. Conheça a SOMA e escolha o plano ideal para sua rotina." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://site-paradigma.local/SOMA.html" />
+  <meta property="og:image" content="https://site-paradigma.local/assets/img/hero-overlay.svg" />
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#000000',
+            foreground: '#ffffff',
+            muted: '#f0f0f0',
+            accent: '#449f60',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'system-ui', 'sans-serif'],
+            display: ['League Gothic', 'Poppins', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="stylesheet" href="/assets/css/soma.css" />
+
+  <!-- 🔰 META PIXEL BASE CODE -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0';
+    n.queue=[]; t=b.createElement(e); t.async=!0;
+    t.src=v; s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}
+    (window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1462444431685846');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=1462444431685846&ev=PageView&noscript=1" />
+  </noscript>
+</head>
+<body class="bg-muted font-sans text-slate-900" data-analytics="site-paradigma">
+  <div class="fixed inset-0 bg-black/60 hidden" data-overlay aria-hidden="true"></div>
+  <header class="bg-background text-foreground" role="banner">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 lg:px-8">
+      <a href="/" class="font-display text-3xl uppercase tracking-[0.35em] focus-visible">;paradigma</a>
+      <button
+        type="button"
+        class="focus-visible inline-flex items-center justify-center rounded-md border border-white/20 p-2 text-white lg:hidden"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        data-menu-button
+      >
+        <span class="sr-only">Abrir menu</span>
+        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5M3.75 12h16.5M3.75 18.75h16.5" />
+        </svg>
+      </button>
+      <nav class="hidden flex-1 justify-end gap-8 text-sm font-medium lg:flex" data-nav data-nav-desktop aria-label="Menu principal">
+        <a class="focus-visible transition hover:text-accent" href="/">Home</a>
+        <a class="focus-visible transition hover:text-accent" href="/manifesto.html">Manifesto</a>
+        <a class="focus-visible transition hover:text-accent" href="/conteudos.html">Conteúdos</a>
+        <a class="focus-visible transition hover:text-accent" href="/sobre.html">Sobre</a>
+        <a class="focus-visible transition hover:text-accent" href="/produtos.html">Produções</a>
+      </nav>
+    </div>
+    <nav class="hidden border-t border-white/10 bg-background px-4 pb-6 pt-4 lg:hidden" data-nav data-nav-mobile aria-label="Menu principal móvel">
+      <ul class="space-y-2 text-lg font-medium">
+        <li><a class="focus-visible mobile-nav__link block rounded-md px-2 py-2 transition" href="/">Home</a></li>
+        <li><a class="focus-visible mobile-nav__link block rounded-md px-2 py-2 transition" href="/manifesto.html">Manifesto</a></li>
+        <li><a class="focus-visible mobile-nav__link block rounded-md px-2 py-2 transition" href="/conteudos.html">Conteúdos</a></li>
+        <li><a class="focus-visible mobile-nav__link block rounded-md px-2 py-2 transition" href="/sobre.html">Sobre</a></li>
+        <li><a class="focus-visible mobile-nav__link block rounded-md px-2 py-2 transition" href="/produtos.html">Produções</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo-principal">
+    <section class="relative overflow-hidden bg-background text-foreground" aria-labelledby="hero-heading">
+      <div class="absolute inset-0">
+        <img src="/assets/img/hero-overlay.svg" alt="Texturas orgânicas e formas abstratas" class="h-full w-full object-cover" />
+        <div class="absolute inset-0 bg-black/80 mix-blend-multiply" aria-hidden="true"></div>
+      </div>
+      <div class="relative mx-auto flex max-w-6xl flex-col gap-10 px-4 pt-16 pb-24 lg:flex-row lg:items-center lg:px-8">
+        <div class="max-w-2xl space-y-6">
+          <p class="font-semibold uppercase tracking-[0.35em] text-accent">SOMA</p>
+          <h1 id="hero-heading" class="font-display text-5xl uppercase leading-tight text-white sm:text-6xl lg:text-7xl">
+            Clareza, autonomia e método para cuidar do corpo que você tem hoje.
+          </h1>
+          <p class="text-lg text-white/80">
+            A SOMA é o acompanhamento integrativo da ;pdg: menos promessa, mais mapa. Um método crítico e realista para organizar saúde,
+            movimento e autonomia com ajuste contínuo.
+          </p>
+          <div class="flex flex-col gap-4 sm:flex-row">
+            <a
+              class="focus-visible inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-background transition hover:bg-white"
+              href="#planos"
+              data-scroll-target="#planos"
+            >
+              Ver planos
+            </a>
+            <a
+              class="focus-visible inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:border-white hover:bg-white/10"
+              href="/contato.html"
+            >
+              Quero conversar
+            </a>
+          </div>
+        </div>
+        <div class="max-w-md rounded-3xl border border-white/10 bg-white/5 p-6 text-white/80">
+          <p class="text-xs uppercase tracking-[0.35em] text-accent">Mapa em camadas</p>
+          <h2 class="mt-4 font-display text-3xl uppercase text-white">Acompanhamento sem ruído</h2>
+          <p class="mt-4 text-sm">
+            Avaliamos segurança, capacidade atual, regulação, comportamento e morfologia para construir um plano prático e ajustar o que
+            funciona na sua rotina real.
+          </p>
+        </div>
+      </div>
+    </section>
+    <div data-sticky-sentinel aria-hidden="true"></div>
+
+    <section class="mx-auto max-w-6xl px-4 py-16 lg:px-8" aria-labelledby="soma-heading">
+      <div class="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+        <div class="space-y-6">
+          <p class="text-xs font-semibold uppercase tracking-[0.35em] text-accent">O que é a SOMA</p>
+          <h2 id="soma-heading" class="font-display text-4xl uppercase text-background">Método de acompanhamento em saúde, movimento e autonomia.</h2>
+          <p class="text-base text-slate-700">
+            A SOMA organiza o cuidado em etapas claras: começamos pela segurança e pela capacidade atual, passamos por regulação e comportamento,
+            e só então avançamos para o desenho do plano. Isso reduz ruído, deixa o corpo previsível e protege a sua energia.
+          </p>
+          <p class="text-base text-slate-700">
+            É um processo contínuo de avaliação, prática e ajuste. Você ganha direção, consistência e educação para decidir com consciência —
+            sem promessas milagrosas e sem atalhos perigosos.
+          </p>
+        </div>
+        <div class="section-card p-6">
+          <h3 class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">O acompanhamento resolve</h3>
+          <ul class="mt-4 space-y-3 text-sm text-slate-600">
+            <li class="flex gap-2"><span class="text-accent">•</span>Organização da rotina de treino e autocuidado.</li>
+            <li class="flex gap-2"><span class="text-accent">•</span>Direção para evoluir sem ruído ou excesso de estímulos.</li>
+            <li class="flex gap-2"><span class="text-accent">•</span>Consistência com ajustes realistas.</li>
+            <li class="flex gap-2"><span class="text-accent">•</span>Manejo de dor e limitações quando necessário.</li>
+            <li class="flex gap-2"><span class="text-accent">•</span>Autonomia para sustentar o processo no longo prazo.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-16" aria-labelledby="camadas-heading">
+      <div class="mx-auto max-w-6xl px-4 lg:px-8">
+        <div class="flex flex-col gap-10 lg:flex-row lg:items-start">
+          <div class="max-w-xl space-y-4">
+            <p class="text-xs font-semibold uppercase tracking-[0.35em] text-accent">Como a SOMA funciona</p>
+            <h2 id="camadas-heading" class="font-display text-4xl uppercase text-background">Camadas de avaliação que viram ações.</h2>
+            <p class="text-base text-slate-600">
+              Cada camada responde a uma pergunta-chave. Ao revelar o que é seguro, possível e sustentável, construímos um plano que respeita
+              seu corpo e seu contexto.
+            </p>
+          </div>
+          <div class="flex-1 space-y-4">
+            <details class="soma-details rounded-2xl border border-slate-200 bg-muted/40 p-5">
+              <summary class="focus-visible text-lg font-semibold text-background">1. Segurança / Red Flags</summary>
+              <p class="mt-3 text-sm text-slate-600">Identificamos sinais de alerta antes de avançar. Ex: dor aguda que precisa de avaliação médica.</p>
+            </details>
+            <details class="soma-details rounded-2xl border border-slate-200 bg-muted/40 p-5">
+              <summary class="focus-visible text-lg font-semibold text-background">2. Capacidade Atual</summary>
+              <p class="mt-3 text-sm text-slate-600">Mapeamos o que você consegue hoje. Ex: quanto tempo aguenta em uma caminhada sem piorar sintomas.</p>
+            </details>
+            <details class="soma-details rounded-2xl border border-slate-200 bg-muted/40 p-5">
+              <summary class="focus-visible text-lg font-semibold text-background">3. Regulação</summary>
+              <p class="mt-3 text-sm text-slate-600">Observamos recuperação, sono e estresse. Ex: ajustar treino após semanas de baixa energia.</p>
+            </details>
+            <details class="soma-details rounded-2xl border border-slate-200 bg-muted/40 p-5">
+              <summary class="focus-visible text-lg font-semibold text-background">4. Comportamento e Contexto</summary>
+              <p class="mt-3 text-sm text-slate-600">Entendemos hábitos, agenda e ambiente. Ex: treinos curtos quando a rotina é instável.</p>
+            </details>
+            <details class="soma-details rounded-2xl border border-slate-200 bg-muted/40 p-5">
+              <summary class="focus-visible text-lg font-semibold text-background">5. Morfologia e Restrições</summary>
+              <p class="mt-3 text-sm text-slate-600">Consideramos estrutura corporal e limitações. Ex: adaptar exercícios para ombro sensível.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-4 py-16 lg:px-8" aria-labelledby="objetivos-heading">
+      <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <div class="space-y-4">
+          <p class="text-xs font-semibold uppercase tracking-[0.35em] text-accent">Objetivos</p>
+          <h2 id="objetivos-heading" class="font-display text-4xl uppercase text-background">Curto, médio e longo prazo sem datas rígidas.</h2>
+          <p class="text-base text-slate-700">
+            Na SOMA, objetivos não são promessas. São marcos claros de processo: o foco é construir capacidade, ajustar comportamento e sustentar
+            o que funciona.
+          </p>
+          <div class="rounded-2xl border border-slate-200 bg-white p-5">
+            <h3 class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">O que muda quando você tem um mapa</h3>
+            <p class="mt-3 text-sm text-slate-600">
+              Você sabe o que treinar, quando ajustar e como interpretar sinais do corpo. Resultado: menos ansiedade, mais autonomia.
+            </p>
+          </div>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-3">
+          <article class="section-card p-5">
+            <h3 class="font-display text-2xl uppercase text-background">Curto</h3>
+            <p class="mt-2 text-sm text-slate-600">Organizar rotina, reduzir ruído e garantir segurança.</p>
+          </article>
+          <article class="section-card p-5">
+            <h3 class="font-display text-2xl uppercase text-background">Médio</h3>
+            <p class="mt-2 text-sm text-slate-600">Ganhar consistência, aumentar capacidade e regular energia.</p>
+          </article>
+          <article class="section-card p-5">
+            <h3 class="font-display text-2xl uppercase text-background">Longo</h3>
+            <p class="mt-2 text-sm text-slate-600">Sustentar autonomia com ajustes contínuos e evolução segura.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-16" aria-labelledby="acompanhamento-heading">
+      <div class="mx-auto max-w-6xl px-4 lg:px-8">
+        <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+          <div class="space-y-4">
+            <p class="text-xs font-semibold uppercase tracking-[0.35em] text-accent">Acompanhamento e ajustes</p>
+            <h2 id="acompanhamento-heading" class="font-display text-4xl uppercase text-background">Plano prático + monitoramento cíclico.</h2>
+            <p class="text-base text-slate-700">
+              Depois da avaliação, você recebe um plano claro de treino e autocuidado. Acompanhamos o processo com ciclos de monitoramento e
+              ajustes para manter o corpo em movimento e longe de extremos.
+            </p>
+            <p class="text-base text-slate-700">
+              A educação contínua faz parte do método: você entende o porquê de cada ajuste e ganha autonomia para manter o ritmo mesmo quando
+              a rotina muda.
+            </p>
+          </div>
+          <div class="space-y-4">
+            <div class="rounded-2xl border border-slate-200 bg-muted/40 p-5">
+              <h3 class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">BLOCO 3 — Plano Prático</h3>
+              <p class="mt-3 text-sm text-slate-600">Treino personalizado, protocolos complementares e rotina realista.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-200 bg-muted/40 p-5">
+              <h3 class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">BLOCO 4 — Monitoramento</h3>
+              <p class="mt-3 text-sm text-slate-600">Check-ins, ajustes e educação para manter o processo vivo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-4 py-16 lg:px-8" aria-labelledby="quiz-heading">
+      <div class="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start">
+        <div class="space-y-4">
+          <p class="text-xs font-semibold uppercase tracking-[0.35em] text-accent">Mini-quiz</p>
+          <h2 id="quiz-heading" class="font-display text-4xl uppercase text-background">Qual plano combina com você?</h2>
+          <p class="text-base text-slate-700">
+            Responda 3 perguntas rápidas e receba uma recomendação inicial. Você pode ajustar com a equipe depois — o mapa é sempre personalizado.
+          </p>
+        </div>
+        <form class="space-y-6 rounded-3xl border border-slate-200 bg-white p-6" data-plan-quiz>
+          <fieldset class="space-y-3" data-question>
+            <legend class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">1. Nível de acompanhamento</legend>
+            <label class="flex cursor-pointer items-start gap-3 text-sm text-slate-700">
+              <input class="mt-1" type="radio" name="nivel" value="assessoria" />
+              Autonomia com plano e suporte pontual.
+            </label>
+            <label class="flex cursor-pointer items-start gap-3 text-sm text-slate-700">
+              <input class="mt-1" type="radio" name="nivel" value="ao-vivo" />
+              Encontros semanais para acompanhamento constante.
+            </label>
+            <label class="flex cursor-pointer items-start gap-3 text-sm text-slate-700">
+              <input class="mt-1" type="radio" name="nivel" value="performance" />
+              Acompanhamento frequente para performance e metas ambiciosas.
+            </label>
+          </fieldset>
+          <fieldset class="space-y-3" data-question>
+            <legend class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">2. Formato de atendimento</legend>
+            <label class="flex cursor-pointer items-start gap-3 text-sm text-slate-700">
+              <input class="mt-1" type="radio" name="formato" value="remoto" />
+              Prefiro treinar no remoto.
+            </label>
+            <label class="flex cursor-pointer items-start gap-3 text-sm text-slate-700">
+              <input class="mt-1" type="radio" name="formato" value="presencial" />
+              Quero atendimento presencial.
+            </label>
+          </fieldset>
+          <fieldset class="space-y-3" data-question>
+            <legend class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">3. Frequência semanal</legend>
+            <label class="flex cursor-pointer items-start gap-3 text-sm text-slate-700">
+              <input class="mt-1" type="radio" name="frequencia" value="1x" />
+              1x por semana.
+            </label>
+            <label class="flex cursor-pointer items-start gap-3 text-sm text-slate-700">
+              <input class="mt-1" type="radio" name="frequencia" value="2x" />
+              2x por semana.
+            </label>
+            <label class="flex cursor-pointer items-start gap-3 text-sm text-slate-700">
+              <input class="mt-1" type="radio" name="frequencia" value="3x" />
+              3x por semana.
+            </label>
+          </fieldset>
+          <button type="submit" class="focus-visible w-full rounded-full bg-background px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-accent">
+            Ver recomendação
+          </button>
+          <div class="rounded-2xl border border-slate-200 bg-muted/60 p-4 text-sm text-slate-700" data-quiz-result aria-live="polite">
+            <p class="font-semibold text-background" data-quiz-result-title>Preencha o quiz para ver a recomendação.</p>
+            <p class="mt-2" data-quiz-result-text>Sem coleta de dados. A resposta é apenas um ponto de partida.</p>
+            <a class="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-accent" data-quiz-result-link href="#planos">
+              Ver todos os planos
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="bg-white py-16" aria-labelledby="planos-heading" id="planos">
+      <div class="mx-auto max-w-6xl px-4 lg:px-8">
+        <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div class="space-y-3">
+            <p class="text-xs font-semibold uppercase tracking-[0.35em] text-accent">Planos SOMA</p>
+            <h2 id="planos-heading" class="font-display text-4xl uppercase text-background">Escolha o ritmo certo para você.</h2>
+            <p class="text-base text-slate-600">Use o toggle para comparar valores trimestrais e semestrais.</p>
+          </div>
+          <fieldset class="price-toggle flex items-center gap-3 rounded-full border border-slate-200 bg-muted/70 p-2" data-price-toggle>
+            <legend class="sr-only">Selecionar período de contratação</legend>
+            <input class="sr-only" type="radio" name="periodo" id="periodo-tri" value="trimestral" checked />
+            <label class="price-toggle__option" for="periodo-tri">Trimestral</label>
+            <input class="sr-only" type="radio" name="periodo" id="periodo-sem" value="semestral" />
+            <label class="price-toggle__option" for="periodo-sem">Semestral</label>
+          </fieldset>
+        </div>
+
+        <div class="mt-10 grid gap-6 lg:grid-cols-3">
+          <article class="section-card flex h-full flex-col gap-6 p-6" id="plano-assessoria">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Assessoria</p>
+              <h3 class="mt-3 font-display text-3xl uppercase text-background">SOMA (Plano Base)</h3>
+              <p class="mt-3 text-sm text-slate-600">Para pessoas ativas, sem dor significativa, que buscam organização, clareza e autonomia.</p>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li>• Avaliação integrada remota (educador físico + fisioterapeuta).</li>
+              <li>• Planilha de treino personalizada.</li>
+              <li>• Protocolo complementar (mobilidade, prevenção).</li>
+              <li>• Suporte via WhatsApp (reativo).</li>
+              <li>• Acesso ao App MFIT.</li>
+            </ul>
+            <div class="rounded-2xl border border-slate-200 bg-muted/70 p-4">
+              <div data-price="trimestral">
+                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Trimestral</p>
+                <p class="mt-2 text-3xl font-semibold text-background">R$ 249<span class="text-base font-medium">/mês</span></p>
+              </div>
+              <div data-price="semestral">
+                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Semestral</p>
+                <p class="mt-2 text-3xl font-semibold text-background">R$ 219<span class="text-base font-medium">/mês</span></p>
+              </div>
+            </div>
+            <a class="focus-visible mt-auto inline-flex items-center justify-center rounded-full bg-background px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-accent" href="#cta-final">
+              Escolher este plano
+            </a>
+          </article>
+
+          <article class="section-card flex h-full flex-col gap-6 p-6" id="plano-remoto-essencial">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Remoto</p>
+              <h3 class="mt-3 font-display text-3xl uppercase text-background">Essencial+</h3>
+              <p class="mt-3 text-sm text-slate-600">Para quem quer acompanhamento semanal com equipe integrada no remoto.</p>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li>• Personal 1x/semana.</li>
+              <li>• Fisio remota 1x/mês.</li>
+              <li>• Plano de treino e ajustes contínuos.</li>
+              <li>• Suporte via WhatsApp.</li>
+              <li>• Acesso ao App MFIT.</li>
+            </ul>
+            <div class="rounded-2xl border border-slate-200 bg-muted/70 p-4">
+              <div data-price="trimestral">
+                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Trimestral</p>
+                <p class="mt-2 text-3xl font-semibold text-background">R$ 420<span class="text-base font-medium">/mês</span></p>
+              </div>
+              <div data-price="semestral">
+                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Semestral</p>
+                <p class="mt-2 text-3xl font-semibold text-background">R$ 390<span class="text-base font-medium">/mês</span></p>
+              </div>
+            </div>
+            <a class="focus-visible mt-auto inline-flex items-center justify-center rounded-full bg-background px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-accent" href="#cta-final">
+              Escolher este plano
+            </a>
+          </article>
+
+          <article class="section-card flex h-full flex-col gap-6 p-6" id="plano-remoto-integrado">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Remoto</p>
+              <h3 class="mt-3 font-display text-3xl uppercase text-background">Integrado+</h3>
+              <p class="mt-3 text-sm text-slate-600">Para quem busca evolução consistente com dois encontros semanais.</p>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li>• Personal 2x/semana.</li>
+              <li>• Fisio remota 2x/mês.</li>
+              <li>• Plano de treino estruturado.</li>
+              <li>• Suporte via WhatsApp.</li>
+              <li>• Acesso ao App MFIT.</li>
+            </ul>
+            <div class="rounded-2xl border border-slate-200 bg-muted/70 p-4">
+              <div data-price="trimestral">
+                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Trimestral</p>
+                <p class="mt-2 text-3xl font-semibold text-background">R$ 820<span class="text-base font-medium">/mês</span></p>
+              </div>
+              <div data-price="semestral">
+                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Semestral</p>
+                <p class="mt-2 text-3xl font-semibold text-background">R$ 780<span class="text-base font-medium">/mês</span></p>
+              </div>
+            </div>
+            <a class="focus-visible mt-auto inline-flex items-center justify-center rounded-full bg-background px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-accent" href="#cta-final">
+              Escolher este plano
+            </a>
+          </article>
+
+          <article class="section-card flex h-full flex-col gap-6 p-6" id="plano-remoto-performance">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Remoto</p>
+              <h3 class="mt-3 font-display text-3xl uppercase text-background">Performance+</h3>
+              <p class="mt-3 text-sm text-slate-600">Para quem precisa de acompanhamento intenso e foco em performance.</p>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li>• Personal 3x/semana.</li>
+              <li>• Fisio remota 4x/mês.</li>
+              <li>• Ajustes semanais.</li>
+              <li>• Suporte via WhatsApp.</li>
+              <li>• Acesso ao App MFIT.</li>
+            </ul>
+            <div class="rounded-2xl border border-slate-200 bg-muted/70 p-4">
+              <div data-price="trimestral">
+                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Trimestral</p>
+                <p class="mt-2 text-3xl font-semibold text-background">R$ 1.290<span class="text-base font-medium">/mês</span></p>
+              </div>
+              <div data-price="semestral">
+                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Semestral</p>
+                <p class="mt-2 text-3xl font-semibold text-background">R$ 1.220<span class="text-base font-medium">/mês</span></p>
+              </div>
+            </div>
+            <a class="focus-visible mt-auto inline-flex items-center justify-center rounded-full bg-background px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-accent" href="#cta-final">
+              Escolher este plano
+            </a>
+          </article>
+
+          <article class="section-card flex h-full flex-col gap-6 p-6" id="plano-presencial-essencial">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Presencial</p>
+              <h3 class="mt-3 font-display text-3xl uppercase text-background">Essencial+</h3>
+              <p class="mt-3 text-sm text-slate-600">Para quem quer acompanhamento presencial com check-ins mensais.</p>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li>• Personal 1x/semana.</li>
+              <li>• Fisio presencial 1x/mês.</li>
+              <li>• Ajustes personalizados.</li>
+              <li>• Suporte via WhatsApp.</li>
+              <li>• Acesso ao App MFIT.</li>
+            </ul>
+            <div class="rounded-2xl border border-slate-200 bg-muted/70 p-4">
+              <div data-price="trimestral">
+                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Trimestral</p>
+                <p class="mt-2 text-3xl font-semibold text-background">R$ 549<span class="text-base font-medium">/mês</span></p>
+              </div>
+              <div data-price="semestral">
+                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Semestral</p>
+                <p class="mt-2 text-3xl font-semibold text-background">R$ 520<span class="text-base font-medium">/mês</span></p>
+              </div>
+            </div>
+            <a class="focus-visible mt-auto inline-flex items-center justify-center rounded-full bg-background px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-accent" href="#cta-final">
+              Escolher este plano
+            </a>
+          </article>
+
+          <article class="section-card flex h-full flex-col gap-6 p-6" id="plano-presencial-integrado">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Presencial</p>
+              <h3 class="mt-3 font-display text-3xl uppercase text-background">Integrado+</h3>
+              <p class="mt-3 text-sm text-slate-600">Para quem quer presença constante da equipe e evolução segura.</p>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li>• Personal 2x/semana.</li>
+              <li>• Fisio presencial 2x/mês.</li>
+              <li>• Ajustes quinzenais.</li>
+              <li>• Suporte via WhatsApp.</li>
+              <li>• Acesso ao App MFIT.</li>
+            </ul>
+            <div class="rounded-2xl border border-slate-200 bg-muted/70 p-4">
+              <div data-price="trimestral">
+                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Trimestral</p>
+                <p class="mt-2 text-3xl font-semibold text-background">R$ 1.080<span class="text-base font-medium">/mês</span></p>
+              </div>
+              <div data-price="semestral">
+                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Semestral</p>
+                <p class="mt-2 text-3xl font-semibold text-background">R$ 1.040<span class="text-base font-medium">/mês</span></p>
+              </div>
+            </div>
+            <a class="focus-visible mt-auto inline-flex items-center justify-center rounded-full bg-background px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-accent" href="#cta-final">
+              Escolher este plano
+            </a>
+          </article>
+
+          <article class="section-card flex h-full flex-col gap-6 p-6" id="plano-presencial-performance">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Presencial</p>
+              <h3 class="mt-3 font-display text-3xl uppercase text-background">Performance+</h3>
+              <p class="mt-3 text-sm text-slate-600">Para quem quer máxima intensidade e ajustes presenciais frequentes.</p>
+            </div>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li>• Personal 3x/semana.</li>
+              <li>• Fisio presencial 3x/mês.</li>
+              <li>• Ajustes semanais.</li>
+              <li>• Suporte via WhatsApp.</li>
+              <li>• Acesso ao App MFIT.</li>
+            </ul>
+            <div class="rounded-2xl border border-slate-200 bg-muted/70 p-4">
+              <div data-price="trimestral">
+                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Trimestral</p>
+                <p class="mt-2 text-3xl font-semibold text-background">R$ 1.620<span class="text-base font-medium">/mês</span></p>
+              </div>
+              <div data-price="semestral">
+                <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Semestral</p>
+                <p class="mt-2 text-3xl font-semibold text-background">R$ 1.550<span class="text-base font-medium">/mês</span></p>
+              </div>
+            </div>
+            <a class="focus-visible mt-auto inline-flex items-center justify-center rounded-full bg-background px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-accent" href="#cta-final">
+              Escolher este plano
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-4 py-16 lg:px-8" aria-labelledby="faq-heading" id="faq">
+      <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <div class="space-y-4">
+          <p class="text-xs font-semibold uppercase tracking-[0.35em] text-accent">FAQ</p>
+          <h2 id="faq-heading" class="font-display text-4xl uppercase text-background">Dúvidas comuns antes de começar.</h2>
+          <p class="text-base text-slate-700">Se algo ainda ficar aberto, fale com a equipe para definir o plano certo.</p>
+        </div>
+        <div class="space-y-4">
+          <details class="soma-details rounded-2xl border border-slate-200 bg-white p-5">
+            <summary class="focus-visible text-base font-semibold text-background">Qual a diferença entre a Assessoria e os planos +?</summary>
+            <p class="mt-3 text-sm text-slate-600">A Assessoria oferece plano e suporte reativo. Os planos + incluem encontros ao vivo com personal e fisioterapia.</p>
+          </details>
+          <details class="soma-details rounded-2xl border border-slate-200 bg-white p-5">
+            <summary class="focus-visible text-base font-semibold text-background">Preciso ter dor para entrar?</summary>
+            <p class="mt-3 text-sm text-slate-600">Não. A SOMA serve para organização, prevenção e evolução segura — inclusive sem dor.</p>
+          </details>
+          <details class="soma-details rounded-2xl border border-slate-200 bg-white p-5">
+            <summary class="focus-visible text-base font-semibold text-background">E se eu estiver em crise ou com medo de treinar?</summary>
+            <p class="mt-3 text-sm text-slate-600">Começamos pela camada de segurança e ajustamos o plano para reduzir risco e ansiedade.</p>
+          </details>
+          <details class="soma-details rounded-2xl border border-slate-200 bg-white p-5">
+            <summary class="focus-visible text-base font-semibold text-background">Como funciona o suporte?</summary>
+            <p class="mt-3 text-sm text-slate-600">Você recebe canais diretos (WhatsApp) para dúvidas e ajustes conforme seu plano.</p>
+          </details>
+          <details class="soma-details rounded-2xl border border-slate-200 bg-white p-5">
+            <summary class="focus-visible text-base font-semibold text-background">Preciso de academia?</summary>
+            <p class="mt-3 text-sm text-slate-600">Não necessariamente. Adaptamos o plano ao seu contexto e recursos disponíveis.</p>
+          </details>
+          <details class="soma-details rounded-2xl border border-slate-200 bg-white p-5">
+            <summary class="focus-visible text-base font-semibold text-background">Como é a avaliação integrada?</summary>
+            <p class="mt-3 text-sm text-slate-600">É feita por educador físico e fisioterapeuta, cruzando dados de segurança, capacidade e comportamento.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-16" aria-labelledby="credibilidade-heading">
+      <div class="mx-auto max-w-6xl px-4 lg:px-8">
+        <div class="space-y-8">
+          <div class="space-y-4">
+            <p class="text-xs font-semibold uppercase tracking-[0.35em] text-accent">Prova e credibilidade</p>
+            <h2 id="credibilidade-heading" class="font-display text-4xl uppercase text-background">O que você pode esperar nas primeiras semanas</h2>
+          </div>
+          <div class="grid gap-6 lg:grid-cols-3">
+            <article class="section-card p-6">
+              <h3 class="font-display text-2xl uppercase text-background">Primeiros ajustes</h3>
+              <p class="mt-3 text-sm text-slate-600">Rotina organizada, sinais de segurança definidos e plano claro para executar.</p>
+            </article>
+            <article class="section-card p-6">
+              <h3 class="font-display text-2xl uppercase text-background">Sinais de progresso</h3>
+              <p class="mt-3 text-sm text-slate-600">Mais consistência, menos medo de errar e melhor leitura dos sinais do corpo.</p>
+            </article>
+            <article class="section-card p-6">
+              <h3 class="font-display text-2xl uppercase text-background">Quem cuida</h3>
+              <p class="mt-3 text-sm text-slate-600">Equipe integrada de educação física e fisioterapia.</p>
+              <a class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-accent" href="/sobre.html">
+                Conheça a equipe
+                <span aria-hidden="true">→</span>
+              </a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-4 py-16 lg:px-8" aria-labelledby="cta-heading" id="cta-final">
+      <div class="section-card--dark rounded-3xl bg-background p-10 text-center text-foreground">
+        <h2 id="cta-heading" class="font-display text-4xl uppercase text-white">Pronto para começar com um mapa real?</h2>
+        <p class="mt-4 text-base text-white/80">Escolha seu plano e fale com a equipe para ajustar tudo ao seu contexto.</p>
+        <div class="mt-6 flex flex-col justify-center gap-4 sm:flex-row">
+          <a class="focus-visible inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-background transition hover:bg-white" href="#planos">
+            Escolha seu plano
+          </a>
+          <a class="focus-visible inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:border-white hover:bg-white/10" href="/contato.html">
+            Falar com a equipe
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="sticky-cta sm:hidden" data-sticky-cta aria-hidden="true">
+    <a class="focus-visible flex-1 rounded-full bg-accent px-4 py-3 text-center text-sm font-semibold uppercase tracking-[0.2em] text-background" href="#planos" data-scroll-target="#planos">Ver planos</a>
+    <a class="focus-visible flex-1 rounded-full border border-white/40 px-4 py-3 text-center text-sm font-semibold uppercase tracking-[0.2em] text-white" href="/contato.html">Quero conversar</a>
+  </div>
+
+  <footer class="bg-background py-12 text-white" role="contentinfo">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 lg:grid-cols-[1fr_auto] lg:items-center lg:px-8">
+      <div class="space-y-6">
+        <a href="/" class="font-display text-3xl uppercase tracking-[0.35em] text-white focus-visible">;paradigma</a>
+        <p class="text-sm text-white/70">;paradigma — ciência, natureza, humanidade.</p>
+      </div>
+      <div class="grid gap-6 text-sm lg:text-right">
+        <nav aria-label="Links institucionais" class="flex flex-wrap justify-start gap-x-6 gap-y-2 lg:justify-end">
+          <a class="focus-visible transition hover:text-accent" href="/manifesto.html">Manifesto</a>
+          <a class="focus-visible transition hover:text-accent" href="/conteudos.html">Conteúdos</a>
+          <a class="focus-visible transition hover:text-accent" href="/sobre.html">Sobre</a>
+        </nav>
+        <div class="flex items-center justify-start gap-4 lg:justify-end" aria-label="Redes sociais">
+          <a class="focus-visible text-white transition hover:text-accent" href="https://instagram.com" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true">
+              <path
+                d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.75a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5Zm0 2a3.25 3.25 0 1 0 0 6.5 3.25 3.25 0 0 0 0-6.5Zm6.5-.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z"
+              />
+            </svg>
+          </a>
+          <a class="focus-visible text-white transition hover:text-accent" href="https://www.tiktok.com" aria-label="TikTok">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true">
+              <path
+                d="M15.5 2a5.5 5.5 0 0 0 3.5 5.1V11a6.5 6.5 0 1 1-7.7-6.4V7a3.5 3.5 0 1 0 2.2 3.2V2h2Z"
+              />
+            </svg>
+          </a>
+          <a class="focus-visible text-white transition hover:text-accent" href="#planos" data-scroll-target="#planos" aria-label="Planos SOMA">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true">
+              <path d="M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14l-5.5-4h-8A2.5 2.5 0 0 1 5 12.5v-1l7 4 7-4V5H5v7.5a.5.5 0 0 0 .5.5h8l4.5 3V14l-5.5-3.142L3 8V5Z" />
+            </svg>
+          </a>
+        </div>
+        <p class="text-xs text-white/60">&copy; <span id="ano-footer">2024</span> ;paradigma. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/soma.js" defer></script>
+</body>
+</html>

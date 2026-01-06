@@ -1,0 +1,76 @@
+html.js-enabled [data-price] {
+  display: none;
+}
+
+html.js-enabled [data-price][data-price-active="true"] {
+  display: block;
+}
+
+.price-toggle__option {
+  cursor: pointer;
+  border-radius: 9999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: inherit;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.price-toggle__option.is-active {
+  background-color: var(--color-accent);
+  color: var(--color-background);
+}
+
+.soma-details summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.soma-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.soma-details summary::after {
+  content: '+';
+  font-weight: 600;
+  margin-left: 1rem;
+  color: var(--color-accent);
+  transition: transform 150ms ease;
+}
+
+.soma-details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.sticky-cta {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 9999px;
+  background: rgba(0, 0, 0, 0.88);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.35);
+  transform: translateY(140%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 200ms ease, opacity 200ms ease;
+  z-index: 60;
+}
+
+.sticky-cta.is-visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sticky-cta a {
+  white-space: nowrap;
+}
