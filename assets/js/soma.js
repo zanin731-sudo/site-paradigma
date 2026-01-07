@@ -25,10 +25,11 @@
     });
   });
 
-  const priceToggle = document.querySelector('[data-price-toggle]');
-  if (priceToggle) {
+  const planosSection = document.getElementById('planos');
+  const priceToggle = planosSection ? planosSection.querySelector('[data-price-toggle]') : null;
+  if (priceToggle && planosSection) {
     const radioInputs = Array.from(priceToggle.querySelectorAll('input[type="radio"]'));
-    const priceItems = Array.from(document.querySelectorAll('[data-price]'));
+    const priceItems = Array.from(planosSection.querySelectorAll('[data-price]'));
     const labels = Array.from(priceToggle.querySelectorAll('.price-toggle__option'));
 
     const setActiveLabel = (value) => {
@@ -41,6 +42,7 @@
     };
 
     const updatePrices = (value) => {
+      planosSection.setAttribute('data-price', value);
       priceItems.forEach((item) => {
         const isActive = item.getAttribute('data-price') === value;
         item.setAttribute('data-price-active', isActive ? 'true' : 'false');
