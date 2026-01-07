@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>;paradigma | SOMA — método de acompanhamento em saúde e movimento</title>
-  <meta name="description" content="SOMA é o método ;pdg para acompanhamento em saúde, movimento e autonomia com camadas claras, objetivos reais e ajustes contínuos." />
+  <meta name="description" content="SOMA é um método de treino e recuperação em um único acompanhamento, com cuidado integrado e ajustes contínuos." />
   <meta property="og:title" content="SOMA — acompanhamento em saúde e movimento" />
-  <meta property="og:description" content="Menos promessa, mais mapa. Conheça a SOMA e escolha o plano ideal para sua rotina." />
+  <meta property="og:description" content="Um convite para viver saúde integrada com treino, recuperação e acompanhamento real." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://site-paradigma.local/SOMA.html" />
   <meta property="og:image" content="https://site-paradigma.local/assets/img/hero-overlay.svg" />
@@ -25,14 +25,12 @@
           colors: {
             background: '#000000',
             foreground: '#ffffff',
-            muted: '#f4efe7',
-            accent: '#2e5b44',
-            accentBright: '#38bf7a',
-            highlight: '#d9c7b0',
+            muted: '#f0f0f0',
+            accent: '#449f60',
           },
           fontFamily: {
             sans: ['Poppins', 'system-ui', 'sans-serif'],
-            display: ['Poppins', 'system-ui', 'sans-serif'],
+            display: ['League Gothic', 'Poppins', 'sans-serif'],
           },
         },
       },
@@ -59,7 +57,7 @@
          src="https://www.facebook.com/tr?id=1462444431685846&ev=PageView&noscript=1" />
   </noscript>
 </head>
-<body class="bg-muted font-sans text-black" data-analytics="site-paradigma">
+<body class="bg-muted font-sans text-slate-900" data-analytics="site-paradigma">
   <div class="fixed inset-0 bg-black/60 hidden" data-overlay aria-hidden="true"></div>
   <header class="bg-background text-foreground" role="banner">
     <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 lg:px-8">
@@ -77,11 +75,11 @@
         </svg>
       </button>
       <nav class="hidden flex-1 justify-end gap-8 text-sm font-medium lg:flex" data-nav data-nav-desktop aria-label="Menu principal">
-        <a class="focus-visible transition hover:text-accentBright" href="/">Home</a>
-        <a class="focus-visible transition hover:text-accentBright" href="/manifesto.html">Manifesto</a>
-        <a class="focus-visible transition hover:text-accentBright" href="/conteudos.html">Conteúdos</a>
-        <a class="focus-visible transition hover:text-accentBright" href="/sobre.html">Sobre</a>
-        <a class="focus-visible transition hover:text-accentBright" href="/produtos.html">Produções</a>
+        <a class="focus-visible transition hover:text-accent" href="/">Home</a>
+        <a class="focus-visible transition hover:text-accent" href="/manifesto.html">Manifesto</a>
+        <a class="focus-visible transition hover:text-accent" href="/conteudos.html">Conteúdos</a>
+        <a class="focus-visible transition hover:text-accent" href="/sobre.html">Sobre</a>
+        <a class="focus-visible transition hover:text-accent" href="/produtos.html">Produções</a>
       </nav>
     </div>
     <nav class="hidden border-t border-white/10 bg-background px-4 pb-6 pt-4 lg:hidden" data-nav data-nav-mobile aria-label="Menu principal móvel">
@@ -95,390 +93,497 @@
     </nav>
   </header>
 
-  <main id="conteudo-principal">
-    <section class="relative overflow-hidden bg-background text-foreground" aria-labelledby="hero-heading">
-      <div class="absolute inset-0">
-        <img src="/assets/img/hero-overlay.svg" alt="Texturas orgânicas e formas abstratas" class="h-full w-full object-cover opacity-80" />
-        <div class="absolute inset-0 bg-black/70 mix-blend-multiply" aria-hidden="true"></div>
-      </div>
-      <div class="relative mx-auto grid max-w-6xl gap-12 px-4 py-20 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:px-8">
-        <div class="space-y-6">
-          <p class="text-xs font-semibold uppercase tracking-[0.4em] text-accentBright">SOMA</p>
-          <h1 id="hero-heading" class="text-4xl uppercase leading-tight text-white sm:text-5xl lg:text-6xl">
-            Um método curto, claro e contínuo para cuidar do corpo real.
-          </h1>
-          <p class="text-base text-white/80">
-            Menos ruído, mais direção. Acompanhamos seu processo com passos simples e ajustes constantes.
-          </p>
-          <div class="flex flex-col gap-4 sm:flex-row">
-            <a
-              class="focus-visible inline-flex items-center justify-center rounded-full bg-accentBright px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-background transition hover:bg-white"
-              href="#planos"
-              data-scroll-target="#planos"
-            >
-              Ver planos
-            </a>
-            <a
-              class="focus-visible inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:border-white hover:bg-white/10"
-              href="/contato.html"
-            >
-              Falar com a equipe
-            </a>
-          </div>
+  <main id="conteudo-principal" class="soma-main">
+    <section class="soma-hero" aria-labelledby="hero-heading">
+      <div class="soma-hero__overlay" aria-hidden="true"></div>
+      <div class="soma-hero__content" data-reveal>
+        <div class="soma-hero__label">
+          <span class="soma-pill">método</span>
         </div>
-        <div class="rounded-3xl border border-white/15 bg-white/5 p-6 text-white/80">
-          <p class="text-xs uppercase tracking-[0.35em] text-accentBright">O essencial</p>
-          <ul class="mt-4 space-y-3 text-sm">
-            <li class="flex gap-2"><span class="text-accentBright">•</span>Plano claro e executável.</li>
-            <li class="flex gap-2"><span class="text-accentBright">•</span>Ajustes contínuos com base no seu ritmo.</li>
-            <li class="flex gap-2"><span class="text-accentBright">•</span>Autonomia com suporte.</li>
-          </ul>
+        <h1 id="hero-heading" class="soma-hero__title font-display">SOMA</h1>
+        <p class="soma-hero__subtitle">Treino e recuperação em um único acompanhamento.</p>
+        <p class="soma-hero__text">
+          Um convite simples para cuidar do corpo real, com dois olhares trabalhando juntos e uma visão mais profunda do seu processo.
+        </p>
+        <div class="soma-hero__actions" role="group" aria-label="Chamadas para ação">
+          <a
+            class="soma-button soma-button--primary focus-visible"
+            href="#planos"
+            data-scroll-target="#planos"
+          >Ver planos</a>
+          <a class="soma-button soma-button--ghost focus-visible" href="/contato.html">Quero conversar</a>
         </div>
       </div>
     </section>
+
     <div data-sticky-sentinel aria-hidden="true"></div>
 
-    <section class="mx-auto max-w-6xl px-4 py-16 lg:px-8" aria-labelledby="entrega-heading">
-      <div class="space-y-8">
-        <div class="space-y-3">
-          <p class="text-xs font-semibold uppercase tracking-[0.35em] text-accent">O que você recebe</p>
-          <h2 id="entrega-heading" class="text-3xl uppercase text-background">Um mapa simples para seguir.</h2>
-        </div>
-        <div class="grid gap-6 md:grid-cols-3">
-          <article class="section-card p-6">
-            <h3 class="text-lg font-semibold uppercase text-background">Plano real</h3>
-            <p class="mt-2 text-sm text-slate-700">Treinos e cuidados ajustados ao seu contexto.</p>
-          </article>
-          <article class="section-card p-6">
-            <h3 class="text-lg font-semibold uppercase text-background">Check-ins</h3>
-            <p class="mt-2 text-sm text-slate-700">Ajustes frequentes para manter o corpo seguro.</p>
-          </article>
-          <article class="section-card p-6">
-            <h3 class="text-lg font-semibold uppercase text-background">Autonomia</h3>
-            <p class="mt-2 text-sm text-slate-700">Você entende o processo e decide com clareza.</p>
-          </article>
+    <section class="soma-section soma-section--invite" aria-labelledby="convite-heading" data-reveal>
+      <div class="soma-section__inner">
+        <p class="soma-eyebrow">Convite</p>
+        <h2 id="convite-heading" class="soma-heading">A gente veio te fazer um convite especial.</h2>
+        <div class="soma-text">
+          <p>
+            Saúde integrada não cabe em uma única caixa. Você não é só treino, nem só diagnóstico, nem só um problema para resolver.
+            Por isso, SOMA reúne educação física e fisioterapia em um mesmo acompanhamento — dois olhares que constroem um caminho mais claro.
+          </p>
+          <p>
+            Não é um pacote — é um método. Uma forma de acompanhar seu corpo com respeito, continuidade e decisões que fazem sentido para a sua rotina.
+          </p>
+          <p class="soma-text__question">A pergunta é simples: você topa fazer parte?</p>
         </div>
       </div>
     </section>
 
-    <section class="bg-white py-16" aria-labelledby="fluxo-heading">
-      <div class="mx-auto max-w-6xl px-4 lg:px-8">
-        <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div class="space-y-4">
-            <p class="text-xs font-semibold uppercase tracking-[0.35em] text-accent">Fluxo rápido</p>
-            <h2 id="fluxo-heading" class="text-3xl uppercase text-background">Três etapas, sem excesso.</h2>
-            <p class="text-sm text-slate-600">Avaliar, organizar e ajustar. Simples e contínuo.</p>
+    <section class="soma-section" aria-labelledby="metodo-heading" data-reveal>
+      <div class="soma-section__inner">
+        <p class="soma-eyebrow">O que é a SOMA</p>
+        <h2 id="metodo-heading" class="soma-heading">Um método de treino e recuperação em um único acompanhamento.</h2>
+        <div class="soma-grid">
+          <div class="soma-card">
+            <h3 class="soma-card__title">Olhar integrado</h3>
+            <p>Educadora física e fisio em diálogo constante, sem dividir seu corpo em partes desconectadas.</p>
           </div>
-          <div class="grid gap-4 sm:grid-cols-3">
-            <div class="rounded-2xl border border-slate-200 bg-muted/60 p-5">
-              <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">01</p>
-              <p class="mt-2 text-sm font-semibold text-background">Segurança + capacidade</p>
-            </div>
-            <div class="rounded-2xl border border-slate-200 bg-muted/60 p-5">
-              <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">02</p>
-              <p class="mt-2 text-sm font-semibold text-background">Plano e prática</p>
-            </div>
-            <div class="rounded-2xl border border-slate-200 bg-muted/60 p-5">
-              <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">03</p>
-              <p class="mt-2 text-sm font-semibold text-background">Monitoramento</p>
-            </div>
+          <div class="soma-card">
+            <h3 class="soma-card__title">Ferramentas reais</h3>
+            <ul class="soma-list">
+              <li>Treino individualizado e progressivo.</li>
+              <li>Reabilitação e prevenção de dor.</li>
+              <li>Conhecimento aplicado para autonomia.</li>
+            </ul>
+          </div>
+          <div class="soma-card">
+            <h3 class="soma-card__title">Acompanhamento contínuo</h3>
+            <ul class="soma-list">
+              <li>Monitoramento e ajustes constantes.</li>
+              <li>Suporte acessível ao longo do plano.</li>
+              <li>Objetivos alinhados ao seu momento.</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="mx-auto max-w-6xl px-4 py-16 lg:px-8" aria-labelledby="planos-heading" id="planos">
-      <div class="space-y-8">
-        <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div class="space-y-3">
-            <p class="text-xs font-semibold uppercase tracking-[0.35em] text-accent">Planos</p>
-            <h2 id="planos-heading" class="text-3xl uppercase text-background">Escolha o ritmo ideal.</h2>
-            <p class="text-sm text-slate-700">Planos com acompanhamento remoto ou presencial, sempre ajustável.</p>
+    <section class="soma-section soma-section--dark" aria-labelledby="camadas-heading" data-reveal>
+      <div class="soma-section__inner">
+        <p class="soma-eyebrow">Como funciona</p>
+        <h2 id="camadas-heading" class="soma-heading">Interpretação por camadas, sem pressa e sem atalhos.</h2>
+        <div class="soma-details-grid">
+          <details class="soma-details">
+            <summary>Segurança e red flags</summary>
+            <p>Primeiro cuidamos do que não pode esperar: sinais de risco e limites claros.</p>
+          </details>
+          <details class="soma-details">
+            <summary>Capacidade atual</summary>
+            <p>Entendemos sua base de força, mobilidade, resistência e recuperação.</p>
+          </details>
+          <details class="soma-details">
+            <summary>Regulação</summary>
+            <p>Como seu corpo responde ao estímulo e ao descanso — o que acelera e o que freia.</p>
+          </details>
+          <details class="soma-details">
+            <summary>Comportamento e contexto</summary>
+            <p>Rotina, sono, estresse e hábitos que moldam o jeito como você se move.</p>
+          </details>
+          <details class="soma-details">
+            <summary>Morfologia e restrições</summary>
+            <p>Estrutura, limitações e características que pedem adaptações personalizadas.</p>
+          </details>
+        </div>
+        <div class="soma-objectives">
+          <div>
+            <h3>Objetivos em camadas</h3>
+            <ul class="soma-list">
+              <li>Curto prazo: segurança e alívio.</li>
+              <li>Médio prazo: consistência e evolução.</li>
+              <li>Longo prazo: autonomia e confiança.</li>
+            </ul>
           </div>
-          <form class="price-toggle flex flex-wrap items-center gap-2 rounded-full border border-slate-200 bg-white px-2 py-2" data-price-toggle>
-            <label class="price-toggle__option is-active" for="preco-trimestral">
-              Trimestral
-            </label>
+          <div>
+            <h3>Acompanhamento prático</h3>
+            <ul class="soma-list">
+              <li>Plano claro, aplicado na sua rotina.</li>
+              <li>Monitoramento e ajustes regulares.</li>
+              <li>Educação contínua para autonomia.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="soma-section" aria-labelledby="planos-heading" id="planos" data-reveal>
+      <div class="soma-section__inner">
+        <div class="soma-section__header">
+          <div>
+            <p class="soma-eyebrow">Planos</p>
+            <h2 id="planos-heading" class="soma-heading">Planos com clareza de ritmo e compromisso.</h2>
+            <p class="soma-lead">Escolha entre acompanhamento base, remoto ou presencial, sempre com ajustes contínuos.</p>
+          </div>
+          <form class="price-toggle" data-price-toggle>
+            <span class="price-toggle__label">Preferência</span>
+            <label class="price-toggle__option is-active" for="preco-trimestral">Trimestral</label>
             <input class="sr-only" type="radio" id="preco-trimestral" name="preco" value="trimestral" checked />
-            <label class="price-toggle__option" for="preco-semestral">
-              Semestral
-            </label>
+            <label class="price-toggle__option" for="preco-semestral">Semestral</label>
             <input class="sr-only" type="radio" id="preco-semestral" name="preco" value="semestral" />
           </form>
         </div>
 
-        <div class="grid gap-8 lg:grid-cols-3">
-          <article class="section-card flex h-full flex-col gap-6 p-6" id="plano-assessoria">
-            <div>
-              <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Base</p>
-              <h3 class="mt-3 text-2xl uppercase text-background">Assessoria SOMA</h3>
-              <p class="mt-2 text-sm text-slate-600">Plano estruturado com suporte pontual.</p>
+        <div class="soma-plan-group">
+          <h3 class="soma-plan-group__title">Assessoria</h3>
+          <article class="plan-card" id="plano-assessoria">
+            <header class="plan-card__header">
+              <p class="plan-card__eyebrow">SOMA</p>
+              <h4 class="plan-card__title">Assessoria (Plano Base)</h4>
+              <p class="plan-card__subtitle">Para começar com consistência, sem perder o essencial.</p>
+            </header>
+            <div class="plan-card__content">
+              <div>
+                <p class="plan-card__label">Para quem é</p>
+                <ul class="soma-list">
+                  <li>Quer clareza e autonomia com suporte.</li>
+                  <li>Prefere um ritmo estável e simples.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="plan-card__label">Inclui</p>
+                <ul class="soma-list">
+                  <li>Treino individualizado e ajustes.</li>
+                  <li>Reabilitação e prevenção integrada.</li>
+                  <li>Acompanhamento contínuo.</li>
+                </ul>
+              </div>
             </div>
-            <ul class="space-y-2 text-sm text-slate-600">
-              <li>• Plano de treino e autocuidado.</li>
-              <li>• 1 check-in mensal.</li>
-              <li>• Suporte via WhatsApp.</li>
-            </ul>
-            <div class="price-stack">
+            <div class="plan-card__prices" aria-label="Valores por período">
               <div class="price-box" data-price="trimestral">
                 <p class="price-box__label">Trimestral</p>
-                <p class="price-box__value">R$ 290<span>/mês</span></p>
+                <p class="price-box__value">R$ 249<span>/mês</span></p>
               </div>
               <div class="price-box" data-price="semestral">
                 <p class="price-box__label">Semestral</p>
-                <p class="price-box__value">R$ 260<span>/mês</span></p>
+                <p class="price-box__value">R$ 219<span>/mês</span></p>
               </div>
             </div>
-            <a class="focus-visible mt-auto inline-flex items-center justify-center rounded-full bg-background px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-accent" href="#cta-final">
-              Quero esse
-            </a>
           </article>
+        </div>
 
-          <article class="section-card flex h-full flex-col gap-6 p-6" id="plano-remoto-essencial">
-            <div>
-              <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Remoto</p>
-              <h3 class="mt-3 text-2xl uppercase text-background">Essencial+</h3>
-              <p class="mt-2 text-sm text-slate-600">Encontro semanal e ajustes frequentes.</p>
-            </div>
-            <ul class="space-y-2 text-sm text-slate-600">
-              <li>• Personal 1x/semana.</li>
-              <li>• Ajustes quinzenais.</li>
-              <li>• Suporte direto.</li>
-            </ul>
-            <div class="price-stack">
-              <div class="price-box" data-price="trimestral">
-                <p class="price-box__label">Trimestral</p>
-                <p class="price-box__value">R$ 420<span>/mês</span></p>
+        <div class="soma-plan-group">
+          <h3 class="soma-plan-group__title">Remotos</h3>
+          <div class="soma-plan-grid">
+            <article class="plan-card" id="plano-remoto-essencial">
+              <header class="plan-card__header">
+                <p class="plan-card__eyebrow">SOMA</p>
+                <h4 class="plan-card__title">Remoto Essencial+</h4>
+                <p class="plan-card__subtitle">Para quem quer acompanhamento remoto com constância.</p>
+              </header>
+              <div class="plan-card__content">
+                <div>
+                  <p class="plan-card__label">Para quem é</p>
+                  <ul class="soma-list">
+                    <li>Prefere encontros à distância.</li>
+                    <li>Busca consistência com apoio próximo.</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="plan-card__label">Inclui</p>
+                  <ul class="soma-list">
+                    <li>Treino ajustado à sua rotina.</li>
+                    <li>Monitoramento e ajustes contínuos.</li>
+                    <li>Suporte para dúvidas do dia a dia.</li>
+                  </ul>
+                </div>
               </div>
-              <div class="price-box" data-price="semestral">
-                <p class="price-box__label">Semestral</p>
-                <p class="price-box__value">R$ 390<span>/mês</span></p>
+              <div class="plan-card__prices" aria-label="Valores por período">
+                <div class="price-box" data-price="trimestral">
+                  <p class="price-box__label">Trimestral</p>
+                  <p class="price-box__value">R$ 420<span>/mês</span></p>
+                </div>
+                <div class="price-box" data-price="semestral">
+                  <p class="price-box__label">Semestral</p>
+                  <p class="price-box__value">R$ 390<span>/mês</span></p>
+                </div>
               </div>
-            </div>
-            <a class="focus-visible mt-auto inline-flex items-center justify-center rounded-full bg-background px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-accent" href="#cta-final">
-              Quero esse
-            </a>
-          </article>
+            </article>
 
-          <article class="section-card flex h-full flex-col gap-6 p-6" id="plano-remoto-integrado">
-            <div>
-              <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Remoto</p>
-              <h3 class="mt-3 text-2xl uppercase text-background">Integrado+</h3>
-              <p class="mt-2 text-sm text-slate-600">Dois encontros por semana para evolução sólida.</p>
-            </div>
-            <ul class="space-y-2 text-sm text-slate-600">
-              <li>• Personal 2x/semana.</li>
-              <li>• Fisio remota 2x/mês.</li>
-              <li>• Ajustes semanais.</li>
-            </ul>
-            <div class="price-stack">
-              <div class="price-box" data-price="trimestral">
-                <p class="price-box__label">Trimestral</p>
-                <p class="price-box__value">R$ 820<span>/mês</span></p>
+            <article class="plan-card" id="plano-remoto-integrado">
+              <header class="plan-card__header">
+                <p class="plan-card__eyebrow">SOMA</p>
+                <h4 class="plan-card__title">Remoto Integrado+</h4>
+                <p class="plan-card__subtitle">Para quem precisa de visão mais completa e frequência maior.</p>
+              </header>
+              <div class="plan-card__content">
+                <div>
+                  <p class="plan-card__label">Para quem é</p>
+                  <ul class="soma-list">
+                    <li>Quer acompanhamento mais próximo.</li>
+                    <li>Busca evolução com revisões frequentes.</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="plan-card__label">Inclui</p>
+                  <ul class="soma-list">
+                    <li>Treino e recuperação alinhados.</li>
+                    <li>Check-ins regulares.</li>
+                    <li>Suporte contínuo e educativo.</li>
+                  </ul>
+                </div>
               </div>
-              <div class="price-box" data-price="semestral">
-                <p class="price-box__label">Semestral</p>
-                <p class="price-box__value">R$ 780<span>/mês</span></p>
+              <div class="plan-card__prices" aria-label="Valores por período">
+                <div class="price-box" data-price="trimestral">
+                  <p class="price-box__label">Trimestral</p>
+                  <p class="price-box__value">R$ 820<span>/mês</span></p>
+                </div>
+                <div class="price-box" data-price="semestral">
+                  <p class="price-box__label">Semestral</p>
+                  <p class="price-box__value">R$ 780<span>/mês</span></p>
+                </div>
               </div>
-            </div>
-            <a class="focus-visible mt-auto inline-flex items-center justify-center rounded-full bg-background px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-accent" href="#cta-final">
-              Quero esse
-            </a>
-          </article>
+            </article>
 
-          <article class="section-card flex h-full flex-col gap-6 p-6" id="plano-remoto-performance">
-            <div>
-              <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Remoto</p>
-              <h3 class="mt-3 text-2xl uppercase text-background">Performance+</h3>
-              <p class="mt-2 text-sm text-slate-600">Frequência alta e ajustes constantes.</p>
-            </div>
-            <ul class="space-y-2 text-sm text-slate-600">
-              <li>• Personal 3x/semana.</li>
-              <li>• Fisio remota 4x/mês.</li>
-              <li>• Ajustes semanais.</li>
-            </ul>
-            <div class="price-stack">
-              <div class="price-box" data-price="trimestral">
-                <p class="price-box__label">Trimestral</p>
-                <p class="price-box__value">R$ 1.290<span>/mês</span></p>
+            <article class="plan-card" id="plano-remoto-performance">
+              <header class="plan-card__header">
+                <p class="plan-card__eyebrow">SOMA</p>
+                <h4 class="plan-card__title">Remoto Performance+</h4>
+                <p class="plan-card__subtitle">Para quem quer intensidade com acompanhamento constante.</p>
+              </header>
+              <div class="plan-card__content">
+                <div>
+                  <p class="plan-card__label">Para quem é</p>
+                  <ul class="soma-list">
+                    <li>Busca alto nível de acompanhamento.</li>
+                    <li>Prefere ajustes mais frequentes.</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="plan-card__label">Inclui</p>
+                  <ul class="soma-list">
+                    <li>Planejamento individualizado.</li>
+                    <li>Monitoramento e revisões constantes.</li>
+                    <li>Suporte contínuo ao longo do mês.</li>
+                  </ul>
+                </div>
               </div>
-              <div class="price-box" data-price="semestral">
-                <p class="price-box__label">Semestral</p>
-                <p class="price-box__value">R$ 1.220<span>/mês</span></p>
+              <div class="plan-card__prices" aria-label="Valores por período">
+                <div class="price-box" data-price="trimestral">
+                  <p class="price-box__label">Trimestral</p>
+                  <p class="price-box__value">R$ 1.290<span>/mês</span></p>
+                </div>
+                <div class="price-box" data-price="semestral">
+                  <p class="price-box__label">Semestral</p>
+                  <p class="price-box__value">R$ 1.220<span>/mês</span></p>
+                </div>
               </div>
-            </div>
-            <a class="focus-visible mt-auto inline-flex items-center justify-center rounded-full bg-background px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-accent" href="#cta-final">
-              Quero esse
-            </a>
-          </article>
+            </article>
+          </div>
+        </div>
 
-          <article class="section-card flex h-full flex-col gap-6 p-6" id="plano-presencial-essencial">
-            <div>
-              <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Presencial</p>
-              <h3 class="mt-3 text-2xl uppercase text-background">Essencial+</h3>
-              <p class="mt-2 text-sm text-slate-600">Presença semanal com check-ins mensais.</p>
-            </div>
-            <ul class="space-y-2 text-sm text-slate-600">
-              <li>• Personal 1x/semana.</li>
-              <li>• Fisio presencial 1x/mês.</li>
-              <li>• Ajustes contínuos.</li>
-            </ul>
-            <div class="price-stack">
-              <div class="price-box" data-price="trimestral">
-                <p class="price-box__label">Trimestral</p>
-                <p class="price-box__value">R$ 549<span>/mês</span></p>
+        <div class="soma-plan-group">
+          <h3 class="soma-plan-group__title">Presenciais</h3>
+          <div class="soma-plan-grid">
+            <article class="plan-card" id="plano-presencial-essencial">
+              <header class="plan-card__header">
+                <p class="plan-card__eyebrow">SOMA</p>
+                <h4 class="plan-card__title">Presencial Essencial+</h4>
+                <p class="plan-card__subtitle">Para quem valoriza encontro presencial com constância.</p>
+              </header>
+              <div class="plan-card__content">
+                <div>
+                  <p class="plan-card__label">Para quem é</p>
+                  <ul class="soma-list">
+                    <li>Prefere presença e orientação direta.</li>
+                    <li>Quer segurança e ajuste em tempo real.</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="plan-card__label">Inclui</p>
+                  <ul class="soma-list">
+                    <li>Acompanhamento presencial.</li>
+                    <li>Treino e prevenção alinhados.</li>
+                    <li>Suporte contínuo entre encontros.</li>
+                  </ul>
+                </div>
               </div>
-              <div class="price-box" data-price="semestral">
-                <p class="price-box__label">Semestral</p>
-                <p class="price-box__value">R$ 520<span>/mês</span></p>
+              <div class="plan-card__prices" aria-label="Valores por período">
+                <div class="price-box" data-price="trimestral">
+                  <p class="price-box__label">Trimestral</p>
+                  <p class="price-box__value">R$ 549<span>/mês</span></p>
+                </div>
+                <div class="price-box" data-price="semestral">
+                  <p class="price-box__label">Semestral</p>
+                  <p class="price-box__value">R$ 520<span>/mês</span></p>
+                </div>
               </div>
-            </div>
-            <a class="focus-visible mt-auto inline-flex items-center justify-center rounded-full bg-background px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-accent" href="#cta-final">
-              Quero esse
-            </a>
-          </article>
+            </article>
 
-          <article class="section-card flex h-full flex-col gap-6 p-6" id="plano-presencial-integrado">
-            <div>
-              <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Presencial</p>
-              <h3 class="mt-3 text-2xl uppercase text-background">Integrado+</h3>
-              <p class="mt-2 text-sm text-slate-600">Frequência dupla com suporte integrado.</p>
-            </div>
-            <ul class="space-y-2 text-sm text-slate-600">
-              <li>• Personal 2x/semana.</li>
-              <li>• Fisio presencial 2x/mês.</li>
-              <li>• Ajustes quinzenais.</li>
-            </ul>
-            <div class="price-stack">
-              <div class="price-box" data-price="trimestral">
-                <p class="price-box__label">Trimestral</p>
-                <p class="price-box__value">R$ 1.080<span>/mês</span></p>
+            <article class="plan-card" id="plano-presencial-integrado">
+              <header class="plan-card__header">
+                <p class="plan-card__eyebrow">SOMA</p>
+                <h4 class="plan-card__title">Presencial Integrado+</h4>
+                <p class="plan-card__subtitle">Para quem precisa de acompanhamento próximo e frequente.</p>
+              </header>
+              <div class="plan-card__content">
+                <div>
+                  <p class="plan-card__label">Para quem é</p>
+                  <ul class="soma-list">
+                    <li>Quer evolução com presença regular.</li>
+                    <li>Busca alinhamento entre treino e recuperação.</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="plan-card__label">Inclui</p>
+                  <ul class="soma-list">
+                    <li>Encontros presenciais regulares.</li>
+                    <li>Ajustes contínuos e educativos.</li>
+                    <li>Monitoramento do processo.</li>
+                  </ul>
+                </div>
               </div>
-              <div class="price-box" data-price="semestral">
-                <p class="price-box__label">Semestral</p>
-                <p class="price-box__value">R$ 1.040<span>/mês</span></p>
+              <div class="plan-card__prices" aria-label="Valores por período">
+                <div class="price-box" data-price="trimestral">
+                  <p class="price-box__label">Trimestral</p>
+                  <p class="price-box__value">R$ 1.080<span>/mês</span></p>
+                </div>
+                <div class="price-box" data-price="semestral">
+                  <p class="price-box__label">Semestral</p>
+                  <p class="price-box__value">R$ 1.040<span>/mês</span></p>
+                </div>
               </div>
-            </div>
-            <a class="focus-visible mt-auto inline-flex items-center justify-center rounded-full bg-background px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-accent" href="#cta-final">
-              Quero esse
-            </a>
-          </article>
+            </article>
 
-          <article class="section-card flex h-full flex-col gap-6 p-6" id="plano-presencial-performance">
-            <div>
-              <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Presencial</p>
-              <h3 class="mt-3 text-2xl uppercase text-background">Performance+</h3>
-              <p class="mt-2 text-sm text-slate-600">Acompanhamento intenso e frequente.</p>
-            </div>
-            <ul class="space-y-2 text-sm text-slate-600">
-              <li>• Personal 3x/semana.</li>
-              <li>• Fisio presencial 3x/mês.</li>
-              <li>• Ajustes semanais.</li>
-            </ul>
-            <div class="price-stack">
-              <div class="price-box" data-price="trimestral">
-                <p class="price-box__label">Trimestral</p>
-                <p class="price-box__value">R$ 1.620<span>/mês</span></p>
+            <article class="plan-card" id="plano-presencial-performance">
+              <header class="plan-card__header">
+                <p class="plan-card__eyebrow">SOMA</p>
+                <h4 class="plan-card__title">Presencial Performance+</h4>
+                <p class="plan-card__subtitle">Para quem busca acompanhamento intenso e altamente próximo.</p>
+              </header>
+              <div class="plan-card__content">
+                <div>
+                  <p class="plan-card__label">Para quem é</p>
+                  <ul class="soma-list">
+                    <li>Quer presença constante e total suporte.</li>
+                    <li>Busca alta frequência e ajustes rápidos.</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="plan-card__label">Inclui</p>
+                  <ul class="soma-list">
+                    <li>Plano personalizado e intensivo.</li>
+                    <li>Revisões frequentes e monitoramento.</li>
+                    <li>Suporte contínuo entre encontros.</li>
+                  </ul>
+                </div>
               </div>
-              <div class="price-box" data-price="semestral">
-                <p class="price-box__label">Semestral</p>
-                <p class="price-box__value">R$ 1.550<span>/mês</span></p>
+              <div class="plan-card__prices" aria-label="Valores por período">
+                <div class="price-box" data-price="trimestral">
+                  <p class="price-box__label">Trimestral</p>
+                  <p class="price-box__value">R$ 1.620<span>/mês</span></p>
+                </div>
+                <div class="price-box" data-price="semestral">
+                  <p class="price-box__label">Semestral</p>
+                  <p class="price-box__value">R$ 1.550<span>/mês</span></p>
+                </div>
               </div>
-            </div>
-            <a class="focus-visible mt-auto inline-flex items-center justify-center rounded-full bg-background px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-accent" href="#cta-final">
-              Quero esse
-            </a>
-          </article>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="bg-white py-16" aria-labelledby="faq-heading" id="faq">
-      <div class="mx-auto max-w-6xl px-4 lg:px-8">
-        <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <div class="space-y-4">
-            <p class="text-xs font-semibold uppercase tracking-[0.35em] text-accent">FAQ</p>
-            <h2 id="faq-heading" class="text-3xl uppercase text-background">Perguntas rápidas.</h2>
-            <p class="text-sm text-slate-700">Se precisar de algo específico, fale com a equipe.</p>
+    <section class="soma-section soma-section--muted" aria-labelledby="pagamento-heading" data-reveal>
+      <div class="soma-section__inner">
+        <p class="soma-eyebrow">Formas de pagamento</p>
+        <h2 id="pagamento-heading" class="soma-heading">Transparência e flexibilidade para facilitar a escolha.</h2>
+        <div class="soma-grid">
+          <div class="soma-card">
+            <h3 class="soma-card__title">Recorrente</h3>
+            <p>Mensalidade automática para manter o acompanhamento contínuo.</p>
           </div>
-          <div class="space-y-4">
-            <details class="soma-details rounded-2xl border border-slate-200 bg-white p-5">
-              <summary class="focus-visible text-base font-semibold text-background">Preciso estar em dor?</summary>
-              <p class="mt-3 text-sm text-slate-600">Não. A SOMA também é para prevenção e evolução.</p>
-            </details>
-            <details class="soma-details rounded-2xl border border-slate-200 bg-white p-5">
-              <summary class="focus-visible text-base font-semibold text-background">O plano é remoto ou presencial?</summary>
-              <p class="mt-3 text-sm text-slate-600">Você escolhe o formato e ajustamos de acordo.</p>
-            </details>
-            <details class="soma-details rounded-2xl border border-slate-200 bg-white p-5">
-              <summary class="focus-visible text-base font-semibold text-background">Como funciona o suporte?</summary>
-              <p class="mt-3 text-sm text-slate-600">Canal direto com a equipe para dúvidas e ajustes.</p>
-            </details>
+          <div class="soma-card">
+            <h3 class="soma-card__title">Pix à vista</h3>
+            <p>Pagamento integral com simplicidade e sem burocracia.</p>
+          </div>
+          <div class="soma-card">
+            <h3 class="soma-card__title">Cartão de crédito</h3>
+            <p>Recomendado para parcelar e manter previsibilidade.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="mx-auto max-w-6xl px-4 py-16 lg:px-8" aria-labelledby="cta-heading" id="cta-final">
-      <div class="section-card--dark rounded-3xl bg-background p-10 text-center text-foreground">
-        <h2 id="cta-heading" class="text-3xl uppercase text-white">Pronto para começar?</h2>
-        <p class="mt-3 text-sm text-white/80">Escolha um plano ou converse com a equipe.</p>
-        <div class="mt-6 flex flex-col justify-center gap-4 sm:flex-row">
-          <a class="focus-visible inline-flex items-center justify-center rounded-full bg-accentBright px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-background transition hover:bg-white" href="#planos">
-            Escolher plano
-          </a>
-          <a class="focus-visible inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:border-white hover:bg-white/10" href="/contato.html">
-            Falar com a equipe
-          </a>
+    <section class="soma-section" aria-labelledby="faq-heading" data-reveal>
+      <div class="soma-section__inner">
+        <p class="soma-eyebrow">FAQ</p>
+        <h2 id="faq-heading" class="soma-heading">Perguntas frequentes</h2>
+        <div class="soma-details-grid">
+          <details class="soma-details">
+            <summary>Preciso estar sem dor para começar?</summary>
+            <p>Não. O método inclui avaliação e cuidado para iniciar com segurança, respeitando seu momento.</p>
+          </details>
+          <details class="soma-details">
+            <summary>O acompanhamento é só treino?</summary>
+            <p>Não. SOMA integra treino e recuperação em um mesmo acompanhamento.</p>
+          </details>
+          <details class="soma-details">
+            <summary>Posso mudar de plano depois?</summary>
+            <p>Sim. A ideia é ajustar o plano conforme sua fase e disponibilidade.</p>
+          </details>
+          <details class="soma-details">
+            <summary>Há metas rígidas?</summary>
+            <p>Não. Trabalhamos com objetivos reais e ajustáveis, sem promessas absolutas.</p>
+          </details>
+          <details class="soma-details">
+            <summary>O remoto funciona para quem nunca treinou?</summary>
+            <p>Funciona, porque o acompanhamento começa pela segurança e pelo ritmo individual.</p>
+          </details>
+          <details class="soma-details">
+            <summary>Como acontecem os ajustes?</summary>
+            <p>Com check-ins e monitoramento contínuo, guiados por sinais do corpo e da rotina.</p>
+          </details>
+          <details class="soma-details">
+            <summary>Qual a diferença entre trimestral e semestral?</summary>
+            <p>O acompanhamento é o mesmo, com economia no plano semestral.</p>
+          </details>
+          <details class="soma-details">
+            <summary>Existe suporte entre encontros?</summary>
+            <p>Sim, o suporte está incluso para orientar decisões no dia a dia.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="soma-section soma-section--cta" aria-labelledby="cta-heading" data-reveal id="cta-final">
+      <div class="soma-section__inner soma-cta">
+        <div>
+          <p class="soma-eyebrow">Convite final</p>
+          <h2 id="cta-heading" class="soma-heading">Se fizer sentido para você, a gente caminha junto.</h2>
+          <p class="soma-lead">Escolha o plano ideal e venha conversar com a equipe sobre o seu momento.</p>
+        </div>
+        <div class="soma-cta__actions">
+          <a class="soma-button soma-button--primary focus-visible" href="#planos" data-scroll-target="#planos">Ver planos</a>
+          <a class="soma-button soma-button--ghost focus-visible" href="/contato.html">Quero conversar</a>
         </div>
       </div>
     </section>
   </main>
 
-  <div class="sticky-cta sm:hidden" data-sticky-cta aria-hidden="true">
-    <a class="focus-visible flex-1 rounded-full bg-accentBright px-4 py-3 text-center text-sm font-semibold uppercase tracking-[0.2em] text-background" href="#planos" data-scroll-target="#planos">Ver planos</a>
-    <a class="focus-visible flex-1 rounded-full border border-white/40 px-4 py-3 text-center text-sm font-semibold uppercase tracking-[0.2em] text-white" href="/contato.html">Quero conversar</a>
+  <div class="sticky-cta" data-sticky-cta aria-hidden="true">
+    <a class="soma-button soma-button--light focus-visible" href="#planos" data-scroll-target="#planos">Ver planos</a>
+    <a class="soma-button soma-button--ghost focus-visible" href="/contato.html">Quero conversar</a>
   </div>
 
   <footer class="bg-background py-12 text-white" role="contentinfo">
-    <div class="mx-auto grid max-w-6xl gap-8 px-4 lg:grid-cols-[1fr_auto] lg:items-center lg:px-8">
-      <div class="space-y-6">
-        <a href="/" class="font-display text-3xl uppercase tracking-[0.35em] text-white focus-visible">;paradigma</a>
-        <p class="text-sm text-white/70">;paradigma — ciência, natureza, humanidade.</p>
+    <div class="mx-auto flex max-w-6xl flex-col gap-6 px-4 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+      <div class="space-y-2">
+        <p class="font-display text-2xl uppercase tracking-[0.3em]">;paradigma</p>
+        <p class="text-sm text-white/70">Método SOMA — treino e recuperação em um único acompanhamento.</p>
       </div>
-      <div class="grid gap-6 text-sm lg:text-right">
-        <nav aria-label="Links institucionais" class="flex flex-wrap justify-start gap-x-6 gap-y-2 lg:justify-end">
-          <a class="focus-visible transition hover:text-accentBright" href="/manifesto.html">Manifesto</a>
-          <a class="focus-visible transition hover:text-accentBright" href="/conteudos.html">Conteúdos</a>
-          <a class="focus-visible transition hover:text-accentBright" href="/sobre.html">Sobre</a>
-        </nav>
-        <div class="flex items-center justify-start gap-4 lg:justify-end" aria-label="Redes sociais">
-          <a class="focus-visible text-white transition hover:text-accentBright" href="https://instagram.com" aria-label="Instagram">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true">
-              <path
-                d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.75a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5Zm0 2a3.25 3.25 0 1 0 0 6.5 3.25 3.25 0 0 0 0-6.5Zm6.5-.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z"
-              />
-            </svg>
-          </a>
-          <a class="focus-visible text-white transition hover:text-accentBright" href="https://www.tiktok.com" aria-label="TikTok">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true">
-              <path
-                d="M15.5 2a5.5 5.5 0 0 0 3.5 5.1V11a6.5 6.5 0 1 1-7.7-6.4V7a3.5 3.5 0 1 0 2.2 3.2V2h2Z"
-              />
-            </svg>
-          </a>
-          <a class="focus-visible text-white transition hover:text-accentBright" href="#planos" data-scroll-target="#planos" aria-label="Planos SOMA">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true">
-              <path d="M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14l-5.5-4h-8A2.5 2.5 0 0 1 5 12.5v-1l7 4 7-4V5H5v7.5a.5.5 0 0 0 .5.5h8l4.5 3V14l-5.5-3.142L3 8V5Z" />
-            </svg>
-          </a>
-        </div>
+      <div class="space-y-2 text-sm text-white/70">
+        <p>Fale com a equipe: <a class="soma-link" href="/contato.html">/contato.html</a></p>
         <p class="text-xs text-white/60">&copy; <span id="ano-footer">2024</span> ;paradigma. Todos os direitos reservados.</p>
       </div>
     </div>
   </footer>
 
-  <script src="/assets/js/main.js" defer></script>
-  <script src="/assets/js/soma.js" defer></script>
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/soma.js"></script>
 </body>
 </html>
