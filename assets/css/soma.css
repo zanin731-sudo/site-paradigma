@@ -24,21 +24,24 @@ html.js-enabled [data-reveal].is-visible {
 .soma-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(150deg, rgba(0, 0, 0, 0.9), rgba(68, 159, 96, 0.55));
-  opacity: 0.9;
+  background:
+    radial-gradient(circle at 20% 35%, rgba(68, 159, 96, 0.38), rgba(0, 0, 0, 0) 58%),
+    linear-gradient(108deg, rgba(255, 255, 255, 0.12) 0%, rgba(0, 0, 0, 0.88) 70%);
 }
 
 .soma-hero__content {
   position: relative;
-  max-width: 64rem;
-  margin: 0 auto;
+  max-width: 42rem;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
 .soma-hero__label {
   display: inline-flex;
+  margin-bottom: -0.25rem;
 }
 
 .soma-pill {
@@ -51,18 +54,22 @@ html.js-enabled [data-reveal].is-visible {
 }
 
 .soma-hero__title {
+  margin: 0;
   font-size: clamp(3.4rem, 8vw, 6rem);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
 }
 
 .soma-hero__subtitle {
+  margin: 0;
+  margin-top: 0.35rem;
   font-size: clamp(1.2rem, 2.4vw, 1.6rem);
   font-weight: 500;
   color: rgba(255, 255, 255, 0.86);
 }
 
 .soma-hero__text {
+  margin: 0 0 0.15rem;
   max-width: 36rem;
   color: rgba(255, 255, 255, 0.7);
   font-size: 1rem;
@@ -70,9 +77,29 @@ html.js-enabled [data-reveal].is-visible {
 
 .soma-hero__actions {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
+  width: 100%;
+}
+
+.soma-hero__actions .soma-button {
+  flex: 1 1 12rem;
+}
+
+.soma-hero__actions .soma-button--ghost {
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.soma-hero__actions .soma-button--ghost:hover,
+.soma-hero__actions .soma-button--ghost:focus-visible {
+  border-color: rgba(255, 255, 255, 0.52);
+  color: rgba(255, 255, 255, 0.98);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .soma-section {
@@ -489,6 +516,11 @@ html.js-enabled [data-reveal].is-visible {
 @media (min-width: 768px) {
   .soma-hero {
     padding: 6rem 2rem 7rem;
+  }
+
+  .soma-hero__title {
+    font-size: clamp(3.6rem, 7vw, 6.3rem);
+    letter-spacing: 0.1em;
   }
 
   .soma-hero__actions,
