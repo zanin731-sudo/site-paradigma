@@ -25,47 +25,6 @@
     });
   });
 
-  const planosSection = document.getElementById('planos');
-  const priceToggle = planosSection ? planosSection.querySelector('[data-price-toggle]') : null;
-  if (priceToggle && planosSection) {
-    const radioInputs = Array.from(priceToggle.querySelectorAll('input[type="radio"]'));
-    const priceItems = Array.from(planosSection.querySelectorAll('[data-price]'));
-    const labels = Array.from(priceToggle.querySelectorAll('.price-toggle__option'));
-
-    const setActiveLabel = (value) => {
-      labels.forEach((label) => {
-        const inputId = label.getAttribute('for');
-        const targetInput = inputId ? document.getElementById(inputId) : null;
-        const isActive = targetInput ? targetInput.value === value : false;
-        label.classList.toggle('is-active', isActive);
-      });
-    };
-
-    const updatePrices = (value) => {
-      planosSection.setAttribute('data-price', value);
-      priceItems.forEach((item) => {
-        const isActive = item.getAttribute('data-price') === value;
-        item.setAttribute('data-price-active', isActive ? 'true' : 'false');
-      });
-      setActiveLabel(value);
-    };
-
-    const handleChange = (event) => {
-      if (event.target instanceof HTMLInputElement) {
-        updatePrices(event.target.value);
-      }
-    };
-
-    radioInputs.forEach((input) => {
-      input.addEventListener('change', handleChange);
-    });
-
-    const checked = radioInputs.find((input) => input.checked) || radioInputs[0];
-    if (checked) {
-      updatePrices(checked.value);
-    }
-  }
-
   const stickyCta = document.querySelector('[data-sticky-cta]');
   const stickySentinel = document.querySelector('[data-sticky-sentinel]');
 
