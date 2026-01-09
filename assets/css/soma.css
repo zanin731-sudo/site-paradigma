@@ -267,8 +267,8 @@ html.js-enabled [data-reveal].is-visible {
 }
 
 .plan-toggle {
-  display: inline-flex;
-  flex-wrap: wrap;
+  display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 0.4rem;
   border-radius: 9999px;
@@ -276,6 +276,8 @@ html.js-enabled [data-reveal].is-visible {
   background: #ffffff;
   padding: 0.35rem;
   width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .plan-toggle__label {
@@ -283,8 +285,8 @@ html.js-enabled [data-reveal].is-visible {
   text-transform: uppercase;
   letter-spacing: 0.25em;
   color: rgba(0, 0, 0, 0.5);
-  flex-basis: 100%;
   margin: 0 0.2rem;
+  flex: 0 0 auto;
 }
 
 .plan-toggle__option {
@@ -297,44 +299,47 @@ html.js-enabled [data-reveal].is-visible {
   letter-spacing: 0.18em;
   color: rgba(0, 0, 0, 0.7);
   transition: background-color 150ms ease, color 150ms ease, box-shadow 150ms ease;
-  flex: 1 1 6rem;
+  flex: 0 0 auto;
   min-height: 2.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  background: transparent;
+  border: none;
+  white-space: nowrap;
+}
+
+.plan-toggle__option.is-active {
+  background-color: var(--color-accent);
+  color: var(--color-background);
+  box-shadow: 0 8px 18px -12px rgba(20, 20, 20, 0.4);
+}
+
+.plan-toggle__option:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
 .soma-section__header--plans {
   gap: 1.5rem;
 }
 
-#tab-assessoria:checked ~ .soma-section__header .plan-toggle label[for="tab-assessoria"],
-#tab-presenciais:checked ~ .soma-section__header .plan-toggle label[for="tab-presenciais"],
-#tab-remoto:checked ~ .soma-section__header .plan-toggle label[for="tab-remoto"] {
-  background-color: var(--color-accent);
-  color: var(--color-background);
-  box-shadow: 0 8px 18px -12px rgba(20, 20, 20, 0.4);
-}
-
-#tab-assessoria:focus-visible ~ .soma-section__header .plan-toggle label[for="tab-assessoria"],
-#tab-presenciais:focus-visible ~ .soma-section__header .plan-toggle label[for="tab-presenciais"],
-#tab-remoto:focus-visible ~ .soma-section__header .plan-toggle label[for="tab-remoto"] {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-}
-
 .soma-section__header--plans .plan-toggle {
-  margin-left: auto;
+  scrollbar-width: none;
 }
 
-.soma-plan-groups [data-group] {
+.soma-section__header--plans .plan-toggle::-webkit-scrollbar {
   display: none;
 }
 
-#tab-assessoria:checked ~ .soma-plan-groups [data-group="assessoria"],
-#tab-presenciais:checked ~ .soma-plan-groups [data-group="presenciais"],
-#tab-remoto:checked ~ .soma-plan-groups [data-group="remoto"] {
+html.js-enabled #planos .soma-plan-groups [data-group] {
+  display: none;
+}
+
+html.js-enabled #planos[data-active-group="assessoria"] [data-group="assessoria"],
+html.js-enabled #planos[data-active-group="presenciais"] [data-group="presenciais"],
+html.js-enabled #planos[data-active-group="remoto"] [data-group="remoto"] {
   display: grid;
 }
 
@@ -548,30 +553,6 @@ html.js-enabled [data-reveal].is-visible {
   transform: scaleX(1);
 }
 
-.sticky-cta {
-  position: fixed;
-  left: 1rem;
-  right: 1rem;
-  bottom: 1rem;
-  display: flex;
-  gap: 0.75rem;
-  padding: 0.75rem;
-  border-radius: 9999px;
-  background: rgba(0, 0, 0, 0.88);
-  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.35);
-  transform: translateY(140%);
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 200ms ease, opacity 200ms ease;
-  z-index: 60;
-}
-
-.sticky-cta.is-visible {
-  transform: translateY(0);
-  opacity: 1;
-  pointer-events: auto;
-}
-
 @media (min-width: 768px) {
   .soma-hero {
     padding: 6rem 2rem 7rem;
@@ -609,27 +590,24 @@ html.js-enabled [data-reveal].is-visible {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .plan-toggle {
-    width: max-content;
+  .soma-section__header--plans .plan-toggle {
+    margin-left: auto;
+    width: auto;
+    overflow: visible;
   }
 
   .plan-toggle__label {
-    flex-basis: auto;
     margin-right: 0.4rem;
   }
 
   .plan-toggle__option {
-    flex: 0 0 auto;
-    min-height: 2.5rem;
+    min-height: 2.75rem;
   }
 
   .plan-card__cta {
     width: auto;
   }
 
-  .sticky-cta {
-    display: none;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -641,15 +619,8 @@ html.js-enabled [data-reveal].is-visible {
   html.js-enabled [data-reveal].is-visible,
   .soma-button,
   .plan-card,
-  .price-box,
-  .sticky-cta {
+  .price-box {
     transition: none !important;
     transform: none !important;
-  }
-}
-
-@media (max-width: 767px) {
-  body {
-    padding-bottom: 5.5rem;
   }
 }
