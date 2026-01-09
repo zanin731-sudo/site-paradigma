@@ -116,8 +116,6 @@
       </div>
     </section>
 
-    <div data-sticky-sentinel aria-hidden="true"></div>
-
     <section class="soma-section soma-section--invite" aria-labelledby="convite-heading" data-reveal>
       <div class="soma-section__inner">
         <p class="soma-eyebrow">Convite</p>
@@ -211,27 +209,24 @@
       </div>
     </section>
 
-    <section class="soma-section" aria-labelledby="planos-heading" id="planos">
+    <section class="soma-section" aria-labelledby="planos-heading" id="planos" data-active-group="assessoria">
       <div class="soma-section__inner">
-        <input class="sr-only plan-toggle__input" type="radio" name="plan-group" id="tab-assessoria" checked />
-        <input class="sr-only plan-toggle__input" type="radio" name="plan-group" id="tab-presenciais" />
-        <input class="sr-only plan-toggle__input" type="radio" name="plan-group" id="tab-remoto" />
         <div class="soma-section__header soma-section__header--plans">
           <div>
             <p class="soma-eyebrow">Planos</p>
             <h2 id="planos-heading" class="soma-heading">Planos com clareza de ritmo e compromisso.</h2>
             <p class="soma-lead">Escolha entre acompanhamento base, remoto ou presencial, sempre com ajustes contínuos.</p>
           </div>
-          <form class="plan-toggle" data-plan-toggle aria-label="Grupos de planos">
+          <div class="plan-toggle" data-plan-toggle role="tablist" aria-label="Grupos de planos">
             <span class="plan-toggle__label">Planos</span>
-            <label class="plan-toggle__option" for="tab-assessoria">Assessoria</label>
-            <label class="plan-toggle__option" for="tab-presenciais">Presenciais</label>
-            <label class="plan-toggle__option" for="tab-remoto">Remoto</label>
-          </form>
+            <button type="button" class="plan-toggle__option is-active" data-group-btn="assessoria" role="tab" aria-selected="true">Assessoria</button>
+            <button type="button" class="plan-toggle__option" data-group-btn="presenciais" role="tab" aria-selected="false">Presenciais</button>
+            <button type="button" class="plan-toggle__option" data-group-btn="remoto" role="tab" aria-selected="false">Remoto</button>
+          </div>
         </div>
 
         <div class="soma-plan-groups">
-          <div class="soma-plan-group" data-group="assessoria">
+          <div class="soma-plan-group" data-group="assessoria" role="tabpanel" tabindex="-1">
             <h3 class="soma-plan-group__title">Assessoria</h3>
             <article class="plan-card" id="plano-assessoria">
               <header class="plan-card__header">
@@ -283,159 +278,7 @@
             </article>
           </div>
 
-          <div class="soma-plan-group" data-group="remoto">
-            <h3 class="soma-plan-group__title">Remotos</h3>
-            <div class="soma-plan-grid">
-              <article class="plan-card" id="plano-remoto-essencial">
-                <header class="plan-card__header">
-                  <p class="plan-card__eyebrow">SOMA</p>
-                  <h4 class="plan-card__title">Remoto Essencial+</h4>
-                  <p class="plan-card__subtitle">Para quem quer acompanhamento remoto com constância.</p>
-                </header>
-                <div class="plan-card__prices" aria-label="Valores por período">
-                  <div class="price-box" data-price="trimestral">
-                    <p class="price-box__label">Trimestral</p>
-                    <p class="price-box__value">R$ 420<span>/mês</span></p>
-                  </div>
-                  <div class="price-box" data-price="semestral">
-                    <p class="price-box__label">Semestral</p>
-                    <p class="price-box__value">R$ 390<span>/mês</span></p>
-                  </div>
-                </div>
-                <div class="plan-card__actions">
-                  <a class="soma-button soma-button--primary focus-visible plan-card__cta" href="#cta-final">Escolher este plano</a>
-                </div>
-                <div class="plan-card__summary">
-                  <p class="plan-card__label">Inclui</p>
-                  <ul class="soma-list">
-                    <li>Treino ajustado à sua rotina.</li>
-                    <li>Monitoramento e ajustes contínuos.</li>
-                    <li>Suporte para dúvidas do dia a dia.</li>
-                  </ul>
-                </div>
-                <details class="soma-details plan-card__details">
-                  <summary>Ver detalhes</summary>
-                  <div class="plan-card__details-body">
-                    <div>
-                      <p class="plan-card__label">Para quem é</p>
-                      <ul class="soma-list">
-                        <li>Prefere encontros à distância.</li>
-                        <li>Busca consistência com apoio próximo.</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <p class="plan-card__label">Inclui</p>
-                      <ul class="soma-list">
-                        <li>Treino ajustado à sua rotina.</li>
-                        <li>Monitoramento e ajustes contínuos.</li>
-                        <li>Suporte para dúvidas do dia a dia.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </details>
-              </article>
-
-              <article class="plan-card" id="plano-remoto-integrado">
-                <header class="plan-card__header">
-                  <p class="plan-card__eyebrow">SOMA</p>
-                  <h4 class="plan-card__title">Remoto Integrado+</h4>
-                  <p class="plan-card__subtitle">Para quem precisa de visão mais completa e frequência maior.</p>
-                </header>
-                <div class="plan-card__prices" aria-label="Valores por período">
-                  <div class="price-box" data-price="trimestral">
-                    <p class="price-box__label">Trimestral</p>
-                    <p class="price-box__value">R$ 820<span>/mês</span></p>
-                  </div>
-                  <div class="price-box" data-price="semestral">
-                    <p class="price-box__label">Semestral</p>
-                    <p class="price-box__value">R$ 780<span>/mês</span></p>
-                  </div>
-                </div>
-                <div class="plan-card__actions">
-                  <a class="soma-button soma-button--primary focus-visible plan-card__cta" href="#cta-final">Escolher este plano</a>
-                </div>
-                <div class="plan-card__summary">
-                  <p class="plan-card__label">Inclui</p>
-                  <ul class="soma-list">
-                    <li>Treino e recuperação alinhados.</li>
-                    <li>Check-ins regulares.</li>
-                    <li>Suporte contínuo e educativo.</li>
-                  </ul>
-                </div>
-                <details class="soma-details plan-card__details">
-                  <summary>Ver detalhes</summary>
-                  <div class="plan-card__details-body">
-                    <div>
-                      <p class="plan-card__label">Para quem é</p>
-                      <ul class="soma-list">
-                        <li>Quer acompanhamento mais próximo.</li>
-                        <li>Busca evolução com revisões frequentes.</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <p class="plan-card__label">Inclui</p>
-                      <ul class="soma-list">
-                        <li>Treino e recuperação alinhados.</li>
-                        <li>Check-ins regulares.</li>
-                        <li>Suporte contínuo e educativo.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </details>
-              </article>
-
-              <article class="plan-card" id="plano-remoto-performance">
-                <header class="plan-card__header">
-                  <p class="plan-card__eyebrow">SOMA</p>
-                  <h4 class="plan-card__title">Remoto Performance+</h4>
-                  <p class="plan-card__subtitle">Para quem quer intensidade com acompanhamento constante.</p>
-                </header>
-                <div class="plan-card__prices" aria-label="Valores por período">
-                  <div class="price-box" data-price="trimestral">
-                    <p class="price-box__label">Trimestral</p>
-                    <p class="price-box__value">R$ 1.290<span>/mês</span></p>
-                  </div>
-                  <div class="price-box" data-price="semestral">
-                    <p class="price-box__label">Semestral</p>
-                    <p class="price-box__value">R$ 1.220<span>/mês</span></p>
-                  </div>
-                </div>
-                <div class="plan-card__actions">
-                  <a class="soma-button soma-button--primary focus-visible plan-card__cta" href="#cta-final">Escolher este plano</a>
-                </div>
-                <div class="plan-card__summary">
-                  <p class="plan-card__label">Inclui</p>
-                  <ul class="soma-list">
-                    <li>Planejamento individualizado.</li>
-                    <li>Monitoramento e revisões constantes.</li>
-                    <li>Suporte contínuo ao longo do mês.</li>
-                  </ul>
-                </div>
-                <details class="soma-details plan-card__details">
-                  <summary>Ver detalhes</summary>
-                  <div class="plan-card__details-body">
-                    <div>
-                      <p class="plan-card__label">Para quem é</p>
-                      <ul class="soma-list">
-                        <li>Busca alto nível de acompanhamento.</li>
-                        <li>Prefere ajustes mais frequentes.</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <p class="plan-card__label">Inclui</p>
-                      <ul class="soma-list">
-                        <li>Planejamento individualizado.</li>
-                        <li>Monitoramento e revisões constantes.</li>
-                        <li>Suporte contínuo ao longo do mês.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </details>
-              </article>
-            </div>
-          </div>
-
-          <div class="soma-plan-group" data-group="presenciais">
+          <div class="soma-plan-group" data-group="presenciais" role="tabpanel" tabindex="-1">
             <h3 class="soma-plan-group__title">Presenciais</h3>
             <div class="soma-plan-grid">
               <article class="plan-card" id="plano-presencial-essencial">
@@ -586,6 +429,158 @@
               </article>
             </div>
           </div>
+
+          <div class="soma-plan-group" data-group="remoto" role="tabpanel" tabindex="-1">
+            <h3 class="soma-plan-group__title">Remotos</h3>
+            <div class="soma-plan-grid">
+              <article class="plan-card" id="plano-remoto-essencial">
+                <header class="plan-card__header">
+                  <p class="plan-card__eyebrow">SOMA</p>
+                  <h4 class="plan-card__title">Remoto Essencial+</h4>
+                  <p class="plan-card__subtitle">Para quem quer acompanhamento remoto com constância.</p>
+                </header>
+                <div class="plan-card__prices" aria-label="Valores por período">
+                  <div class="price-box" data-price="trimestral">
+                    <p class="price-box__label">Trimestral</p>
+                    <p class="price-box__value">R$ 420<span>/mês</span></p>
+                  </div>
+                  <div class="price-box" data-price="semestral">
+                    <p class="price-box__label">Semestral</p>
+                    <p class="price-box__value">R$ 390<span>/mês</span></p>
+                  </div>
+                </div>
+                <div class="plan-card__actions">
+                  <a class="soma-button soma-button--primary focus-visible plan-card__cta" href="#cta-final">Escolher este plano</a>
+                </div>
+                <div class="plan-card__summary">
+                  <p class="plan-card__label">Inclui</p>
+                  <ul class="soma-list">
+                    <li>Treino ajustado à sua rotina.</li>
+                    <li>Monitoramento e ajustes contínuos.</li>
+                    <li>Suporte para dúvidas do dia a dia.</li>
+                  </ul>
+                </div>
+                <details class="soma-details plan-card__details">
+                  <summary>Ver detalhes</summary>
+                  <div class="plan-card__details-body">
+                    <div>
+                      <p class="plan-card__label">Para quem é</p>
+                      <ul class="soma-list">
+                        <li>Prefere encontros à distância.</li>
+                        <li>Busca consistência com apoio próximo.</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p class="plan-card__label">Inclui</p>
+                      <ul class="soma-list">
+                        <li>Treino ajustado à sua rotina.</li>
+                        <li>Monitoramento e ajustes contínuos.</li>
+                        <li>Suporte para dúvidas do dia a dia.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </details>
+              </article>
+
+              <article class="plan-card" id="plano-remoto-integrado">
+                <header class="plan-card__header">
+                  <p class="plan-card__eyebrow">SOMA</p>
+                  <h4 class="plan-card__title">Remoto Integrado+</h4>
+                  <p class="plan-card__subtitle">Para quem precisa de visão mais completa e frequência maior.</p>
+                </header>
+                <div class="plan-card__prices" aria-label="Valores por período">
+                  <div class="price-box" data-price="trimestral">
+                    <p class="price-box__label">Trimestral</p>
+                    <p class="price-box__value">R$ 820<span>/mês</span></p>
+                  </div>
+                  <div class="price-box" data-price="semestral">
+                    <p class="price-box__label">Semestral</p>
+                    <p class="price-box__value">R$ 780<span>/mês</span></p>
+                  </div>
+                </div>
+                <div class="plan-card__actions">
+                  <a class="soma-button soma-button--primary focus-visible plan-card__cta" href="#cta-final">Escolher este plano</a>
+                </div>
+                <div class="plan-card__summary">
+                  <p class="plan-card__label">Inclui</p>
+                  <ul class="soma-list">
+                    <li>Treino e recuperação alinhados.</li>
+                    <li>Check-ins regulares.</li>
+                    <li>Suporte contínuo e educativo.</li>
+                  </ul>
+                </div>
+                <details class="soma-details plan-card__details">
+                  <summary>Ver detalhes</summary>
+                  <div class="plan-card__details-body">
+                    <div>
+                      <p class="plan-card__label">Para quem é</p>
+                      <ul class="soma-list">
+                        <li>Quer acompanhamento mais próximo.</li>
+                        <li>Busca evolução com revisões frequentes.</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p class="plan-card__label">Inclui</p>
+                      <ul class="soma-list">
+                        <li>Treino e recuperação alinhados.</li>
+                        <li>Check-ins regulares.</li>
+                        <li>Suporte contínuo e educativo.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </details>
+              </article>
+
+              <article class="plan-card" id="plano-remoto-performance">
+                <header class="plan-card__header">
+                  <p class="plan-card__eyebrow">SOMA</p>
+                  <h4 class="plan-card__title">Remoto Performance+</h4>
+                  <p class="plan-card__subtitle">Para quem quer intensidade com acompanhamento constante.</p>
+                </header>
+                <div class="plan-card__prices" aria-label="Valores por período">
+                  <div class="price-box" data-price="trimestral">
+                    <p class="price-box__label">Trimestral</p>
+                    <p class="price-box__value">R$ 1.290<span>/mês</span></p>
+                  </div>
+                  <div class="price-box" data-price="semestral">
+                    <p class="price-box__label">Semestral</p>
+                    <p class="price-box__value">R$ 1.220<span>/mês</span></p>
+                  </div>
+                </div>
+                <div class="plan-card__actions">
+                  <a class="soma-button soma-button--primary focus-visible plan-card__cta" href="#cta-final">Escolher este plano</a>
+                </div>
+                <div class="plan-card__summary">
+                  <p class="plan-card__label">Inclui</p>
+                  <ul class="soma-list">
+                    <li>Planejamento individualizado.</li>
+                    <li>Monitoramento e revisões constantes.</li>
+                    <li>Suporte contínuo ao longo do mês.</li>
+                  </ul>
+                </div>
+                <details class="soma-details plan-card__details">
+                  <summary>Ver detalhes</summary>
+                  <div class="plan-card__details-body">
+                    <div>
+                      <p class="plan-card__label">Para quem é</p>
+                      <ul class="soma-list">
+                        <li>Busca alto nível de acompanhamento.</li>
+                        <li>Prefere ajustes mais frequentes.</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p class="plan-card__label">Inclui</p>
+                      <ul class="soma-list">
+                        <li>Planejamento individualizado.</li>
+                        <li>Monitoramento e revisões constantes.</li>
+                        <li>Suporte contínuo ao longo do mês.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </details>
+              </article>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -666,11 +661,6 @@
       </div>
     </section>
   </main>
-
-  <div class="sticky-cta" data-sticky-cta aria-hidden="true">
-    <a class="soma-button soma-button--light focus-visible" href="#planos" data-scroll-target="#planos">Ver planos</a>
-    <a class="soma-button soma-button--ghost focus-visible" href="/contato.html">Quero conversar</a>
-  </div>
 
   <footer class="bg-background py-12 text-white" role="contentinfo">
     <div class="mx-auto flex max-w-6xl flex-col gap-6 px-4 lg:flex-row lg:items-center lg:justify-between lg:px-8">

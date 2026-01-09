@@ -25,33 +25,50 @@
     });
   });
 
-  const stickyCta = document.querySelector('[data-sticky-cta]');
-  const stickySentinel = document.querySelector('[data-sticky-sentinel]');
+  const planos = document.getElementById('planos');
+  if (planos) {
+    const toggle = planos.querySelector('[data-plan-toggle]');
+    const buttons = toggle ? Array.from(toggle.querySelectorAll('[data-group-btn]')) : [];
 
-  if (stickyCta && stickySentinel) {
-    const toggleSticky = (shouldShow) => {
-      stickyCta.classList.toggle('is-visible', shouldShow);
-      stickyCta.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
+    const setActiveGroup = (group) => {
+      const nextGroup = group || 'assessoria';
+      planos.setAttribute('data-active-group', nextGroup);
+      buttons.forEach((button) => {
+        const isActive = button.dataset.groupBtn === nextGroup;
+        button.classList.toggle('is-active', isActive);
+        button.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
     };
 
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            toggleSticky(!entry.isIntersecting);
-          });
-        },
-        { threshold: 0.1 }
-      );
-      observer.observe(stickySentinel);
-    } else {
-      const handleScroll = () => {
-        const show = window.scrollY > 240;
-        toggleSticky(show);
-      };
-      window.addEventListener('scroll', handleScroll);
-      handleScroll();
-    }
+    const initialGroup = planos.getAttribute('data-active-group') || 'assessoria';
+    setActiveGroup(initialGroup);
+
+    buttons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        setActiveGroup(button.dataset.groupBtn);
+      });
+
+      button.addEventListener('keydown', (event) => {
+        if (!['ArrowLeft', 'ArrowRight', 'Enter', ' '].includes(event.key)) {
+          return;
+        }
+
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          setActiveGroup(button.dataset.groupBtn);
+          return;
+        }
+
+        event.preventDefault();
+        const direction = event.key === 'ArrowRight' ? 1 : -1;
+        const nextIndex = (index + direction + buttons.length) % buttons.length;
+        const nextButton = buttons[nextIndex];
+        if (nextButton) {
+          nextButton.focus();
+          setActiveGroup(nextButton.dataset.groupBtn);
+        }
+      });
+    });
   }
 
   const revealElements = Array.from(document.querySelectorAll('[data-reveal]'));
