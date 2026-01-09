@@ -638,6 +638,20 @@ html.js-enabled #planos[data-active-group="remoto"] [data-group="remoto"] {
   color: rgba(0, 0, 0, 0.6);
 }
 
+@media (max-width: 640px) {
+  .price-box__value {
+    font-size: 1.1rem;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+
+  .price-box__value span {
+    font-size: 0.85rem;
+    line-height: 1;
+    white-space: nowrap;
+  }
+}
+
 
 .soma-cta {
   display: grid;
