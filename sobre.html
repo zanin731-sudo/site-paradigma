@@ -87,14 +87,14 @@
 
   <main id="conteudo-principal">
     <!-- INÍCIO BLOCO HERO SOBRE -->
-    <section class="relative overflow-hidden bg-background text-foreground">
-      <div class="hero-overlay relative w-full">
-        <img src="/assets/img/hero-overlay.svg" alt="Formas abstratas representando colaboração" class="absolute inset-0 h-full w-full" />
-        <div class="relative mx-auto flex max-w-6xl flex-col justify-center gap-4 px-4 py-20 sm:py-24 lg:px-8 lg:py-20">
-          <p class="font-semibold uppercase tracking-[0.3em] text-accent">Sobre nós</p>
-          <h1 class="font-display text-5xl uppercase leading-tight">Sobre a Paradigma</h1>
-          <p class="max-w-3xl text-lg text-foreground/80">Somos apaixonados por movimento, esportes, cultura e acima de tudo pela vida! </p>
+    <section class="soma-hero" aria-labelledby="hero-heading">
+      <div class="soma-hero__overlay" aria-hidden="true"></div>
+      <div class="soma-hero__content">
+        <div class="soma-hero__label">
+          <span class="soma-pill">sobre nós</span>
         </div>
+        <h1 id="hero-heading" class="soma-hero__title font-display">Sobre a Paradigma</h1>
+        <p class="soma-hero__subtitle">Somos apaixonados por movimento, esportes, cultura e acima de tudo pela vida!</p>
       </div>
     </section>
     <!-- FIM BLOCO HERO SOBRE -->

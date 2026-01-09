@@ -87,14 +87,14 @@
 
   <main id="conteudo-principal">
     <!-- INÍCIO BLOCO MANIFESTO HERO -->
-    <section class="relative overflow-hidden bg-background text-foreground">
-      <div class="hero-overlay relative w-full">
-        <img src="/assets/img/hero-overlay.svg" alt="Formas abstratas em verde e preto" class="absolute inset-0 h-full w-full" />
-        <div class="relative mx-auto flex max-w-5xl flex-col justify-center gap-4 px-4 py-20 sm:py-24 lg:px-8 lg:py-20">
-          <p class="font-semibold uppercase tracking-[0.3em] text-accent">Manifesto</p>
-          <h1 class="font-display text-5xl uppercase leading-tight">No que acreditamos...</h1>
-          <p class="max-w-2xl text-lg text-foreground/80">Uma declaração viva que orienta nossas decisões coletivas, respeitando a complexidade da vida e celebrando o potencial humano.</p>
+    <section class="soma-hero" aria-labelledby="hero-heading">
+      <div class="soma-hero__overlay" aria-hidden="true"></div>
+      <div class="soma-hero__content">
+        <div class="soma-hero__label">
+          <span class="soma-pill">manifesto</span>
         </div>
+        <h1 id="hero-heading" class="soma-hero__title font-display">No que acreditamos...</h1>
+        <p class="soma-hero__subtitle">Uma declaração viva que orienta nossas decisões coletivas, respeitando a complexidade da vida e celebrando o potencial humano.</p>
       </div>
     </section>
     <!-- FIM BLOCO MANIFESTO HERO -->
